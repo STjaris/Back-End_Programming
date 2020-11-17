@@ -28,8 +28,12 @@ public class textimport implements textImportInterface {
 
     public void arrayFiltering(List<String> lines) {
 
-        String regex = ".*\\d.*";
-        Pattern pattern = Pattern.compile(regex);
+        String regex1 = ".*\\d.*";
+        String regex2 = ".*[A-Z].*";
+        String regex3 = ".*\\W.*";
+        Pattern pattern = Pattern.compile(regex1);
+        Pattern pattern2 = Pattern.compile(regex2);
+        Pattern pattern3 = Pattern.compile(regex3);
 
         List<String> linesFiltered = new ArrayList<>();
 
@@ -47,8 +51,13 @@ public class textimport implements textImportInterface {
         for (int i = 0; i < 50; i++) {
             //TRUE THEN STRING CONTAINS NUMBERS
             Matcher matcher = pattern.matcher(linesFiltered.get(i));
-            System.out.println(linesFiltered.get(i) + ": " + matcher.matches());
+            //TRUE THEN STRING CONTAINS CAPS
+            Matcher matcher2 = pattern2.matcher(linesFiltered.get(i));
+            //TRUE THEN STRING CONTAINS SPEC.CHAR
+            Matcher matcher3 = pattern3.matcher(linesFiltered.get(i));
 
+            System.out.println(linesFiltered.get(i) + ": MATCH1: " + matcher.matches() + ": MATCH2: "
+                    + matcher2.matches() + ": MATCH3: " + matcher3.matches());
 
         }
 
