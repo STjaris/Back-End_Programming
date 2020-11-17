@@ -17,9 +17,7 @@ public class BackEndProgrammingApplication {
 
 	public static void testingout(){
 		try{
-			//text.importFile();
-			//text.exportFile();
-			text.arrayFiltering(text.filereader());
+			text.stringCheck(text.arrayFiltering(text.filereader()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

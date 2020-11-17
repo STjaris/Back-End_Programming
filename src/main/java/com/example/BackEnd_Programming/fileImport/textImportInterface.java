@@ -6,5 +6,6 @@ import java.util.List;
 public interface textImportInterface {
 
     List<String> filereader() throws IOException;
-    void arrayFiltering(List<String> lines);
+    List<String> arrayFiltering(List<String> lines);
+    void stringCheck(List<String> linesLengthFiltered);
 }
