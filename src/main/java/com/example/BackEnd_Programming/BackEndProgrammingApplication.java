@@ -19,7 +19,7 @@ public class BackEndProgrammingApplication {
 		try{
 			//text.importFile();
 			//text.exportFile();
-			text.filereader();
+			text.arrayFiltering(text.filereader());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
