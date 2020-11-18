@@ -27,6 +27,14 @@ public class textimportTests {
     }
 
     @Test
+    @DisplayName("Is smaller than 5")
+    public void SmallerThan(){
+        String text = "kjdb";
+        boolean isSmallerThan = text.length() < 5;
+        assertTrue(isSmallerThan);
+    }
+
+    @Test
     @DisplayName("Is not smaller than 5")
     public void notSmallerThan(){
         String text = "kjdb";
