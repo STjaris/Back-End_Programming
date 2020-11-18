@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 
 public class textimport implements textImportInterface {
 
+    private final String fileString = "C:\\Users\\Soerano\\Documents\\GitHub\\Back-End_Programming\\Back-End_Programming\\src\\main\\resources\\basiswoorden-gekeurd.txt";
 
-    String fileString = "C:\\Users\\Soerano\\Documents\\GitHub\\Back-End_Programming\\Back-End_Programming\\src\\main\\resources\\basiswoorden-gekeurd.txt";
 
     public List<String> filereader() throws FileNotFoundException {
         List<String> lines = new ArrayList<>();
@@ -40,7 +40,7 @@ public class textimport implements textImportInterface {
         return linesLengthFiltered;
     }
 
-    public void stringCheck(List<String> linesLengthFiltered ){
+    public void stringCheck(List<String> linesLengthFiltered) {
         //ARRAY FOR FILTERED STRING
         List<String> linesFiltered = new ArrayList<>();
 
