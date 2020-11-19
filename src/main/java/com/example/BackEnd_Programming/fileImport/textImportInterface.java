@@ -7,5 +7,5 @@ public interface textImportInterface {
 
     List<String> filereader() throws IOException;
     List<String> arrayFiltering(List<String> lines);
-    void stringCheck(List<String> linesLengthFiltered);
+
 }

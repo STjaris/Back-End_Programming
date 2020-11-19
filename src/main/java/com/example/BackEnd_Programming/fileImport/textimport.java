@@ -12,18 +12,29 @@ public class textimport implements textImportInterface {
 
     private final String fileString = "C:\\Users\\Soerano\\Documents\\GitHub\\Back-End_Programming\\Back-End_Programming\\src\\main\\resources\\basiswoorden-gekeurd.txt";
 
-    public boolean lengthFiltering(String input){
+    public boolean stringFilteringOnLength(String input){
 
-        if(input.length() <= 7 && input.length() >= 5){
-            return true;
-        }
-        else
-            return false;
+        return input.length() <= 7 && input.length() >= 5;
     }
 
-    public boolean stringFiltering(String input){
+    public boolean stringFilteringOnSpecialChar(String input){
 
-        return true;
+        String regex1 = ".*\\d.*";
+        String regex2 = ".*[A-Z].*";
+        String regex3 = ".*\\W.*";
+
+        Pattern pattern = Pattern.compile(regex1);
+        Pattern pattern2 = Pattern.compile(regex2);
+        Pattern pattern3 = Pattern.compile(regex3);
+
+        //TRUE THEN STRING CONTAINS NUMBERS
+        Matcher matcher = pattern.matcher(input);
+        //TRUE THEN STRING CONTAINS CAPS
+        Matcher matcher2 = pattern2.matcher(input);
+        //TRUE THEN STRING CONTAINS SPEC.CHAR
+        Matcher matcher3 = pattern3.matcher(input);
+
+        return !matcher.matches() && !matcher2.matches() && !matcher3.matches();
     }
 
 
@@ -49,38 +60,12 @@ public class textimport implements textImportInterface {
 
         //FILTER LENGTH
         for (String line : lines) {
-            if (lengthFiltering(line)) {
+            if (stringFilteringOnLength(line) && stringFilteringOnSpecialChar(line)) {
                 linesLengthFiltered.add(line);
             }
         }
+        System.out.println(linesLengthFiltered);
+
         return linesLengthFiltered;
     }
-
-    public void stringCheck(List<String> linesLengthFiltered) {
-        //ARRAY FOR FILTERED STRING
-        List<String> linesFiltered = new ArrayList<>();
-
-        String regex1 = ".*\\d.*";
-        String regex2 = ".*[A-Z].*";
-        String regex3 = ".*\\W.*";
-        Pattern pattern = Pattern.compile(regex1);
-        Pattern pattern2 = Pattern.compile(regex2);
-        Pattern pattern3 = Pattern.compile(regex3);
-
-        //IF BLOCK FOR STRING CHECK
-        for (String s : linesLengthFiltered) {
-            //TRUE THEN STRING CONTAINS NUMBERS
-            Matcher matcher = pattern.matcher(s);
-            //TRUE THEN STRING CONTAINS CAPS
-            Matcher matcher2 = pattern2.matcher(s);
-            //TRUE THEN STRING CONTAINS SPEC.CHAR
-            Matcher matcher3 = pattern3.matcher(s);
-
-            if (!matcher.matches() && !matcher2.matches() && !matcher3.matches()) {
-                linesFiltered.add(s);
-            }
-        }
-        System.out.println(linesFiltered);
-    }
-
 }

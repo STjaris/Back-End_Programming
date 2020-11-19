@@ -17,15 +17,9 @@ public class BackEndProgrammingApplication {
 
 	public static void testingout(){
 		try{
-			text.stringCheck(text.arrayFiltering(text.filereader()));
-
-
-			//System.out.println(text.lengthFiltering("qwertyuiop"));
+			text.arrayFiltering(text.filereader());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
-
 }

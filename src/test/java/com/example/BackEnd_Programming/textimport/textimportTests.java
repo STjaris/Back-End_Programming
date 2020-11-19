@@ -28,7 +28,7 @@ public class textimportTests {
     public void verifyIsInBetween(String input, boolean expectedResult) {
         textimport textImport = new textimport();
 
-        boolean result = textImport.lengthFiltering(input);
+        boolean result = textImport.stringFilteringOnLength(input);
 
         assertEquals(expectedResult, result);
     }
