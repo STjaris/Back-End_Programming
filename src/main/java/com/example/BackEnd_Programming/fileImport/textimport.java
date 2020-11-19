@@ -10,8 +10,6 @@ import java.util.regex.Pattern;
 
 public class textimport implements textImportInterface {
 
-    private final String fileString = "C:\\Users\\Soerano\\Documents\\GitHub\\Back-End_Programming\\Back-End_Programming\\src\\main\\resources\\basiswoorden-gekeurd.txt";
-
     public boolean stringFilteringOnLength(String input){
 
         return input.length() <= 7 && input.length() >= 5;
@@ -41,6 +39,7 @@ public class textimport implements textImportInterface {
     public List<String> filereader() throws FileNotFoundException {
         List<String> lines = new ArrayList<>();
 
+        String fileString = "C:\\Users\\Soerano\\Documents\\GitHub\\Back-End_Programming\\Back-End_Programming\\src\\main\\resources\\basiswoorden-gekeurd.txt";
         File file = new File(fileString);
         Scanner scanner = new Scanner(file);
 
@@ -56,16 +55,16 @@ public class textimport implements textImportInterface {
     public List<String> arrayFiltering(List<String> lines) {
 
         //ARRAYLIST FOR LENGTH FILTERING
-        List<String> linesLengthFiltered = new ArrayList<>();
+        List<String> linesFiltered = new ArrayList<>();
 
         //FILTER LENGTH
         for (String line : lines) {
             if (stringFilteringOnLength(line) && stringFilteringOnSpecialChar(line)) {
-                linesLengthFiltered.add(line);
+                linesFiltered.add(line);
             }
         }
-        System.out.println(linesLengthFiltered);
+        System.out.println(linesFiltered);
 
-        return linesLengthFiltered;
+        return linesFiltered;
     }
 }
