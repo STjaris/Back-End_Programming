@@ -1,47 +1,37 @@
 package com.example.BackEnd_Programming.textimport;
-import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.example.BackEnd_Programming.fileImport.textimport;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import java.util.stream.Stream;
+import static org.junit.Assert.assertEquals;
 
 
 @DisplayName("textimport")
 public class textimportTests {
 
-    private static final String content = "isLangerDan7";
-
-    @Test
-    @DisplayName("Is longer than 7")
-    public void longerThan(){
-        String text = "kjdbfdsabfbsd";
-        boolean isLongerThan = text.length() > 7;
-        assertTrue(isLongerThan);
+    private static Stream<Arguments> provideLengthAndResults() {
+        return Stream.of(
+                Arguments.of("Test", false),
+                Arguments.of("isTeLang", false),
+                Arguments.of("qwert", true),
+                Arguments.of("qwerty", true),
+                Arguments.of("qwertyu", true)
+        );
     }
 
-    @Test
-    @DisplayName("Is not longer than 7")
-    public void notLongerThan(){
-        String text = "kjdbfdsabfbsd";
-        boolean isLongerThan = text.length() <= 7;
-        assertTrue(isLongerThan);
-    }
+    @ParameterizedTest
+    @MethodSource("provideLengthAndResults")
+    @DisplayName("Is in between 5 and 7")
+    public void verifyIsInBetween(String input, boolean expectedResult) {
+        textimport textImport = new textimport();
 
-    @Test
-    @DisplayName("Is smaller than 5")
-    public void SmallerThan(){
-        String text = "kjdb";
-        boolean isSmallerThan = text.length() < 5;
-        assertTrue(isSmallerThan);
-    }
+        boolean result = textImport.lengthFiltering(input);
 
-    @Test
-    @DisplayName("Is not smaller than 5")
-    public void notSmallerThan(){
-        String text = "kjdb";
-        boolean isSmallerThan = text.length() >= 5;
-        assertTrue(isSmallerThan);
+        assertEquals(expectedResult, result);
     }
-
 
 
 }

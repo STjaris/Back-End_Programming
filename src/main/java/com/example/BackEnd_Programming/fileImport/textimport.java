@@ -12,6 +12,20 @@ public class textimport implements textImportInterface {
 
     private final String fileString = "C:\\Users\\Soerano\\Documents\\GitHub\\Back-End_Programming\\Back-End_Programming\\src\\main\\resources\\basiswoorden-gekeurd.txt";
 
+    public boolean lengthFiltering(String input){
+
+        if(input.length() <= 7 && input.length() >= 5){
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public boolean stringFiltering(String input){
+
+        return true;
+    }
+
 
     public List<String> filereader() throws FileNotFoundException {
         List<String> lines = new ArrayList<>();
@@ -26,6 +40,8 @@ public class textimport implements textImportInterface {
         return lines;
     }
 
+
+
     public List<String> arrayFiltering(List<String> lines) {
 
         //ARRAYLIST FOR LENGTH FILTERING
@@ -33,7 +49,7 @@ public class textimport implements textImportInterface {
 
         //FILTER LENGTH
         for (String line : lines) {
-            if (line.length() <= 7 && line.length() >= 5) {
+            if (lengthFiltering(line)) {
                 linesLengthFiltered.add(line);
             }
         }

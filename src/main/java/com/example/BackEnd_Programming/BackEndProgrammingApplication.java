@@ -1,5 +1,6 @@
 package com.example.BackEnd_Programming;
 
+import com.example.BackEnd_Programming.fileImport.textImportInterface;
 import com.example.BackEnd_Programming.fileImport.textimport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,9 @@ public class BackEndProgrammingApplication {
 	public static void testingout(){
 		try{
 			text.stringCheck(text.arrayFiltering(text.filereader()));
+
+
+			//System.out.println(text.lengthFiltering("qwertyuiop"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
