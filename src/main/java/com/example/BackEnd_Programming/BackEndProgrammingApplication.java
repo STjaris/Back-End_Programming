@@ -8,18 +8,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BackEndProgrammingApplication {
 
-	private static textimport text = new textimport();
+    private static final textImportInterface textImportInterface = new textimport();
 
-	public static void main(String[] args) {
-		SpringApplication.run(BackEndProgrammingApplication.class, args);
-		testingout();
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BackEndProgrammingApplication.class, args);
+        startTextImport();
+    }
 
-	public static void testingout(){
-		try{
-			text.arrayFiltering(text.filereader());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public static void startTextImport() {
+        try {
+            textImportInterface.arrayFiltering(textImportInterface.filereader());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
