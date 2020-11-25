@@ -39,7 +39,7 @@ public class textimport implements textImportInterface {
     public List<String> filereader() throws FileNotFoundException {
         List<String> lines = new ArrayList<>();
 
-        String fileString = "basiswoorden-gekeurd.txt";
+        String fileString = "C:\\Users\\Soerano\\Documents\\GitHub\\Back-End_Programming\\Back-End_Programming\\src\\main\\resources\\basiswoorden-gekeurd.txt";
         File file = new File(fileString);
         Scanner scanner = new Scanner(file);
 
