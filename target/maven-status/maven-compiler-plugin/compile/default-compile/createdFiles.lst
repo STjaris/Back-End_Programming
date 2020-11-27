@@ -6,6 +6,7 @@ com\example\BackEnd_Programming\game\controller\GameController.class
 com\example\BackEnd_Programming\highScore\service\HighScoreService.class
 com\example\BackEnd_Programming\player\service\PlayerServiceInterface.class
 com\example\BackEnd_Programming\round\RoundStatus.class
+com\example\BackEnd_Programming\word\service\WordServiceInterface.class
 com\example\BackEnd_Programming\game\GameType.class
 com\example\BackEnd_Programming\player\Player.class
 com\example\BackEnd_Programming\round\controller\RoundController.class
@@ -14,6 +15,7 @@ com\example\BackEnd_Programming\game\Game.class
 com\example\BackEnd_Programming\highScore\service\HighScoreServiceInterface.class
 com\example\BackEnd_Programming\player\controller\PlayerController.class
 com\example\BackEnd_Programming\player\repository\PlayerRepository.class
+com\example\BackEnd_Programming\word\service\WordService.class
 com\example\BackEnd_Programming\highScore\HighScore.class
 com\example\BackEnd_Programming\score\controller\ScoreController.class
 com\example\BackEnd_Programming\fileImport\textImportInterface.class
@@ -28,5 +30,6 @@ com\example\BackEnd_Programming\score\repository\ScoreRepository.class
 com\example\BackEnd_Programming\game\repository\GameRepository.class
 com\example\BackEnd_Programming\score\service\ScoreService.class
 com\example\BackEnd_Programming\round\RoundType.class
+com\example\BackEnd_Programming\word\controller\WordController.class
 com\example\BackEnd_Programming\BackEndProgrammingApplication.class
 com\example\BackEnd_Programming\highScore\repository\HighScoreRepository.class

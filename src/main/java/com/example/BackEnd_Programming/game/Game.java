@@ -28,8 +28,17 @@ public class Game {
     @JoinColumn(name = "scoreid", nullable = false)
     private Score score;
 
-    public Game(Long id, Round round, Score score) {
+
+    private final int maxDuratie = 5;
+
+    private int duratie;
+
+
+
+    public Game(Long id, Round round, Score score, GameStatus gameStatus, GameType gameType) {
         this.id = id;
+        this.gameStatus = gameStatus;
+        this.gameType = gameType;
         this.round = round;
         this.score = score;
     }

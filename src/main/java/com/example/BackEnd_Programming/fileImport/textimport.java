@@ -4,18 +4,22 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class textimport implements textImportInterface {
 
-    public boolean stringFilteringOnLength(String input){
+    private List<String> list = new ArrayList<>();
+
+
+    public boolean stringFilteringOnLength(String input) {
 
         return input.length() <= 7 && input.length() >= 5;
     }
 
-    public boolean stringFilteringOnSpecialChar(String input){
+    public boolean stringFilteringOnSpecialChar(String input) {
 
         String regex1 = ".*\\d.*";
         String regex2 = ".*[A-Z].*";
@@ -51,7 +55,6 @@ public class textimport implements textImportInterface {
     }
 
 
-
     public List<String> arrayFiltering(List<String> lines) {
 
         //ARRAYLIST FOR LENGTH FILTERING
@@ -63,8 +66,26 @@ public class textimport implements textImportInterface {
                 linesFiltered.add(line);
             }
         }
-        System.out.println(linesFiltered);
 
+        list = linesFiltered;
         return linesFiltered;
     }
+
+    public String getRandomWord(int length) {
+        boolean cond = false;
+        int rnd = new Random().nextInt(list.size());
+
+        do {
+            if (list.get(rnd).length() != length) {
+                rnd = new Random().nextInt(list.size());
+            } else {
+                cond = true;
+            }
+
+        } while (!cond);
+
+        return list.get(rnd);
+    }
+
+
 }

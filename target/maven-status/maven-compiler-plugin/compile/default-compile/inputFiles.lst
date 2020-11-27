@@ -3,9 +3,11 @@ C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\fileImport\textImportInterface.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\game\repository\GameRepository.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\highScore\service\HighScoreService.java
+C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\word\service\WordService.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\player\controller\PlayerController.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\highScore\service\HighScoreServiceInterface.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\game\GameStatus.java
+C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\word\controller\WordController.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\game\controller\GameController.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\highScore\HighScore.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\round\RoundStatus.java
@@ -30,3 +32,4 @@ C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\player\service\PlayerServiceInterface.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\score\service\ScoreServiceInterface.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\score\service\ScoreService.java
+C:\Users\Soerano\Documents\GitHub\Back-End_Programming\Back-End_Programming\src\main\java\com\example\BackEnd_Programming\word\service\WordServiceInterface.java
