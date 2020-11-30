@@ -1,6 +1,6 @@
 package com.example.BackEnd_Programming.textimport;
 
-import com.example.BackEnd_Programming.fileImport.textimport;
+import com.example.BackEnd_Programming.fileImport.Textimport;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -38,7 +38,7 @@ public class textimportTests {
     @MethodSource("provideLengthAndResults")
     @DisplayName("Is in between 5 and 7")
     public void verifyLengthIsInBetween(String input, boolean expectedResult) {
-        textimport textImport = new textimport();
+        Textimport textImport = new Textimport();
 
         boolean result = textImport.stringFilteringOnLength(input);
 
@@ -49,7 +49,7 @@ public class textimportTests {
     @MethodSource("provideCharAndResults")
     @DisplayName("Contains no special characters")
     public void verifyCharOfString(String input, boolean expectedResult) {
-        textimport textImport = new textimport();
+        Textimport textImport = new Textimport();
 
         boolean result = textImport.stringFilteringOnSpecialChar(input);
 

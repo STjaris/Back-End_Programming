@@ -3,7 +3,7 @@ package com.example.BackEnd_Programming.fileImport;
 import java.io.IOException;
 import java.util.List;
 
-public interface textImportInterface {
+public interface TextImportInterface {
 
     List<String> filereader() throws IOException;
     List<String> arrayFiltering(List<String> lines);

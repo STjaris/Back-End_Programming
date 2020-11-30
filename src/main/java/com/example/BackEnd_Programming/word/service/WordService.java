@@ -2,11 +2,17 @@ package com.example.BackEnd_Programming.word.service;
 
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class WordService implements WordServiceInterface {
+
+
+    public Boolean wordLengthCheck(String input, int length){
+
+        return input.length() == length;
+    }
+
 
 
     public boolean wordCheck(String input, String word) {
@@ -22,8 +28,10 @@ public class WordService implements WordServiceInterface {
         return result;
     }
 
-    public Map<String, String> letterCheck(String input, String word) {
-        Map<String, String> map = new HashMap<>();
+    public List<String> letterCheck(String input, String word) {
+        String startChar = Character.toString(input.charAt(0));
+        String startString =  startChar + " " + "- " + "- " + "- " + "- ";
+        List<String> list = new ArrayList<>();
 
         int i = 0;
         do {
@@ -31,21 +39,21 @@ public class WordService implements WordServiceInterface {
             String wordIndex = Character.toString(word.charAt(i));
 
             if(inputIndex.equals(wordIndex)){
-                map.put(inputIndex, "CORRECT");
+                list.add(inputIndex + ": CORRECT");
+
             }else if(word.contains(inputIndex)){
-                map.put(inputIndex, "CONTAINS");
+                list.add(inputIndex + ": CONTAINS");
             }else
-                map.put(inputIndex, "INVALID");
+            list.add(inputIndex + ": ABSENT");
 
             i++;
         }
+
         while (i < word.length());
 
-        System.out.println(map.toString());
+        System.out.println(Arrays.toString(list.toArray()));
 
-
-        return map;
+        return list;
     }
-
 
 }

@@ -1,7 +1,9 @@
 package com.example.BackEnd_Programming;
 
-import com.example.BackEnd_Programming.fileImport.textImportInterface;
-import com.example.BackEnd_Programming.fileImport.textimport;
+import com.example.BackEnd_Programming.fileImport.TextImportInterface;
+import com.example.BackEnd_Programming.fileImport.Textimport;
+import com.example.BackEnd_Programming.round.service.RoundService;
+import com.example.BackEnd_Programming.round.service.RoundServiceInterface;
 import com.example.BackEnd_Programming.word.service.WordService;
 import com.example.BackEnd_Programming.word.service.WordServiceInterface;
 import org.springframework.boot.SpringApplication;
@@ -12,14 +14,13 @@ import java.util.Scanner;
 @SpringBootApplication
 public class BackEndProgrammingApplication {
 
-    private static final textImportInterface textImportInterface = new textimport();
-
+    private static final TextImportInterface textImportInterface = new Textimport();
+    //private static final RoundServiceInterface roundServiceInterface = new RoundService();
     private static final WordServiceInterface wordServiceInterface = new WordService();
 
     public static void main(String[] args) {
         SpringApplication.run(BackEndProgrammingApplication.class, args);
         startTextImport();
-
         startNewRound();
     }
 
@@ -31,6 +32,7 @@ public class BackEndProgrammingApplication {
         }
     }
 
+
     public static void startNewRound() {
 
         int i = 0;
@@ -38,30 +40,36 @@ public class BackEndProgrammingApplication {
         Scanner scanner = new Scanner(System.in);
         String word = textImportInterface.getRandomWord(5);
 
+        String inputIndex = Character.toString(word.charAt(0));
+
         System.out.println(word);
 
         System.out.println("5letter ronde:");
-        System.out.println("- " + "- " + "- " + "- " + "- ");
+        System.out.println(inputIndex + " " + "- " + "- " + "- " + "- ");
 
-        System.out.println("Raadbeurt:");
-        String input = scanner.next();
 
-        if (wordServiceInterface.wordCheck(input, word)) {
-            System.out.println("CORRECT");
+        //INPUTCHECK AND ROUNDCOUNT
+        do {
+            System.out.println("Raadbeurt " + i + " :");
+            String input = scanner.next();
+
+            if (wordServiceInterface.wordLengthCheck(input, 5)) {
+
+                if (wordServiceInterface.wordCheck(input, word)) {
+                    System.out.println("CORRECT");
+                    break;
+                }
+
+            } else {
+                System.out.println("INPUT NOT VALID, WORD LENGTH NOT CORRECT");
+            }
+
+
+            i++;
         }
-        else{
-            System.out.println("FALSE");
+        while (i < 5);
 
-        }
-
-//        do{
-//
-//
-//            i++;
-//        }
-//        while(i <= 5);
-
-
+        System.out.println("GAME HAS ENDED");
 
 
     }

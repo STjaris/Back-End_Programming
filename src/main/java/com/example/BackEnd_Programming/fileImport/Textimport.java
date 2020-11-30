@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class textimport implements textImportInterface {
+public class Textimport implements TextImportInterface {
 
     private List<String> list = new ArrayList<>();
 
