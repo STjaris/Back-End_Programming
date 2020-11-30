@@ -1,9 +1,12 @@
 package com.example.BackEnd_Programming.word.service;
 
+import com.example.BackEnd_Programming.word.Word;
+
 import java.util.List;
-import java.util.Map;
 
 public interface WordServiceInterface {
+
+    void save(Word word);
 
     Boolean wordLengthCheck(String input, int length);
 

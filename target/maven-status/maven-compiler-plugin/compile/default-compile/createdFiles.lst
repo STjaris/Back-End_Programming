@@ -10,6 +10,7 @@ com\example\BackEnd_Programming\game\GameType.class
 com\example\BackEnd_Programming\player\Player.class
 com\example\BackEnd_Programming\round\controller\RoundController.class
 com\example\BackEnd_Programming\highScore\controller\HighScoreController.class
+com\example\BackEnd_Programming\word\repository\WordRepository.class
 com\example\BackEnd_Programming\word\Word.class
 com\example\BackEnd_Programming\game\Game.class
 com\example\BackEnd_Programming\highScore\service\HighScoreServiceInterface.class
