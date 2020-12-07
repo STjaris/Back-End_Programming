@@ -20,10 +20,14 @@ public class Round {
     @NotNull
     private RoundType roundType;
 
-    public Round(Long id, RoundStatus roundStatus, RoundType roundType) {
-        this.id = id;
+    @OneToOne
+    @JoinColumn(name = "gameid", nullable = false)
+    private Game game;
+
+    public Round(RoundStatus roundStatus, RoundType roundType, Game game) {
         this.roundStatus = roundStatus;
         this.roundType = roundType;
+        this.game = game;
     }
 
     public Round() {
@@ -37,5 +41,8 @@ public class Round {
     }
     public RoundType getRoundType() {
         return roundType;
+    }
+    public Game getGame() {
+        return game;
     }
 }

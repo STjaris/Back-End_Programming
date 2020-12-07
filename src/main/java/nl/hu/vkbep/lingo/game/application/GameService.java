@@ -1,18 +1,19 @@
 package nl.hu.vkbep.lingo.game.application;
 
+import nl.hu.vkbep.lingo.game.data.GameRepository;
 import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.domain.GameStatus;
-import nl.hu.vkbep.lingo.game.data.GameRepository;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.round.application.RoundServiceInterface;
 import nl.hu.vkbep.lingo.round.domain.Round;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
-import org.springframework.beans.factory.annotation.Autowired;
+import nl.hu.vkbep.lingo.word.domain.Word;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 @Service
 public class GameService implements GameServiceInterface {
-
 
 
     private GameRepository gameRepository;
@@ -32,7 +33,7 @@ public class GameService implements GameServiceInterface {
 
     }
 
-    public Game createNewGame(){
+    public Game createNewGame() {
 
         //CREATE NEW GAME
         Game game = new Game();
@@ -46,24 +47,11 @@ public class GameService implements GameServiceInterface {
         //SET GAMETYPE
         game.setGameType(GameType.LETTEROF5);
 
-        //SET ROUND
-        game.setRound(roundServiceInterface.createNewRound());
-
-        //SET WORD
-
-
-
-
-
-
-
-
         //SAVE GAME
         gameRepository.save(game);
 
         return game;
     }
-
 
 
     public void startNewRound() {
@@ -73,4 +61,16 @@ public class GameService implements GameServiceInterface {
         if (game.getGameStatus() == GameStatus.NOTSTARTED) {
         }
     }
+
+    @Override
+    public Map guess(Long gameid, String guess) {
+        return roundServiceInterface.playRound(gameid, guess);
+    }
+
+    @Override
+    public Game getById(Long gameid) {
+        return gameRepository.getById(gameid);
+    }
+
+
 }

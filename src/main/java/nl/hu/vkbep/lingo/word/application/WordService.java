@@ -1,20 +1,25 @@
 package nl.hu.vkbep.lingo.word.application;
 
-import nl.hu.vkbep.lingo.word.domain.Word;
+import nl.hu.vkbep.lingo.game.application.GameServiceInterface;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
+import nl.hu.vkbep.lingo.word.domain.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class WordService implements WordServiceInterface {
 
-    @Autowired
     private WordRepository wordRepository;
+
+    private GameServiceInterface gameServiceInterface;
+
+    @Autowired
+    public WordService(WordRepository wordRepository, GameServiceInterface gameServiceInterface) {
+        this.wordRepository = wordRepository;
+        this.gameServiceInterface = gameServiceInterface;
+    }
 
     @Override
     public void save(Word word) {
@@ -42,9 +47,10 @@ public class WordService implements WordServiceInterface {
     }
 
     @Override
-    public List<String> letterCheck(String input, String word) {
-        String startChar = Character.toString(input.charAt(0));
-        String startString = startChar + " " + "- " + "- " + "- " + "- ";
+    public Map<String, List> letterCheck(String input, String word) {
+
+        Map<String, List> map = new HashMap();
+
         List<String> list = new ArrayList<>();
 
         int i = 0;
@@ -65,21 +71,30 @@ public class WordService implements WordServiceInterface {
 
         while (i < word.length());
 
-        System.out.println(Arrays.toString(list.toArray()));
 
-        return list;
+        map.put("feedback", list);
+
+        return map;
     }
 
     @Override
     public Word getRandomWord() {
         Word word = new Word();
 
-        do{
+        do {
             word = wordRepository.getRandomWord();
         }
-        while(word.getWord().length() != 5);
+        while (word.getWord().length() != 5);
 
 
         return word;
+    }
+
+    @Override
+    public Word getWordbyGameId(Long gameid) {
+
+        //wordRepository.getById(gameServiceInterface.getById(gameid).getWord().getId())
+        return gameServiceInterface.getById(gameid).getWord();
+
     }
 }

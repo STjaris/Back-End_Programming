@@ -1,12 +1,17 @@
 package nl.hu.vkbep.lingo.round.application;
 
+import nl.hu.vkbep.lingo.game.application.GameServiceInterface;
 import nl.hu.vkbep.lingo.round.data.RoundRepository;
 import nl.hu.vkbep.lingo.round.domain.Round;
-import nl.hu.vkbep.lingo.word.data.WordRepository;
+import nl.hu.vkbep.lingo.round.domain.RoundStatus;
+import nl.hu.vkbep.lingo.round.domain.RoundType;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
+import nl.hu.vkbep.lingo.word.data.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,12 +21,15 @@ public class RoundService implements RoundServiceInterface {
     private WordRepository wordRepository;
     private WordServiceInterface wordServiceInterface;
     private RoundRepository roundRepository;
+    private GameServiceInterface gameServiceInterface;
+
 
     @Autowired
-    public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
+    public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface, RoundRepository roundRepository, GameServiceInterface gameServiceInterface) {
         this.wordRepository = wordRepository;
         this.wordServiceInterface = wordServiceInterface;
         this.roundRepository = roundRepository;
+        this.gameServiceInterface = gameServiceInterface;
     }
 
     public RoundService() {
@@ -36,12 +44,12 @@ public class RoundService implements RoundServiceInterface {
         String word;
 
         //GET WORD WITH LENGTH ...
-        do{
+        do {
             int rnd = new Random().nextInt();
             word = wordRepository.getById((long) rnd).toString();
 
         }
-        while(word.length() != 5);
+        while (word.length() != 5);
 
         String inputIndex = Character.toString(word.charAt(0));
 
@@ -85,5 +93,27 @@ public class RoundService implements RoundServiceInterface {
         return round;
     }
 
+    @Override
+    public Map playRound(Long gameid, String guess) {
 
+        Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, gameServiceInterface.getById(gameid));
+
+        Map<String, String> map = new HashMap<>();
+
+        String word = wordServiceInterface.getWordbyGameId(gameid).getWord();
+
+        //GUESS CHECK ON LENGTH
+        if (wordServiceInterface.wordLengthCheck(guess, 5)) {
+            if (wordServiceInterface.wordCheck(guess, word)) {
+                map.put("feedback", "CORRECT");
+            } else {
+                return wordServiceInterface.letterCheck(guess, word);
+            }
+
+        } else {
+            map.put("feedback", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
+        }
+
+        return map;
+    }
 }

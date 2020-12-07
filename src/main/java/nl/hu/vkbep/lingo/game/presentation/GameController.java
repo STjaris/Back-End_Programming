@@ -1,9 +1,12 @@
 package nl.hu.vkbep.lingo.game.presentation;
 
-import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.application.GameServiceInterface;
+import nl.hu.vkbep.lingo.game.domain.Game;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 public class GameController {
@@ -15,7 +18,14 @@ public class GameController {
     }
 
     @PostMapping("/games")
-    public Game startGame(){
+    public Game startGame() {
         return gameServiceInterface.createNewGame();
+    }
+
+    @PostMapping("/games/{gameid}/attempt")
+    public Map makeAttempt(@PathVariable Long gameid, String attempt) {
+        gameServiceInterface.guess(gameid, attempt);
+
+        return gameServiceInterface.guess(gameid, attempt);
     }
 }
