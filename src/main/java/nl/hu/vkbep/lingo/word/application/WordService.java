@@ -75,9 +75,7 @@ public class WordService implements WordServiceInterface {
         Word word = new Word();
 
         do{
-            int rnd = new Random().nextInt();
-            word.setWord(wordRepository.getById((long) rnd).toString());
-
+            word = wordRepository.getRandomWord();
         }
         while(word.getWord().length() != 5);
 
