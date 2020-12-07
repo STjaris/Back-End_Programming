@@ -12,21 +12,16 @@ import javax.persistence.*;
 public class Round {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "gameid", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Game game;
 
     @NotNull
     private RoundStatus roundStatus;
     @NotNull
     private RoundType roundType;
 
-    public Round(Long id, Game game, RoundStatus roundStatus, RoundType roundType) {
+    public Round(Long id, RoundStatus roundStatus, RoundType roundType) {
         this.id = id;
-        this.game = game;
         this.roundStatus = roundStatus;
         this.roundType = roundType;
     }
@@ -36,9 +31,6 @@ public class Round {
 
     public Long getId() {
         return id;
-    }
-    public Game getGame() {
-        return game;
     }
     public RoundStatus getRoundStatus() {
         return roundStatus;

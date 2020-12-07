@@ -934,6 +934,7 @@ false posixrules
     </sequence>
     <table id="32" parent="18" name="game">
       <ObjectId>25408</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>1014</StateNumber>
     </table>

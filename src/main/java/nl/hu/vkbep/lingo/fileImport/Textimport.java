@@ -4,6 +4,7 @@ import nl.hu.vkbep.lingo.word.domain.Word;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ public class Textimport implements TextImportInterface, InitializingBean {
 
     private WordRepository wordRepository;
 
+    @Autowired
     public Textimport(WordServiceInterface wordService, WordRepository wordRepository) {
         this.wordService = wordService;
         this.wordRepository = wordRepository;
@@ -42,8 +44,10 @@ public class Textimport implements TextImportInterface, InitializingBean {
 
     @Override
     public void startTextImport() throws IOException {
-        arrayFiltering(filereader());
 
+        if(wordRepository.count() == 0){
+            arrayFiltering(filereader());
+        }
     }
 
     @Override
@@ -65,22 +69,18 @@ public class Textimport implements TextImportInterface, InitializingBean {
     public List<String> arrayFiltering(List<String> lines) {
 
         //FILTER LENGTH
-//        for (String line : lines) {
-//            if (stringFilteringOnLength(line) && stringFilteringOnSpecialChar(line)) {
-//                System.out.println(line);
-//                Word word = new Word();
-//                word.setWord(line);
-//                System.out.println(word.toString());
-//                wordService.save(word);
-//
-//                //list.add(line);
-//            }
-//        }
+        for (String line : lines) {
+            if (stringFilteringOnLength(line) && stringFilteringOnSpecialChar(line)) {
+                Word word = new Word();
+                word.setWord(line);
+                wordService.save(word);
+            }
+        }
 
-        Word word = new Word();
-        word.setWord("TEST");
-        wordRepository.save(word);
-        wordService.save(word);
+//        Word word = new Word();
+//        word.setWord("TEST");
+//        wordRepository.save(word);
+//        wordService.save(word);
 
 
         return list;

@@ -10,6 +10,10 @@ public class GameController {
 
     private GameServiceInterface gameServiceInterface;
 
+    public GameController(GameServiceInterface gameServiceInterface) {
+        this.gameServiceInterface = gameServiceInterface;
+    }
+
     @PostMapping("/games")
     public Game startGame(){
         return gameServiceInterface.createNewGame();

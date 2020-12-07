@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class WordService implements WordServiceInterface {
@@ -71,6 +72,16 @@ public class WordService implements WordServiceInterface {
 
     @Override
     public Word getRandomWord() {
-        return null;
+        Word word = new Word();
+
+        do{
+            int rnd = new Random().nextInt();
+            word.setWord(wordRepository.getById((long) rnd).toString());
+
+        }
+        while(word.getWord().length() != 5);
+
+
+        return word;
     }
 }

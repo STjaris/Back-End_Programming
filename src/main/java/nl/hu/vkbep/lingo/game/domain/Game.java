@@ -30,9 +30,9 @@ public class Game {
     @JoinColumn(name = "roundid", nullable = false)
     private Round round;
 
-    @OneToOne
-    @JoinColumn(name = "scoreid", nullable = false)
-    private Score score;
+//    @OneToOne
+//    @JoinColumn(name = "scoreid", nullable = false)
+//    private Score score;
 
 
     private final int maxDuratie = 5;
@@ -45,7 +45,7 @@ public class Game {
         this.gameType = gameType;
         this.word = word;
         this.round = round;
-        this.score = score;
+        //this.score = score;
         this.duratie = duratie;
     }
 
@@ -65,14 +65,17 @@ public class Game {
     public Round getRound() {
         return round;
     }
-    public Score getScore() {
-        return score;
-    }
+//    public Score getScore() {
+//        return score;
+//    }
     public Word getWord() {
         return word;
     }
     public int getMaxDuratie() {
         return maxDuratie;
+    }
+    public int getDuratie() {
+        return duratie;
     }
 
     public void setGameStatus(GameStatus gameStatus) {
@@ -84,16 +87,14 @@ public class Game {
     public void setRound(Round round) {
         this.round = round;
     }
-    public void setScore(Score score) {
-        this.score = score;
-    }
+//    public void setScore(Score score) {
+//        this.score = score;
+//    }
     public void setDuratie(int duratie) {
         this.duratie = duratie;
     }
     public void setWord(Word word) {
         this.word = word;
     }
-    public int getDuratie() {
-        return duratie;
-    }
+
 }

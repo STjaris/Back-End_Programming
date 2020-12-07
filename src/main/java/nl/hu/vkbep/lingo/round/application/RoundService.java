@@ -1,5 +1,7 @@
 package nl.hu.vkbep.lingo.round.application;
 
+import nl.hu.vkbep.lingo.round.data.RoundRepository;
+import nl.hu.vkbep.lingo.round.domain.Round;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +15,13 @@ public class RoundService implements RoundServiceInterface {
 
     private WordRepository wordRepository;
     private WordServiceInterface wordServiceInterface;
+    private RoundRepository roundRepository;
 
     @Autowired
-    public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface) {
+    public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
         this.wordRepository = wordRepository;
         this.wordServiceInterface = wordServiceInterface;
+        this.roundRepository = roundRepository;
     }
 
     public RoundService() {
@@ -71,6 +75,14 @@ public class RoundService implements RoundServiceInterface {
         System.out.println("GAME HAS ENDED");
 
 
+    }
+
+    @Override
+    public Round createNewRound() {
+        Round round = new Round();
+        roundRepository.save(round);
+
+        return round;
     }
 
 
