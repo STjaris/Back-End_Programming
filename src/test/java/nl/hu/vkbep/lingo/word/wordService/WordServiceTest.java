@@ -1,6 +1,6 @@
 package nl.hu.vkbep.lingo.word.wordService;
 
-import nl.hu.vkbep.lingo.word.service.WordService;
+import nl.hu.vkbep.lingo.word.application.WordService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
