@@ -1,6 +1,7 @@
 package nl.hu.vkbep.lingo.round.application;
 
 import nl.hu.vkbep.lingo.game.application.GameServiceInterface;
+import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.round.data.RoundRepository;
 import nl.hu.vkbep.lingo.round.domain.Round;
 import nl.hu.vkbep.lingo.round.domain.RoundStatus;
@@ -21,15 +22,15 @@ public class RoundService implements RoundServiceInterface {
     private WordRepository wordRepository;
     private WordServiceInterface wordServiceInterface;
     private RoundRepository roundRepository;
-    private GameServiceInterface gameServiceInterface;
+
 
 
     @Autowired
-    public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface, RoundRepository roundRepository, GameServiceInterface gameServiceInterface) {
+    public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
         this.wordRepository = wordRepository;
         this.wordServiceInterface = wordServiceInterface;
         this.roundRepository = roundRepository;
-        this.gameServiceInterface = gameServiceInterface;
+
     }
 
     public RoundService() {
@@ -94,13 +95,13 @@ public class RoundService implements RoundServiceInterface {
     }
 
     @Override
-    public Map playRound(Long gameid, String guess) {
+    public Map playRound(Game game, Long wordid, String guess) {
 
-        Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, gameServiceInterface.getById(gameid));
+        Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, game);
 
         Map<String, String> map = new HashMap<>();
 
-        String word = wordServiceInterface.getWordbyGameId(gameid).getWord();
+        String word = wordServiceInterface.getWordbyId(wordid).getWord();
 
         //GUESS CHECK ON LENGTH
         if (wordServiceInterface.wordLengthCheck(guess, 5)) {

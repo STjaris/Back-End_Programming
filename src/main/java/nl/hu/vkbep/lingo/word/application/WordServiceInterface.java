@@ -17,6 +17,6 @@ public interface WordServiceInterface {
 
     Word getRandomWord();
 
-    Word getWordbyGameId(Long gameid);
+    Word getWordbyId(Long gameid);
 
 }

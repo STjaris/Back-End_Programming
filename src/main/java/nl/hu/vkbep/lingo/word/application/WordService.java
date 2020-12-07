@@ -13,12 +13,12 @@ public class WordService implements WordServiceInterface {
 
     private WordRepository wordRepository;
 
-    private GameServiceInterface gameServiceInterface;
-
     @Autowired
-    public WordService(WordRepository wordRepository, GameServiceInterface gameServiceInterface) {
+    public WordService(WordRepository wordRepository) {
         this.wordRepository = wordRepository;
-        this.gameServiceInterface = gameServiceInterface;
+    }
+
+    public WordService() {
     }
 
     @Override
@@ -91,10 +91,9 @@ public class WordService implements WordServiceInterface {
     }
 
     @Override
-    public Word getWordbyGameId(Long gameid) {
+    public Word getWordbyId(Long wordid) {
 
-        //wordRepository.getById(gameServiceInterface.getById(gameid).getWord().getId())
-        return gameServiceInterface.getById(gameid).getWord();
+        return wordRepository.getById(wordid);
 
     }
 }

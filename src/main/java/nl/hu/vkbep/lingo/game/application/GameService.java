@@ -6,6 +6,7 @@ import nl.hu.vkbep.lingo.game.domain.GameStatus;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.round.application.RoundServiceInterface;
 import nl.hu.vkbep.lingo.round.domain.Round;
+import nl.hu.vkbep.lingo.word.application.WordService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.springframework.stereotype.Service;
@@ -64,13 +65,16 @@ public class GameService implements GameServiceInterface {
 
     @Override
     public Map guess(Long gameid, String guess) {
-        return roundServiceInterface.playRound(gameid, guess);
+
+        Long wordid = gameRepository.getById(gameid).getWord().getId();
+        Game game = gameRepository.getById(gameid);
+
+
+        return roundServiceInterface.playRound(game, wordid, guess);
     }
 
     @Override
     public Game getById(Long gameid) {
         return gameRepository.getById(gameid);
     }
-
-
 }
