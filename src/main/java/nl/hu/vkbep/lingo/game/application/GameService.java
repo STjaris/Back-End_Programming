@@ -6,9 +6,8 @@ import nl.hu.vkbep.lingo.game.domain.GameStatus;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.round.application.RoundServiceInterface;
 import nl.hu.vkbep.lingo.round.domain.Round;
-import nl.hu.vkbep.lingo.word.application.WordService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
-import nl.hu.vkbep.lingo.word.domain.Word;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -23,6 +22,7 @@ public class GameService implements GameServiceInterface {
 
     private RoundServiceInterface roundServiceInterface;
 
+    @Autowired
     public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, RoundServiceInterface roundServiceInterface) {
         this.gameRepository = gameRepository;
         this.wordServiceInterface = wordServiceInterface;

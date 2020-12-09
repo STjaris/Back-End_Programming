@@ -1,6 +1,5 @@
 package nl.hu.vkbep.lingo.round.application;
 
-import nl.hu.vkbep.lingo.game.application.GameServiceInterface;
 import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.round.data.RoundRepository;
 import nl.hu.vkbep.lingo.round.domain.Round;
@@ -23,14 +22,11 @@ public class RoundService implements RoundServiceInterface {
     private WordServiceInterface wordServiceInterface;
     private RoundRepository roundRepository;
 
-
-
     @Autowired
     public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
         this.wordRepository = wordRepository;
         this.wordServiceInterface = wordServiceInterface;
         this.roundRepository = roundRepository;
-
     }
 
     public RoundService() {

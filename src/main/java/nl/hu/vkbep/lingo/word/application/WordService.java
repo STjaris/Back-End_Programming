@@ -1,12 +1,14 @@
 package nl.hu.vkbep.lingo.word.application;
 
-import nl.hu.vkbep.lingo.game.application.GameServiceInterface;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class WordService implements WordServiceInterface {
