@@ -7,9 +7,12 @@
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/data/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/data/GameRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/data/RoundRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/data/RoundRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +108,7 @@
       <workItem from="1606991794576" duration="1877000" />
       <workItem from="1607253829494" duration="150000" />
       <workItem from="1607338995490" duration="11107000" />
-      <workItem from="1607517755664" duration="641000" />
+      <workItem from="1607517755664" duration="3422000" />
     </task>
     <servers />
   </component>

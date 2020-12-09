@@ -1,8 +1,7 @@
 package nl.hu.vkbep.lingo.game.domain;
 
 import com.sun.istack.NotNull;
-import nl.hu.vkbep.lingo.round.domain.Round;
-import nl.hu.vkbep.lingo.score.domain.Score;
+import com.sun.istack.Nullable;
 import nl.hu.vkbep.lingo.word.domain.Word;
 
 import javax.persistence.*;
@@ -12,34 +11,33 @@ import javax.persistence.*;
 public class Game {
 
     private final int maxDuratie = 5;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @NotNull
     private GameStatus gameStatus;
+
     @NotNull
     private GameType gameType;
 
-//    @ManyToOne
-//    @JoinColumn(name = "roundid", nullable = false)
-//    private Round round;
-
-//    @OneToOne
-//    @JoinColumn(name = "scoreid", nullable = false)
-//    private Score score;
     @ManyToOne
     @JoinColumn(name = "wordid", nullable = false)
     private Word word;
+
     private int duratie;
 
+    @Nullable
+    private int roundCount;
 
-    public Game(GameStatus gameStatus, GameType gameType, Word word, Round round, Score score, int duratie) {
+
+    public Game(GameStatus gameStatus, GameType gameType, Word word, int duratie, int roundCount) {
         this.gameStatus = gameStatus;
         this.gameType = gameType;
         this.word = word;
-        //this.round = round;
-        //this.score = score;
         this.duratie = duratie;
+        this.roundCount = roundCount;
     }
 
     public Game() {
@@ -66,12 +64,6 @@ public class Game {
         this.gameType = gameType;
     }
 
-    //    public Round getRound() {
-//        return round;
-//    }
-//    public Score getScore() {
-//        return score;
-//    }
     public Word getWord() {
         return word;
     }
@@ -88,14 +80,15 @@ public class Game {
         return duratie;
     }
 
-    //    public void setRound(Round round) {
-//        this.round = round;
-//    }
-//    public void setScore(Score score) {
-//        this.score = score;
-//    }
     public void setDuratie(int duratie) {
         this.duratie = duratie;
     }
 
+    public int getRoundCount() {
+        return roundCount;
+    }
+
+    public void setRoundCount(int roundCount) {
+        this.roundCount = roundCount;
+    }
 }

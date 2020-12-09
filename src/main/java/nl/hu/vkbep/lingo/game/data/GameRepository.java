@@ -7,4 +7,5 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 
     Game getById(Long gameid);
 
+
 }

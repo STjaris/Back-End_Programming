@@ -95,6 +95,8 @@ public class RoundService implements RoundServiceInterface {
 
         Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, game);
 
+        roundRepository.save(round);
+
         Map<String, String> map = new HashMap<>();
 
         String word = wordServiceInterface.getWordbyId(wordid).getWord();
@@ -113,4 +115,12 @@ public class RoundService implements RoundServiceInterface {
 
         return map;
     }
+
+    @Override
+    public int countRoundPerGame(Game game){
+
+        return roundRepository.countAllByGame(game);
+
+    }
+
 }

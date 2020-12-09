@@ -10,6 +10,7 @@ import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -54,24 +55,33 @@ public class GameService implements GameServiceInterface {
         return game;
     }
 
-
-    public void startNewRound() {
-        Round round = new Round();
-        Game game = new Game();
-
-        if (game.getGameStatus() == GameStatus.NOTSTARTED) {
-        }
-    }
-
     @Override
     public Map guess(Long gameid, String guess) {
 
+        //GET WORDID FROM GAME
         Long wordid = gameRepository.getById(gameid).getWord().getId();
+
+        //CREATE NEW GAME
         Game game = gameRepository.getById(gameid);
 
+        //CHECK IF MAX ROUND IS REACHED
+        if(game.getRoundCount() <= 4){
+            game.setRoundCount(countRoundsPerGame(game.getId()));
 
-        return roundServiceInterface.playRound(game, wordid, guess);
+            return roundServiceInterface.playRound(game, wordid, guess);
+        } else{
+            Map map= new HashMap<String, String>();
+            map.put("feedback", "MAX ROUND REACHED");
+            return map;
+        }
     }
+
+    public int countRoundsPerGame(Long gameid){
+        Game game = gameRepository.getById(gameid);
+
+        return roundServiceInterface.countRoundPerGame(game);
+    }
+
 
     @Override
     public Game getById(Long gameid) {
