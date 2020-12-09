@@ -93,7 +93,7 @@ public class RoundService implements RoundServiceInterface {
     @Override
     public Map playRound(Game game, Long wordid, String guess) {
 
-        Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, game);
+        Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, game, guess);
 
         roundRepository.save(round);
 

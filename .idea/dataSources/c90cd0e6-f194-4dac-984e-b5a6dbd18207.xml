@@ -973,6 +973,7 @@ UC/10
     </sequence>
     <table id="31" parent="17" name="game">
       <ObjectId>16583</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>19052</StateNumber>
     </table>

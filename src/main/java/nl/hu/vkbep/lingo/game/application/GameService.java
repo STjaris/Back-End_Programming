@@ -5,13 +5,13 @@ import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.domain.GameStatus;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.round.application.RoundServiceInterface;
-import nl.hu.vkbep.lingo.round.domain.Round;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 @Service
 public class GameService implements GameServiceInterface {
@@ -64,19 +64,23 @@ public class GameService implements GameServiceInterface {
         //CREATE NEW GAME
         Game game = gameRepository.getById(gameid);
 
+        System.out.println("ROUNDCOUNT: " + game.getRoundCount());
+
+
         //CHECK IF MAX ROUND IS REACHED
-        if(game.getRoundCount() <= 4){
-            game.setRoundCount(countRoundsPerGame(game.getId()));
+        if (game.getRoundCount() < 5) {
+            game.setRoundCount(countRoundsPerGame(game.getId()) + 1);
 
             return roundServiceInterface.playRound(game, wordid, guess);
-        } else{
-            Map map= new HashMap<String, String>();
+            //.orElseThrow(() -> new MaxRoundReached());
+        } else {
+            Map map = new HashMap<String, String>();
             map.put("feedback", "MAX ROUND REACHED");
             return map;
         }
     }
 
-    public int countRoundsPerGame(Long gameid){
+    public int countRoundsPerGame(Long gameid) {
         Game game = gameRepository.getById(gameid);
 
         return roundServiceInterface.countRoundPerGame(game);

@@ -24,10 +24,14 @@ public class Round {
     @JoinColumn(name = "gameid", nullable = false)
     private Game game;
 
-    public Round(RoundStatus roundStatus, RoundType roundType, Game game) {
+    @NotNull
+    private String guess;
+
+    public Round(RoundStatus roundStatus, RoundType roundType, Game game, String guess) {
         this.roundStatus = roundStatus;
         this.roundType = roundType;
         this.game = game;
+        this.guess = guess;
     }
 
     public Round() {
@@ -44,5 +48,8 @@ public class Round {
     }
     public Game getGame() {
         return game;
+    }
+    public String getGuess() {
+        return guess;
     }
 }
