@@ -1,5 +1,7 @@
 package nl.hu.vkbep.lingo.word.application;
 
+import nl.hu.vkbep.lingo.game.domain.Game;
+import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,7 +75,6 @@ public class WordService implements WordServiceInterface {
 
         while (i < word.length());
 
-
         map.put("feedback", list);
 
         return map;
@@ -81,13 +82,12 @@ public class WordService implements WordServiceInterface {
 
     @Override
     public Word getRandomWord() {
-        Word word = new Word();
+        Word word;
 
         do {
             word = wordRepository.getRandomWord();
         }
         while (word.getWord().length() != 5);
-
 
         return word;
     }

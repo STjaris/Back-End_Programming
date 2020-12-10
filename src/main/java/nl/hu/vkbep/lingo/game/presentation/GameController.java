@@ -19,7 +19,7 @@ public class GameController {
     }
 
     @PostMapping("/games")
-    public Game startGame() {
+    public Map startGame() {
         return gameServiceInterface.createNewGame();
     }
 

@@ -52,4 +52,17 @@ public class Round {
     public String getGuess() {
         return guess;
     }
+
+    public void setRoundStatus(RoundStatus roundStatus) {
+        this.roundStatus = roundStatus;
+    }
+    public void setRoundType(RoundType roundType) {
+        this.roundType = roundType;
+    }
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    public void setGuess(String guess) {
+        this.guess = guess;
+    }
 }

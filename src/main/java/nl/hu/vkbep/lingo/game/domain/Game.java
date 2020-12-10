@@ -30,7 +30,7 @@ public class Game {
 
     @Nullable
     private int roundCount;
-
+    
 
     public Game(GameStatus gameStatus, GameType gameType, Word word, int duratie, int roundCount) {
         this.gameStatus = gameStatus;

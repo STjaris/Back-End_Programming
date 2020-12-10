@@ -8,7 +8,7 @@ public interface GameServiceInterface {
 
     void getAllGames();
 
-    Game createNewGame();
+    Map createNewGame();
 
     Game getById(Long gameid);
 

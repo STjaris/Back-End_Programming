@@ -25,6 +25,7 @@ C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\domain\GameStatus.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\data\GameRepository.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\highScore\application\HighScoreService.java
+C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\exceptions\MaxRoundReached.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\highScore\presentation\HighScoreController.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\domain\Game.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\player\domain\Player.java

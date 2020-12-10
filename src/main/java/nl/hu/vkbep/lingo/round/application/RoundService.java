@@ -1,6 +1,7 @@
 package nl.hu.vkbep.lingo.round.application;
 
 import nl.hu.vkbep.lingo.game.domain.Game;
+import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.round.data.RoundRepository;
 import nl.hu.vkbep.lingo.round.domain.Round;
 import nl.hu.vkbep.lingo.round.domain.RoundStatus;
@@ -38,8 +39,10 @@ public class RoundService implements RoundServiceInterface {
     @Override
     public Map playRound(Game game, Long wordid, String guess) {
 
-        //CREATE AND SAVE ROUND
-        Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, game, guess);
+        //CREATE ROUND
+        Round round = new Round(RoundStatus.NOTCORRECT, roundCheckFromGame(game), game, guess);
+
+        //SAVE ROUND
         roundRepository.save(round);
 
         Map<String, String> map = new HashMap<>();
@@ -50,12 +53,12 @@ public class RoundService implements RoundServiceInterface {
         //GUESS CHECK ON LENGTH
         if (wordServiceInterface.wordLengthCheck(guess, roundTypeCheck(round))) {
             if (wordServiceInterface.wordCheck(guess, word)) {
-                map.put("feedback", "CORRECT");
+                map.put("note", "CORRECT");
             } else {
                 return wordServiceInterface.letterCheck(guess, word);
             }
         } else {
-            map.put("feedback", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
+            map.put("note", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
         }
 
         return map;
@@ -67,7 +70,19 @@ public class RoundService implements RoundServiceInterface {
         return roundRepository.countAllByGame(game);
     }
 
+    public RoundType roundCheckFromGame(Game game) {
+        //CHECKS GAMETYPE AND RETURNS CORRESPONDING ROUNDTYPE
+        if (game.getGameType() == GameType.LETTEROF5) {
+            return (RoundType.LETTEROF5);
+        } else if (game.getGameType() == GameType.LETTEROF6) {
+            return (RoundType.LETTEROF6);
+        } else {
+            return (RoundType.LETTEROF7);
+        }
+    }
+
     public int roundTypeCheck(Round round) {
+        //RETURNS INT CORRESPONDING ROUNDTYPE
         if (round.getRoundType() == RoundType.LETTEROF5) {
             return 5;
         } else if (round.getRoundType() == RoundType.LETTEROF6) {
