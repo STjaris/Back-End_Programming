@@ -6,80 +6,25 @@ import nl.hu.vkbep.lingo.round.domain.Round;
 import nl.hu.vkbep.lingo.round.domain.RoundStatus;
 import nl.hu.vkbep.lingo.round.domain.RoundType;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
-import nl.hu.vkbep.lingo.word.data.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
 
 @Service
 public class RoundService implements RoundServiceInterface {
 
-    private WordRepository wordRepository;
     private WordServiceInterface wordServiceInterface;
     private RoundRepository roundRepository;
 
     @Autowired
-    public RoundService(WordRepository wordRepository, WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
-        this.wordRepository = wordRepository;
+    public RoundService(WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
         this.wordServiceInterface = wordServiceInterface;
         this.roundRepository = roundRepository;
     }
 
     public RoundService() {
-    }
-
-    @Override
-    public void startNewRound() {
-
-        int i = 0;
-
-        Scanner scanner = new Scanner(System.in);
-        String word;
-
-        //GET WORD WITH LENGTH ...
-        do {
-            int rnd = new Random().nextInt();
-            word = wordRepository.getById((long) rnd).toString();
-
-        }
-        while (word.length() != 5);
-
-        String inputIndex = Character.toString(word.charAt(0));
-
-        System.out.println(word);
-
-        System.out.println("5letter ronde:");
-        System.out.println(inputIndex + " " + "- " + "- " + "- " + "- ");
-
-
-        //INPUTCHECK AND ROUNDCOUNT
-        do {
-            System.out.println("Raadbeurt " + i + " :");
-            String input = scanner.next();
-
-            if (wordServiceInterface.wordLengthCheck(input, 5)) {
-
-                if (wordServiceInterface.wordCheck(input, word)) {
-                    System.out.println("CORRECT");
-                    break;
-                }
-
-            } else {
-                System.out.println("INPUT NOT VALID, WORD LENGTH NOT CORRECT");
-            }
-
-
-            i++;
-        }
-        while (i < 5);
-
-        System.out.println("GAME HAS ENDED");
-
-
     }
 
     @Override
@@ -93,22 +38,22 @@ public class RoundService implements RoundServiceInterface {
     @Override
     public Map playRound(Game game, Long wordid, String guess) {
 
+        //CREATE AND SAVE ROUND
         Round round = new Round(RoundStatus.ONGOING, RoundType.LETTEROF5, game, guess);
-
         roundRepository.save(round);
 
         Map<String, String> map = new HashMap<>();
 
+        //GET WORD FROM GAME
         String word = wordServiceInterface.getWordbyId(wordid).getWord();
 
         //GUESS CHECK ON LENGTH
-        if (wordServiceInterface.wordLengthCheck(guess, 5)) {
+        if (wordServiceInterface.wordLengthCheck(guess, roundTypeCheck(round))) {
             if (wordServiceInterface.wordCheck(guess, word)) {
                 map.put("feedback", "CORRECT");
             } else {
                 return wordServiceInterface.letterCheck(guess, word);
             }
-
         } else {
             map.put("feedback", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
         }
@@ -117,10 +62,19 @@ public class RoundService implements RoundServiceInterface {
     }
 
     @Override
-    public int countRoundPerGame(Game game){
+    public int countRoundPerGame(Game game) {
 
         return roundRepository.countAllByGame(game);
+    }
 
+    public int roundTypeCheck(Round round) {
+        if (round.getRoundType() == RoundType.LETTEROF5) {
+            return 5;
+        } else if (round.getRoundType() == RoundType.LETTEROF6) {
+            return 6;
+        } else {
+            return 7;
+        }
     }
 
 }

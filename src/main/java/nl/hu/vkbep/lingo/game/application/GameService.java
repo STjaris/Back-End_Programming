@@ -55,6 +55,23 @@ public class GameService implements GameServiceInterface {
         return game;
     }
 
+    public Game assignGameType(Game game, Long gameid, String guess) {
+        if (guess(gameid, guess).containsValue("CORRECT") && game.getGameType() == GameType.LETTEROF5) {
+            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, wordServiceInterface.getRandomWord());
+            gameRepository.save(newGame);
+
+            return newGame;
+        } else if (guess(gameid, guess).containsValue("CORRECT") && game.getGameType() == GameType.LETTEROF6) {
+            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, wordServiceInterface.getRandomWord());
+            gameRepository.save(newGame);
+
+            return newGame;
+        } else {
+            return null;
+        }
+    }
+
+
     @Override
     public Map guess(Long gameid, String guess) {
 
@@ -64,17 +81,13 @@ public class GameService implements GameServiceInterface {
         //CREATE NEW GAME
         Game game = gameRepository.getById(gameid);
 
-        System.out.println("ROUNDCOUNT: " + game.getRoundCount());
-
-
         //CHECK IF MAX ROUND IS REACHED
         if (game.getRoundCount() < 5) {
             game.setRoundCount(countRoundsPerGame(game.getId()) + 1);
 
             return roundServiceInterface.playRound(game, wordid, guess);
-            //.orElseThrow(() -> new MaxRoundReached());
         } else {
-            Map map = new HashMap<String, String>();
+            Map<String, String> map = new HashMap<>();
             map.put("feedback", "MAX ROUND REACHED");
             return map;
         }

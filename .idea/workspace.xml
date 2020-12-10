@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/exceptions/MaxRoundReached.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundServiceInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +46,13 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="JUnit.textimportTests" />
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="JUnit.textimportTests.verifyCharOfString" />
       </list>
     </recent_temporary>
@@ -126,7 +124,8 @@
       <workItem from="1606991794576" duration="1877000" />
       <workItem from="1607253829494" duration="150000" />
       <workItem from="1607338995490" duration="11107000" />
-      <workItem from="1607517755664" duration="7130000" />
+      <workItem from="1607517755664" duration="7887000" />
+      <workItem from="1607591691929" duration="3036000" />
     </task>
     <servers />
   </component>

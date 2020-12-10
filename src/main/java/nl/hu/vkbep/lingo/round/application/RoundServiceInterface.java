@@ -7,8 +7,6 @@ import java.util.Map;
 
 public interface RoundServiceInterface {
 
-    void startNewRound();
-
     Round createNewRound();
 
     Map playRound(Game game, Long wordid, String guess);

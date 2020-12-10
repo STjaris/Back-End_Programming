@@ -989,6 +989,7 @@ UC/10
     </table>
     <table id="34" parent="17" name="round">
       <ObjectId>16601</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>19054</StateNumber>
     </table>
