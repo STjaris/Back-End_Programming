@@ -1,5 +1,6 @@
 package nl.hu.vkbep.lingo.word.application;
 
+import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.domain.Word;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface WordServiceInterface {
 
     Map<String, List> letterCheck(String input, String word);
 
-    Word getRandomWord();
+    Word getRandomWord(GameType gameType);
 
     Word getWordbyId(Long gameid);
 

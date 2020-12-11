@@ -7,5 +7,12 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/Back-end_Programming</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Back-end_Programming@localhost [2]" uuid="02ad4b51-868f-4e30-b674-12c15fe15384">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Back-end_Programming</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

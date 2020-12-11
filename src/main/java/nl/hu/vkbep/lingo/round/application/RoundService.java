@@ -42,7 +42,6 @@ public class RoundService implements RoundServiceInterface {
         //CREATE ROUND
         Round round = new Round(RoundStatus.NOTCORRECT, roundCheckFromGame(game), game, guess);
 
-        //SAVE ROUND
         roundRepository.save(round);
 
         Map<String, String> map = new HashMap<>();
@@ -54,6 +53,8 @@ public class RoundService implements RoundServiceInterface {
         if (wordServiceInterface.wordLengthCheck(guess, roundTypeCheck(round))) {
             if (wordServiceInterface.wordCheck(guess, word)) {
                 map.put("note", "CORRECT");
+                round.setRoundStatus(RoundStatus.CORRECT);
+                roundRepository.save(round);
             } else {
                 return wordServiceInterface.letterCheck(guess, word);
             }

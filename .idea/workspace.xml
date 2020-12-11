@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/BackEndProgrammingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/BackEndProgrammingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/TextImportInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/TextImportInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameServiceInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/RoundStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/RoundStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/back-end_programming-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/back-end_programming-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.textimport.textimportTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.textimport.textimportTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.textimport.textimportTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.textimport.textimportTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordServiceInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,17 +50,6 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="textimportTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">

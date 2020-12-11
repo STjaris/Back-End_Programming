@@ -37,12 +37,8 @@ public class GameService implements GameServiceInterface {
 
     public Map createNewGame() {
 
-
         //CREATE NEW GAME
         Game game = new Game();
-
-        //SET RANDOM WORD IN GAME
-        game.setWord(wordServiceInterface.getRandomWord());
 
         //SET GAMESTATUS
         game.setGameStatus(GameStatus.NOTSTARTED);
@@ -50,13 +46,15 @@ public class GameService implements GameServiceInterface {
         //SET GAMETYPE
         game.setGameType(GameType.LETTEROF5);
 
+        //SET RANDOM WORD IN GAME
+        game.setWord(wordServiceInterface.getRandomWord(game.getGameType()));
+
         //SAVE GAME
         gameRepository.save(game);
 
         //RETURN MAP WITH DATA
         Map<String, java.io.Serializable> map = new HashMap<>();
         map.put("gameid", game.getId());
-        //map.put("feedback", game.getWord().getWord().charAt(0));
         map.put("feedback", game.getWord().toString());
 
         return map;
@@ -65,17 +63,26 @@ public class GameService implements GameServiceInterface {
     @Override
     public Map guess(Long gameid, String guess) {
 
+        System.out.println(gameid);
+
+
         //GET WORDID FROM GAME
         Long wordid = gameRepository.getById(gameid).getWord().getId();
 
-        //CREATE NEW GAME
+        //SET GAME TO ONGOING AND SAVE
         Game game = gameRepository.getById(gameid);
+        game.setGameStatus(GameStatus.ONGOING);
+        gameRepository.save(game);
 
         //CHECK IF MAX ROUND IS REACHED
         if (game.getRoundCount() < 5) {
-            game.setRoundCount(countRoundsPerGame(game.getId()) + 1);
+            System.out.println("IN IF BLOCK");
+            System.out.println(game.getRoundCount());
 
-            Map<String, String> map = roundServiceInterface.playRound(game, wordid, guess);
+            game.setRoundCount(countRoundsPerGame(game.getId()) + 1);
+            System.out.println("ATTEMPT: "  + game.getRoundCount());
+
+            Map map = new HashMap();
 
             //ADDS NEW GAME TO MAP
             map.put("Game", checkGameType(roundServiceInterface.playRound(game, wordid, guess), game).toString());
@@ -84,6 +91,11 @@ public class GameService implements GameServiceInterface {
         } else {
             Map<String, String> map = new HashMap<>();
             map.put("feedback", "MAX ROUND REACHED");
+            map.put("gamestatus", GameStatus.ENDED.toString());
+
+            //CHANGE GAMESTATUS TO ENDED AND SAVE
+            game.setGameStatus(GameStatus.ENDED);
+            gameRepository.save(game);
             return map;
         }
     }
@@ -91,15 +103,15 @@ public class GameService implements GameServiceInterface {
     public Game checkGameType(Map<String, String> map, Game game) {
 
         //CREATES NEW GAME IF RETURNS CORRECT ELSE RETURN OLD GAME
-        if (map.containsValue("CORRECT") && game.getGameType() == GameType.LETTEROF5) {
+        if (map.containsValue("CORRECT") && map.containsKey("note") && game.getGameType() == GameType.LETTEROF5) {
             System.out.println("CREATE NEW GAME OF 6");
-            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, wordServiceInterface.getRandomWord());
+            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, wordServiceInterface.getRandomWord(GameType.LETTEROF6));
             gameRepository.save(newGame);
             return newGame;
 
-        } else if (map.containsValue("CORRECT") && game.getGameType() == GameType.LETTEROF6) {
+        } else if (map.containsValue("CORRECT") && map.containsKey("note") && game.getGameType() == GameType.LETTEROF6) {
             System.out.println("CREATE NEW GAME OF 7");
-            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, wordServiceInterface.getRandomWord());
+            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, wordServiceInterface.getRandomWord(GameType.LETTEROF7));
             gameRepository.save(newGame);
             return newGame;
 

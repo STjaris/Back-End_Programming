@@ -81,13 +81,15 @@ public class WordService implements WordServiceInterface {
     }
 
     @Override
-    public Word getRandomWord() {
+    public Word getRandomWord(GameType gameType) {
+        //GET RANDOM WORD FROM DB BY LENGTH
         Word word;
 
+        //LOOP WHILE WORD FROM DB != i;
         do {
             word = wordRepository.getRandomWord();
         }
-        while (word.getWord().length() != 5);
+        while (word.getWord().length() != getLengthByGameType(gameType));
 
         return word;
     }
@@ -98,4 +100,19 @@ public class WordService implements WordServiceInterface {
         return wordRepository.getById(wordid);
 
     }
+
+    public int getLengthByGameType(GameType gameType){
+        int i;
+
+        //SET INT i ON SAME VALUE OF LETTER LENGTH OF GAME
+        if (gameType == GameType.LETTEROF5) {
+            i = 5;
+        } else if (gameType == GameType.LETTEROF6) {
+            i = 6;
+        } else {
+            i = 7;
+        }
+        return i;
+    }
+
 }

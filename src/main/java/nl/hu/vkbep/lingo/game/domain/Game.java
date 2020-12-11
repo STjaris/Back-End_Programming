@@ -97,4 +97,16 @@ public class Game {
     public void setRoundCount(int roundCount) {
         this.roundCount = roundCount;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", gameStatus=" + gameStatus +
+                ", gameType=" + gameType +
+                ", word=" + word +
+                ", duratie=" + duratie +
+                ", roundCount=" + roundCount +
+                '}';
+    }
 }
