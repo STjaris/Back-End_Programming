@@ -1,6 +1,5 @@
 package nl.hu.vkbep.lingo.word.application;
 
-import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.domain.Word;
@@ -101,7 +100,13 @@ public class WordService implements WordServiceInterface {
 
     }
 
-    public int getLengthByGameType(GameType gameType){
+
+    @Override
+    public Boolean wordExits(String guess){
+        return wordRepository.existsByWord(guess);
+    }
+
+    public int getLengthByGameType(GameType gameType) {
         int i;
 
         //SET INT i ON SAME VALUE OF LETTER LENGTH OF GAME

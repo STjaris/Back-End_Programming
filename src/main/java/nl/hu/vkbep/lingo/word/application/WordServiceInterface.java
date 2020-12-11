@@ -20,4 +20,6 @@ public interface WordServiceInterface {
 
     Word getWordbyId(Long gameid);
 
+    Boolean wordExits(String guess);
+
 }

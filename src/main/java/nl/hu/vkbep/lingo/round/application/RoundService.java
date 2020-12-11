@@ -19,6 +19,7 @@ public class RoundService implements RoundServiceInterface {
     private WordServiceInterface wordServiceInterface;
     private RoundRepository roundRepository;
 
+
     @Autowired
     public RoundService(WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
         this.wordServiceInterface = wordServiceInterface;
@@ -49,22 +50,43 @@ public class RoundService implements RoundServiceInterface {
         //GET WORD FROM GAME
         String word = wordServiceInterface.getWordbyId(wordid).getWord();
 
-        //GUESS CHECK ON LENGTH
-        if (wordServiceInterface.wordLengthCheck(guess, roundTypeCheck(round))) {
-            if (wordServiceInterface.wordCheck(guess, word)) {
-                map.put("note", "CORRECT");
-                round.setRoundStatus(RoundStatus.CORRECT);
-                roundRepository.save(round);
-            } else {
-                map.put("feedback", wordServiceInterface.letterCheck(guess, word).toString());
+        //CHECK IF WORD EXISTS
+        if (wordServiceInterface.wordExits(guess)) {
 
-                return wordServiceInterface.letterCheck(guess, word);
-            }
+            return wordLengthCheck(word, guess, round);
+
+        } else {
+            map.put("note", "INPUT NOT VALID, WORD DOES NOT EXISTS");
+        }
+        return map;
+    }
+
+
+    public Map wordLengthCheck(String word, String guess, Round round) {
+        //GUESS CHECK ON LENGTH
+        Map map = new HashMap();
+
+        if (wordServiceInterface.wordLengthCheck(guess, roundTypeCheck(round))) {
+            map.putAll(wordCheck(word, guess, round));
         } else {
             map.put("note", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
         }
 
+        return map;
+    }
 
+
+    public Map wordCheck(String word, String guess, Round round) {
+        Map map = new HashMap();
+
+        if (wordServiceInterface.wordCheck(guess, word)) {
+            map.put("note", "CORRECT");
+            round.setRoundStatus(RoundStatus.CORRECT);
+            roundRepository.save(round);
+        } else {
+            map.put("feedback", wordServiceInterface.letterCheck(guess, word).toString());
+            return wordServiceInterface.letterCheck(guess, word);
+        }
 
         return map;
     }
