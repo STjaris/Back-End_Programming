@@ -56,11 +56,15 @@ public class RoundService implements RoundServiceInterface {
                 round.setRoundStatus(RoundStatus.CORRECT);
                 roundRepository.save(round);
             } else {
+                map.put("feedback", wordServiceInterface.letterCheck(guess, word).toString());
+
                 return wordServiceInterface.letterCheck(guess, word);
             }
         } else {
             map.put("note", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
         }
+
+
 
         return map;
     }
