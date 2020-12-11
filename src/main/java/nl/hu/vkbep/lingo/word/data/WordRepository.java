@@ -17,4 +17,6 @@ public interface WordRepository extends JpaRepository<Word, Long> {
     )
     Word getRandomWord();
 
+    Boolean existsByWord(String word);
+
 }
