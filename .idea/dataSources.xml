@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@localhost:5432/Back-end_Programming" uuid="a379719c-5a83-4cae-91f6-81c7d8529835">
+    <data-source source="LOCAL" name="Back-end_Programming@localhost" uuid="c90cd0e6-f194-4dac-984e-b5a6dbd18207">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/Back-end_Programming</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Back-End_Programming/Hibernate" uuid="158f2190-f92b-43dd-b22b-ab85b51d0380">
-      <driver-ref>greenplum</driver-ref>
+    <data-source source="LOCAL" name="Back-end_Programming@localhost [2]" uuid="02ad4b51-868f-4e30-b674-12c15fe15384">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/Back-end_Programming</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1l3gYc5Ai0dSdYhJJqTAwPhhR8C" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
+    <configuration name="textimportTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.textimport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.textimport" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.textimport.textimportTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="textimportTests.verifyCharOfString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.textimport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.textimport" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.textimport.textimportTests" />
+      <option name="METHOD_NAME" value="verifyCharOfString(java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackEndProgrammingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="lingo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nl.hu.vkbep.lingo.BackEndProgrammingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="JUnit.textimportTests" />
+        <item itemvalue="JUnit.textimportTests.verifyCharOfString" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="" />
+      <created>1606831239422</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606831239422</updated>
+      <workItem from="1606831240840" duration="4249000" />
+      <workItem from="1606991075338" duration="632000" />
+      <workItem from="1606991794576" duration="1877000" />
+      <workItem from="1607253829494" duration="150000" />
+      <workItem from="1607338995490" duration="11107000" />
+      <workItem from="1607517755664" duration="7887000" />
+      <workItem from="1607591691929" duration="13373000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/back_end_programming$textimportTests.ic" NAME="textimportTests Coverage Results" MODIFIED="1606992603176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.textimport.*</FILTER>
+    </SUITE>
+  </component>
+</project>
