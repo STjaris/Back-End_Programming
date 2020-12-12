@@ -1,6 +1,7 @@
 package nl.hu.vkbep.lingo.player.application;
 
 import nl.hu.vkbep.lingo.privilege.domain.Privilege;
+import nl.hu.vkbep.lingo.role.data.RoleRepository;
 import nl.hu.vkbep.lingo.role.domain.Role;
 import nl.hu.vkbep.lingo.player.data.PlayerRepository;
 import nl.hu.vkbep.lingo.player.domain.Player;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,16 +20,25 @@ import java.util.List;
 public class PlayerService implements PlayerServiceInterface, UserDetailsService {
 
 
-    private PlayerRepository userRepository;
+    private PlayerRepository playerRepository;
+    private RoleRepository roleRepository;
 
-    public PlayerService(PlayerRepository userRepository) {
-        this.userRepository = userRepository;
+    public PlayerService(PlayerRepository playerRepository, RoleRepository roleRepository) {
+        this.playerRepository = playerRepository;
+        this.roleRepository = roleRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String name){
 
-        Player user = userRepository.getUserByName(name);
+        Player user = playerRepository.getUserByName(name);
+        if (user == null) {
+            return new org.springframework.security.core.userdetails.User(
+                    " ", " ", true, true, true, true,
+                    getAuthorities(Arrays.asList(
+                            roleRepository.findByName("ROLE_USER"))));
+        }
+
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(), user.getPassword(), user.isEnabled(), true, true,
                 true, getAuthorities(user.getRoles()));

@@ -1,8 +1,10 @@
 nl\hu\vkbep\lingo\score\application\ScoreService.class
+nl\hu\vkbep\lingo\privilege\data\PrivilegeRepository.class
 nl\hu\vkbep\lingo\highScore\presentation\HighScoreController.class
 nl\hu\vkbep\lingo\round\domain\Round.class
 nl\hu\vkbep\lingo\fileImport\TextImportInterface.class
 nl\hu\vkbep\lingo\round\presentation\RoundController.class
+nl\hu\vkbep\lingo\role\data\RoleRepository.class
 nl\hu\vkbep\lingo\score\application\ScoreServiceInterface.class
 nl\hu\vkbep\lingo\player\presentation\PlayerController.class
 nl\hu\vkbep\lingo\score\domain\Score.class
@@ -15,6 +17,8 @@ nl\hu\vkbep\lingo\highScore\application\HighScoreService.class
 nl\hu\vkbep\lingo\game\domain\Game.class
 nl\hu\vkbep\lingo\game\exceptions\MaxRoundReached.class
 nl\hu\vkbep\lingo\highScore\domain\HighScore.class
+nl\hu\vkbep\lingo\role\domain\Role.class
+nl\hu\vkbep\lingo\authentication\domain\SecurityConfig.class
 nl\hu\vkbep\lingo\game\application\GameService.class
 nl\hu\vkbep\lingo\game\presentation\GameController.class
 nl\hu\vkbep\lingo\game\application\GameServiceInterface.class
@@ -27,6 +31,7 @@ nl\hu\vkbep\lingo\word\data\WordRepository.class
 nl\hu\vkbep\lingo\player\application\PlayerService.class
 nl\hu\vkbep\lingo\player\application\PlayerServiceInterface.class
 nl\hu\vkbep\lingo\highScore\application\HighScoreServiceInterface.class
+nl\hu\vkbep\lingo\privilege\domain\Privilege.class
 nl\hu\vkbep\lingo\game\domain\GameStatus.class
 nl\hu\vkbep\lingo\round\domain\RoundType.class
 nl\hu\vkbep\lingo\word\application\WordServiceInterface.class
