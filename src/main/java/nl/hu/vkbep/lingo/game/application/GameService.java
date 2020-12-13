@@ -16,7 +16,6 @@ import java.util.Map;
 @Service
 public class GameService implements GameServiceInterface {
 
-
     private GameRepository gameRepository;
 
     private WordServiceInterface wordServiceInterface;
