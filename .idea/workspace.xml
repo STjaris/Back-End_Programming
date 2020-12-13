@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/application/FilterWordsProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/data/FileWordReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/data/FileWordWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/domain/LingoWordFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/presentation/WordProcessorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/fileImport/application/FilterWordsProcessorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_10_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_19_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_amqp_2_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/TextImportInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/Textimport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/textimport/textimportTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +41,7 @@
   </component>
   <component name="ProjectId" id="1l3gYc5Ai0dSdYhJJqTAwPhhR8C" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -42,7 +58,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
+  <component name="RunManager" selected="JUnit.FilterWordsProcessorTests.verifyLengthIsInBetween">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -56,16 +72,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FilterWordsProcessorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilterWordsProcessorTests.verifyLengthIsInBetween" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests" />
+      <option name="METHOD_NAME" value="verifyLengthIsInBetween(java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="textimportTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.textimport.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.textimport" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.textimport.textimportTests" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.textimportTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,12 +122,12 @@
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.textimport.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.textimport" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.textimport.textimportTests" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.textimportTests" />
       <option name="METHOD_NAME" value="verifyCharOfString(java.lang.String,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -104,6 +151,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FilterWordsProcessorTests.verifyLengthIsInBetween" />
+        <item itemvalue="JUnit.FilterWordsProcessorTests" />
         <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="JUnit.textimportTests" />
         <item itemvalue="JUnit.textimportTests.verifyCharOfString" />
