@@ -5,16 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02ad4b51-868f-4e30-b674-12c15fe15384.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02ad4b51-868f-4e30-b674-12c15fe15384/storage_v2/_src_/database/Back-end_Programming.jwoALg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02ad4b51-868f-4e30-b674-12c15fe15384/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02ad4b51-868f-4e30-b674-12c15fe15384/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/02ad4b51-868f-4e30-b674-12c15fe15384/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207/storage_v2/_src_/database/Back-end_Programming.jwoALg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c90cd0e6-f194-4dac-984e-b5a6dbd18207/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lingo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lingo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/authentication/domain/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/player/application/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/player/application/PlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/player/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/player/domain/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/privilege/data/PrivilegeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/privilege/domain/Privilege.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/role/data/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/role/domain/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/wordService/WordServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/wordService/WordServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/back-end_programming-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/back-end_programming-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.textimport.textimportTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.textimport.textimportTests.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +45,6 @@
   </component>
   <component name="ProjectId" id="1l3gYc5Ai0dSdYhJJqTAwPhhR8C" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -50,33 +61,94 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
-    <configuration name="textimportTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WordServiceTest.wordCheckTest">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.textimport.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.game.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.textimport" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.textimport.textimportTests" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.game.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.game.application.GameServiceTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="textimportTests.verifyCharOfString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameServiceTests.countRoundsPerGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.textimport.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.game.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.textimport" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.textimport.textimportTests" />
-      <option name="METHOD_NAME" value="verifyCharOfString(java.lang.String,boolean)" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.game.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.game.application.GameServiceTests" />
+      <option name="METHOD_NAME" value="countRoundsPerGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServiceTests.getGameById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.game.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.game.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.game.application.GameServiceTests" />
+      <option name="METHOD_NAME" value="getGameById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordServiceTest.wordCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.word.wordService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.wordService" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.wordService.WordServiceTest" />
+      <option name="METHOD_NAME" value="wordCheckTest(java.lang.String,java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordServiceTest.wordLengthCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.word.wordService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.wordService" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.wordService.WordServiceTest" />
+      <option name="METHOD_NAME" value="wordLengthCheckTest(java.lang.String,int,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -89,19 +161,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="JUnit.textimportTests" />
-        <item itemvalue="JUnit.textimportTests.verifyCharOfString" />
+        <item itemvalue="JUnit.WordServiceTest.wordCheckTest" />
+        <item itemvalue="JUnit.WordServiceTest.wordLengthCheckTest" />
+        <item itemvalue="JUnit.GameServiceTests" />
+        <item itemvalue="JUnit.GameServiceTests.countRoundsPerGame" />
+        <item itemvalue="JUnit.GameServiceTests.getGameById" />
       </list>
     </recent_temporary>
   </component>

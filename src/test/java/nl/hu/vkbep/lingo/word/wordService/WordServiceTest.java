@@ -1,5 +1,6 @@
 package nl.hu.vkbep.lingo.word.wordService;
 
+import nl.hu.vkbep.lingo.fileImport.presentation.WordProcessorController;
 import nl.hu.vkbep.lingo.word.application.WordService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,43 +11,49 @@ import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 
-@DisplayName("WORDSERVICETEST")
+@DisplayName("WordServiceTest")
 public class WordServiceTest {
 
-//    private static Stream<Arguments> provideStringAndResults() {
-//        return Stream.of(
-//                Arguments.of("Test", false),
-//                Arguments.of("isTeLang", false),
-//                Arguments.of("qwert", true),
-//                Arguments.of("qwerty", true),
-//                Arguments.of("qwertyu", true)
-//        );
-//    }
-//
-//
-//    @ParameterizedTest
-//    @MethodSource("provideStringAndResults")
-//    @DisplayName("CONTENT STRING MATCHES WITH WORD CHECK")
-//    public void lettercheck(String input, String word, boolean expectedResult) {
-//        WordService wordService = new WordService();
-//
-//        wordService.letterCheck(input, word);
-//
-//        Boolean result = false;
-//
-//        assertEquals(result, expectedResult);
-//    }
-//
-//    @ParameterizedTest
-//    @MethodSource("provideStringAndResults")
-//    @DisplayName("DIRECT WORD ON INPUT CHECK")
-//    public void wordCheck(String input, String word, boolean expectedResult) {
-//        WordService wordService = new WordService();
-//
-//        Boolean result = wordService.wordCheck(input, word);
-//
-//        assertEquals(result, expectedResult);
-//    }
+    private static Stream<Arguments> provideWordLengthAndResult() {
+        return Stream.of(
+                Arguments.of("Test",5,  false),
+                Arguments.of("isTeLang", 5, false),
+                Arguments.of("qwerty",6,  true),
+                Arguments.of("qwertyu",7,  true),
+                Arguments.of("qwertyu",5,  false)
+        );
+    }
+
+    private static Stream<Arguments> provideWordGuessAndResult() {
+        return Stream.of(
+                Arguments.of("Tests","Tests",  true),
+                Arguments.of("isTeLang", "isTeLang", true),
+                Arguments.of("qwerty","zxcvbv" , false),
+                Arguments.of("qwertyu","adsfgg" ,  false),
+                Arguments.of("qwertyu","qwertyu",  true)
+        );
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("provideWordLengthAndResult")
+    public void wordLengthCheckTest(String input, int length, boolean expectedResult){
+        WordService wordService = new WordService();
+
+        boolean result = wordService.wordLengthCheck(input, length);
+
+        assertEquals(result, expectedResult);
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideWordGuessAndResult")
+    public void wordCheckTest(String input, String word, boolean expectedResult){
+        WordService wordService = new WordService();
+
+        boolean result = wordService.wordCheck(input, word);
+
+        assertEquals(result, expectedResult);
+    }
 
 
 }

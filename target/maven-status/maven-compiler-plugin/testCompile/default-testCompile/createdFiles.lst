@@ -1,3 +1,4 @@
-nl\hu\vkbep\lingo\textimport\textimportTests.class
+nl\hu\vkbep\lingo\fileImport\application\FilterWordsProcessorTests.class
+nl\hu\vkbep\lingo\game\application\GameServiceTests.class
 nl\hu\vkbep\lingo\word\wordService\WordServiceTest.class
 nl\hu\vkbep\lingo\BackEndProgrammingApplicationTests.class
