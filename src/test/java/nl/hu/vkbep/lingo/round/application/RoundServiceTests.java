@@ -70,30 +70,46 @@ public class RoundServiceTests {
         );
     }
 
+    private static Stream<Arguments> provideWordGuessRoundAndResult() {
+        return Stream.of(
+                Arguments.of(word.getWord(), "tests", round1, true),
+                Arguments.of(word.getWord(), "guess", round1, false)
+
+        );
+    }
 
     @Before
     public void init() {
 
         word.setWord("tests");
-//
-//        game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
-//        game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word);
-//
-//        round1 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, "tests");
-//        round2 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF6, game2, "tests");
     }
 
     @ParameterizedTest
-    @MethodSource("provideGameGuessRoundAndResult")
-    public void wordCheck(Game game, String guess, Round round, boolean expectedResult){
+    @MethodSource("provideWordGuessRoundAndResult")
+    public void wordLengthCheck(String word, String guess, Round round, boolean expectedResult){
+
         RoundService roundService = new RoundService();
 
-        boolean result = roundService.wordCheck(game.getWord().getWord(), guess, round).containsValue("CORRECT");
+        boolean result = roundService.wordLengthCheck(word, guess, round)
+                .containsValue( "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
 
-        Assertions.assertEquals(result, expectedResult);
+        assertEquals(result, expectedResult);
     }
 
 
+
+
+
+    @ParameterizedTest
+    @MethodSource("provideGameGuessRoundAndResult")
+    public void wordCheck(Game game, String guess, Round round, boolean expectedResult) {
+        RoundService roundService = new RoundService();
+
+        boolean result = roundService.wordCheck(game.getWord().getWord(), guess, round)
+                .containsValue("CORRECT");
+
+        Assertions.assertEquals(result, expectedResult);
+    }
 
 
     @ParameterizedTest
@@ -103,7 +119,8 @@ public class RoundServiceTests {
         RoundService roundServiceMock = Mockito.mock(RoundService.class);
         RoundService roundService = new RoundService();
 
-        boolean result = roundService.roundCheckFromGame(game).equals(round.getRoundType());
+        boolean result = roundService.roundCheckFromGame(game)
+                .equals(round.getRoundType());
 
         assertEquals(result, expectedResult);
     }

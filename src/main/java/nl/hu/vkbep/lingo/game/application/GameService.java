@@ -90,9 +90,6 @@ public class GameService implements GameServiceInterface {
 
             map.putAll(roundServiceInterface.playRound(game, wordid, guess));
 
-
-            System.out.println("GAME: " + map.toString());
-
             return map;
         } else {
             Map<String, String> map = new HashMap<>();
