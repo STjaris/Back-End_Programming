@@ -1,24 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: nl.hu.vkbep.lingo.word.application.WordServiceTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.042 s <<< FAILURE! - in nl.hu.vkbep.lingo.word.application.WordServiceTest
-nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[1]  Time elapsed: 0.004 s  <<< ERROR!
+Tests run: 24, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.03 s <<< FAILURE! - in nl.hu.vkbep.lingo.word.application.WordServiceTest
+nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[1]  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
-	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:72)
+	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:89)
 
-nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[2]  Time elapsed: 0 s  <<< ERROR!
+nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[2]  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
-	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:72)
+	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:89)
 
 nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[3]  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
-	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:72)
+	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:89)
 
 nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[4]  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
-	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:72)
+	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:89)
 
-nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[5]  Time elapsed: 0.001 s  <<< ERROR!
+nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(String, boolean)[5]  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
-	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:72)
+	at nl.hu.vkbep.lingo.word.application.WordServiceTest.wordExists(WordServiceTest.java:89)
 

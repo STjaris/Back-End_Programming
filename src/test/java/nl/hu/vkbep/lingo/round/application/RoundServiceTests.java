@@ -8,6 +8,7 @@ import nl.hu.vkbep.lingo.round.domain.RoundStatus;
 import nl.hu.vkbep.lingo.round.domain.RoundType;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -19,13 +20,15 @@ import static org.junit.Assert.assertEquals;
 
 public class RoundServiceTests {
 
-    private static Word word = new Word(1L, "tests");
-    private static Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
-    private static Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word);
-    private static Game game3 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word);
-    private static Round round1 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, "tests");
-    private static Round round2 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF6, game2, "tests");
-    private static Round round3 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF7, game2, "tests");
+    private static final Word word = new Word(1L, "tests");
+
+    private static final Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
+    private static final Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word);
+    private static final Game game3 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word);
+
+    private static final Round round1 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, "tests");
+    private static final Round round2 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF6, game2, "tests");
+    private static final Round round3 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF7, game2, "tests");
 
     private static Stream<Arguments> provideGameAndResult() {
         return Stream.of(
@@ -59,6 +62,14 @@ public class RoundServiceTests {
         );
     }
 
+    private static Stream<Arguments> provideGameGuessRoundAndResult() {
+        return Stream.of(
+                Arguments.of(game1, "tests", round1, true),
+                Arguments.of(game1, "guess", round1, false)
+
+        );
+    }
+
 
     @Before
     public void init() {
@@ -71,6 +82,19 @@ public class RoundServiceTests {
 //        round1 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, "tests");
 //        round2 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF6, game2, "tests");
     }
+
+    @ParameterizedTest
+    @MethodSource("provideGameGuessRoundAndResult")
+    public void wordCheck(Game game, String guess, Round round, boolean expectedResult){
+        RoundService roundService = new RoundService();
+
+        boolean result = roundService.wordCheck(game.getWord().getWord(), guess, round).containsValue("CORRECT");
+
+        Assertions.assertEquals(result, expectedResult);
+    }
+
+
+
 
     @ParameterizedTest
     @MethodSource("provideGameAndResult")
@@ -87,7 +111,7 @@ public class RoundServiceTests {
 
     @ParameterizedTest
     @MethodSource("provideRoundLengthAndResult")
-    public void roundTypeCheck(Round round, int length, boolean expectedResult){
+    public void roundTypeCheck(Round round, int length, boolean expectedResult) {
 
         RoundService roundService = new RoundService();
 
@@ -96,6 +120,4 @@ public class RoundServiceTests {
         assertEquals(result, expectedResult);
 
     }
-
-
 }

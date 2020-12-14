@@ -1,5 +1,6 @@
 package nl.hu.vkbep.lingo.word.application;
 
+import nl.hu.vkbep.lingo.game.domain.GameType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -42,6 +43,22 @@ public class WordServiceTest {
         );
     }
 
+    private static Stream<Arguments> provideGametypeLengthAndResult() {
+        return Stream.of(
+                Arguments.of(GameType.LETTEROF5, 5, true),
+                Arguments.of(GameType.LETTEROF5, 6, false),
+                Arguments.of(GameType.LETTEROF5, 7, false),
+
+                Arguments.of(GameType.LETTEROF6, 5, false),
+                Arguments.of(GameType.LETTEROF6, 6, true),
+                Arguments.of(GameType.LETTEROF6, 7, false),
+
+                Arguments.of(GameType.LETTEROF7, 5, false),
+                Arguments.of(GameType.LETTEROF7, 6, false),
+                Arguments.of(GameType.LETTEROF7, 7, true)
+        );
+    }
+
 
     @ParameterizedTest
     @MethodSource("provideWordLengthAndResult")
@@ -72,9 +89,17 @@ public class WordServiceTest {
         boolean result = wordService.wordExits(word);
 
         assertEquals(result, expectedResult);
-
-
     }
 
+
+    @ParameterizedTest
+    @MethodSource("provideGametypeLengthAndResult")
+    public void getLengthByGameType(GameType gameType, int length, boolean expectedresult){
+        WordService wordService = new WordService();
+
+        boolean result = wordService.getLengthByGameType(gameType) == length;
+
+        assertEquals(result, expectedresult);
+    }
 
 }
