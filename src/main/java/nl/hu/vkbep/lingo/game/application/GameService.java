@@ -29,6 +29,10 @@ public class GameService implements GameServiceInterface {
         this.roundServiceInterface = roundServiceInterface;
     }
 
+    public GameService() {
+
+    }
+
     @Override
     public void getAllGames() {
 
