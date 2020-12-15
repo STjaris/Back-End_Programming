@@ -5,7 +5,7 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 
 @Entity
-@Table(name= "player")
+@Table(name = "player")
 public class Player {
 
     @Id
@@ -21,11 +21,18 @@ public class Player {
     @NotNull
     private String email;
 
-    public Player(Long id, String name, String password, String email) {
-        this.id = id;
+    private boolean enabled;
+
+    private boolean tokenExpired;
+
+
+    public Player(String name, String password, String email, boolean enabled, boolean tokenExpired) {
         this.name = name;
         this.password = password;
         this.email = email;
+        this.enabled = enabled;
+        this.tokenExpired = tokenExpired;
+
     }
 
     public Player() {
@@ -35,13 +42,25 @@ public class Player {
     public long getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
+
     public String getPassword() {
         return password;
     }
+
     public String getEmail() {
         return email;
     }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public boolean isTokenExpired() {
+        return tokenExpired;
+    }
+
 }

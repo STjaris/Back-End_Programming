@@ -30,14 +30,6 @@ public class RoundService implements RoundServiceInterface {
     }
 
     @Override
-    public Round createNewRound() {
-        Round round = new Round();
-        roundRepository.save(round);
-
-        return round;
-    }
-
-    @Override
     public Map playRound(Game game, Long wordid, String guess) {
 
         //CREATE ROUND
@@ -99,13 +91,14 @@ public class RoundService implements RoundServiceInterface {
 
     public RoundType roundCheckFromGame(Game game) {
         //CHECKS GAMETYPE AND RETURNS CORRESPONDING ROUNDTYPE
-        if (game.getGameType() == GameType.LETTEROF5) {
+        if (game.getGameType().equals(GameType.LETTEROF5)) {
             return (RoundType.LETTEROF5);
-        } else if (game.getGameType() == GameType.LETTEROF6) {
+        } else if (game.getGameType().equals(GameType.LETTEROF6)) {
             return (RoundType.LETTEROF6);
-        } else {
+        } else if(game.getGameType().equals(GameType.LETTEROF7)){
             return (RoundType.LETTEROF7);
         }
+        return null;
     }
 
     public int roundTypeCheck(Round round) {

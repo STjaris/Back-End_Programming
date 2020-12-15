@@ -29,6 +29,10 @@ public class GameService implements GameServiceInterface {
         this.roundServiceInterface = roundServiceInterface;
     }
 
+    public GameService() {
+
+    }
+
     @Override
     public void getAllGames() {
 
@@ -85,9 +89,6 @@ public class GameService implements GameServiceInterface {
             map.put("Game", checkGameType(roundServiceInterface.playRound(game, wordid, guess), game).toString());
 
             map.putAll(roundServiceInterface.playRound(game, wordid, guess));
-
-
-            System.out.println("GAME: " + map.toString());
 
             return map;
         } else {

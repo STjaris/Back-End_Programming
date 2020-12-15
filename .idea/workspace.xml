@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/application/FilterWordsProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/data/FileWordReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/data/FileWordWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/domain/LingoWordFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/presentation/WordProcessorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/fileImport/application/FilterWordsProcessorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_10_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_19_0_0.xml" beforeDir="false" />
@@ -20,9 +15,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_3_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/TextImportInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/fileImport/Textimport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/textimport/textimportTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lingo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +37,6 @@
   </component>
   <component name="ProjectId" id="1l3gYc5Ai0dSdYhJJqTAwPhhR8C" />
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -52,84 +46,100 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/cc-example-master/cc-example-master" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.FilterWordsProcessorTests.verifyLengthIsInBetween">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FilterWordsProcessorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilterWordsProcessorTests.verifyLengthIsInBetween" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoundServiceTests.roundTypeCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.application.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests" />
-      <option name="METHOD_NAME" value="verifyLengthIsInBetween(java.lang.String,boolean)" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
+      <option name="METHOD_NAME" value="roundTypeCheck(nl.hu.vkbep.lingo.round.domain.Round,int,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="textimportTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoundServiceTests.wordCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.textimportTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
+      <option name="METHOD_NAME" value="wordCheck(nl.hu.vkbep.lingo.game.domain.Game,java.lang.String,nl.hu.vkbep.lingo.round.domain.Round,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="textimportTests.verifyCharOfString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoundServiceTests.wordLengthCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.textimportTests" />
-      <option name="METHOD_NAME" value="verifyCharOfString(java.lang.String,boolean)" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
+      <option name="METHOD_NAME" value="wordLengthCheck(java.lang.String,java.lang.String,nl.hu.vkbep.lingo.round.domain.Round,boolean)" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordServiceTest.getLengthByGameType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.word.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.application.WordServiceTest" />
+      <option name="METHOD_NAME" value="getLengthByGameType(nl.hu.vkbep.lingo.game.domain.GameType,int,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="nl.hu.vkbep.lingo in lingo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,21 +151,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FilterWordsProcessorTests.verifyLengthIsInBetween" />
-        <item itemvalue="JUnit.FilterWordsProcessorTests" />
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="JUnit.textimportTests" />
-        <item itemvalue="JUnit.textimportTests.verifyCharOfString" />
+        <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
+        <item itemvalue="JUnit.RoundServiceTests.wordLengthCheck" />
+        <item itemvalue="JUnit.RoundServiceTests.wordCheck" />
+        <item itemvalue="JUnit.WordServiceTest.getLengthByGameType" />
+        <item itemvalue="JUnit.RoundServiceTests.roundTypeCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -174,6 +176,8 @@
       <workItem from="1607338995490" duration="11107000" />
       <workItem from="1607517755664" duration="7887000" />
       <workItem from="1607591691929" duration="13373000" />
+      <workItem from="1607935927088" duration="2676000" />
+      <workItem from="1607938618174" duration="19136000" />
     </task>
     <servers />
   </component>
@@ -183,6 +187,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/back_end_programming$textimportTests.ic" NAME="textimportTests Coverage Results" MODIFIED="1606992603176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.textimport.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1607961080399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.*</FILTER>
     </SUITE>
   </component>
 </project>

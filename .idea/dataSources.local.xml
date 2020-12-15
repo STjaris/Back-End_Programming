@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Back-end_Programming@localhost" uuid="c90cd0e6-f194-4dac-984e-b5a6dbd18207">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
-      <schema-mapping />
-    </data-source>
-    <data-source name="Back-end_Programming@localhost [2]" uuid="02ad4b51-868f-4e30-b674-12c15fe15384">
+    <data-source name="Back-end_Programming@localhost" uuid="468639fe-faeb-40e5-8bc9-cd1b6b07c1af">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
       <schema-mapping />
     </data-source>
