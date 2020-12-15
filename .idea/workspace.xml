@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_10_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_19_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_amqp_2_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lingo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lingo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,15 +55,13 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

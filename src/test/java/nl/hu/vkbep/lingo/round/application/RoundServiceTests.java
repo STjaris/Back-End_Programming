@@ -84,32 +84,32 @@ public class RoundServiceTests {
         word.setWord("tests");
     }
 
-    @ParameterizedTest
-    @MethodSource("provideWordGuessRoundAndResult")
-    public void wordLengthCheck(String word, String guess, Round round, boolean expectedResult){
-
-        RoundService roundService = new RoundService();
-
-        boolean result = roundService.wordLengthCheck(word, guess, round)
-                .containsValue( "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
-
-        assertEquals(result, expectedResult);
-    }
-
-
+//    @ParameterizedTest
+//    @MethodSource("provideWordGuessRoundAndResult")
+//    public void wordLengthCheck(String word, String guess, Round round, boolean expectedResult){
+//
+//        RoundService roundService = new RoundService();
+//
+//        boolean result = roundService.wordLengthCheck(word, guess, round)
+//                .containsValue( "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
+//
+//        assertEquals(result, expectedResult);
+//    }
 
 
 
-    @ParameterizedTest
-    @MethodSource("provideGameGuessRoundAndResult")
-    public void wordCheck(Game game, String guess, Round round, boolean expectedResult) {
-        RoundService roundService = new RoundService();
 
-        boolean result = roundService.wordCheck(game.getWord().getWord(), guess, round)
-                .containsValue("CORRECT");
 
-        Assertions.assertEquals(result, expectedResult);
-    }
+//    @ParameterizedTest
+//    @MethodSource("provideGameGuessRoundAndResult")
+//    public void wordCheck(Game game, String guess, Round round, boolean expectedResult) {
+//        RoundService roundService = new RoundService();
+//
+//        boolean result = roundService.wordCheck(game.getWord().getWord(), guess, round)
+//                .containsValue("CORRECT");
+//
+//        Assertions.assertEquals(result, expectedResult);
+//    }
 
 
     @ParameterizedTest

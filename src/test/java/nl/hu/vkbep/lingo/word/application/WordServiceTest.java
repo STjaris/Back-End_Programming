@@ -79,17 +79,17 @@ public class WordServiceTest {
 
         assertEquals(result, expectedResult);
     }
-
-    @ParameterizedTest
-    @MethodSource("provideIdWordAndResult")
-    public void wordExists(String word, boolean expectedResult) {
-
-        WordService wordService = new WordService();
-
-        boolean result = wordService.wordExits(word);
-
-        assertEquals(result, expectedResult);
-    }
+//
+//    @ParameterizedTest
+//    @MethodSource("provideIdWordAndResult")
+//    public void wordExists(String word, boolean expectedResult) {
+//
+//        WordService wordService = new WordService();
+//
+//        boolean result = wordService.wordExits(word);
+//
+//        assertEquals(result, expectedResult);
+//    }
 
 
     @ParameterizedTest

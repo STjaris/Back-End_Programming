@@ -15,6 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.mockito.Mockito;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -66,59 +67,59 @@ public class GameServiceTests {
     }
 
 
-    @Test
-    public void createNewGame() throws Exception {
-
-        //Mockito.verify(gameSpy, times(1)).createNewGame();
-
-        //Mockito.verify(roundSpy, times(1)).wordLengthCheck(guess,word, round1);
-        //Mockito.verify(wordSpy, times(1)).createNewGame();
-
-//        gameServiceMock.createNewGame();
+//    @Test
+//    public void createNewGame() throws Exception {
 //
-//        Mockito.verify(gameMock, times(1));
-//        Mockito.verify(wordMock, times(1));
-
-
-        //when(gameServiceMock.createNewGame()).thenReturn((Map) game);
-
-        this.mockMvc.perform(post("/games"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("gameid"));
-
-
-    }
-
-    @Test
-    public void countRoundsPerGame(boolean expectedResult) {
-        roundRepositoryMock.save(round1);
-        roundRepositoryMock.save(round2);
-
-        List<Round> rounds = roundRepositoryMock.findAll();
-
-        assertEquals(2, rounds.size());
-        assertTrue(rounds.contains(round1));
-        assertTrue(rounds.contains(round2));
+//        //Mockito.verify(gameSpy, times(1)).createNewGame();
+//
+//        //Mockito.verify(roundSpy, times(1)).wordLengthCheck(guess,word, round1);
+//        //Mockito.verify(wordSpy, times(1)).createNewGame();
+//
+////        gameServiceMock.createNewGame();
+////
+////        Mockito.verify(gameMock, times(1));
+////        Mockito.verify(wordMock, times(1));
 //
 //
+//        //when(gameServiceMock.createNewGame()).thenReturn((Map) game);
+//
+////        this.mockMvc.perform(post("/games"))
+////                .andExpect(status().isOk())
+////                .andExpect(content().string("gameid"));
 //
 //
-        boolean result = gameServiceMock.checkRoundCountPerGame(game, word.getId(), guess)
-                .containsKey("gamestatus");
+//    }
 
-        assertEquals(result,expectedResult);
-    }
+//    @ParameterizedTest
+//    public void countRoundsPerGame(boolean expectedResult) {
+//        roundRepositoryMock.save(round1);
+//        roundRepositoryMock.save(round2);
+//
+//        List<Round> rounds = roundRepositoryMock.findAll();
+//
+//        assertEquals(2, rounds.size());
+//        assertTrue(rounds.contains(round1));
+//        assertTrue(rounds.contains(round2));
+////
+////
+////
+////
+//        boolean result = gameServiceMock.checkRoundCountPerGame(game, word.getId(), guess)
+//                .containsKey("gamestatus");
+//
+//        assertEquals(result,expectedResult);
+//    }
 
-    @Test
-    public void getGameById() {
-        roundRepositoryMock.save(round1);
-
-        Optional<Round> result = roundRepositoryMock.findById(round1.getId());
-        result.ifPresentOrElse(
-                round -> Assertions.assertEquals(round1, round),
-                () -> fail("ROUND MUST BE PRESENT")
-        );
-    }
+//    @Test
+//    public void getGameById() {
+//        roundRepositoryMock.save(round1);
+//
+//        Optional<Round> result = roundRepositoryMock.findById(round1.getId());
+//        result.ifPresentOrElse(
+//                round -> Assertions.assertEquals(round1, round),
+//                () -> fail("ROUND MUST BE PRESENT")
+//        );
+//    }
 
 
 }
