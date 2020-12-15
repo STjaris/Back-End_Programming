@@ -33,7 +33,7 @@ jobs:
 
       - name: Testing_with_Maven
         run: mvn test
-     
+            
       - name: Build_and_Push_Docker_Image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
