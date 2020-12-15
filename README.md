@@ -6,6 +6,5 @@
         <img src="https://codecov.io/gh/STjaris/Back-End_Programming/branch/main/graph/badge.svg?token=GZXAPUD8BT"/>
       </a>
    
-.. image:: https://codecov.io/gh/STjaris/Back-End_Programming/branch/main/graph/badge.svg?token=GZXAPUD8BT
-      :target: https://codecov.io/gh/STjaris/Back-End_Programming
+.. image:: https://codecov.io/gh/STjaris/Back-End_Programming/branch/main/graph/badge.svg?token=GZXAPUD8BT:target: https://codecov.io/gh/STjaris/Back-End_Programming
     
