@@ -14,7 +14,7 @@ public interface WordServiceInterface {
 
     boolean wordCheck(String input, String word);
 
-    Map<String, List> letterCheck(String input, String word);
+    Map<String, List<String>> letterCheck(String input, String word);
 
     Word getRandomWord(GameType gameType);
 

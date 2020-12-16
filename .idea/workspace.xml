@@ -5,25 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_19_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_amqp_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_amqp_spring_rabbit_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_amqp_2_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lingo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordServiceInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/RoundService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/RoundService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/RoundService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/RoundService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.application/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/WordService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/WordService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/WordService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/WordService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.application/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.round.application.RoundServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.round.application.RoundServiceTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.word.application.WordServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.word.application.WordServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.round.application.RoundServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.round.application.RoundServiceTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.word.application.WordServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.word.application.WordServiceTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,66 +82,20 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoundServiceTests.roundTypeCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
-      <option name="METHOD_NAME" value="roundTypeCheck(nl.hu.vkbep.lingo.round.domain.Round,int,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoundServiceTests.wordCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
-      <option name="METHOD_NAME" value="wordCheck(nl.hu.vkbep.lingo.game.domain.Game,java.lang.String,nl.hu.vkbep.lingo.round.domain.Round,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoundServiceTests.wordLengthCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
-      <option name="METHOD_NAME" value="wordLengthCheck(java.lang.String,java.lang.String,nl.hu.vkbep.lingo.round.domain.Round,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WordServiceTest.getLengthByGameType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WordServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
@@ -124,7 +105,38 @@
       </extension>
       <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.application" />
       <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.application.WordServiceTest" />
-      <option name="METHOD_NAME" value="getLengthByGameType(nl.hu.vkbep.lingo.game.domain.GameType,int,boolean)" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordServiceTest.letterCheck (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.word.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.application.WordServiceTest" />
+      <option name="METHOD_NAME" value="letterCheck(java.lang.String,java.lang.String,java.util.List)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordServiceTest.letterCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.word.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.application.WordServiceTest" />
+      <option name="METHOD_NAME" value="letterCheck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -144,6 +156,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/back-end_programming/target/site/jacoco/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="BackEndProgrammingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="lingo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="nl.hu.vkbep.lingo.BackEndProgrammingApplication" />
@@ -154,10 +169,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
-        <item itemvalue="JUnit.RoundServiceTests.wordLengthCheck" />
-        <item itemvalue="JUnit.RoundServiceTests.wordCheck" />
-        <item itemvalue="JUnit.WordServiceTest.getLengthByGameType" />
-        <item itemvalue="JUnit.RoundServiceTests.roundTypeCheck" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JUnit.WordServiceTest.letterCheck (1)" />
+        <item itemvalue="JUnit.WordServiceTest.letterCheck" />
+        <item itemvalue="JUnit.WordServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -188,8 +203,17 @@
     <SUITE FILE_PATH="coverage/back_end_programming$textimportTests.ic" NAME="textimportTests Coverage Results" MODIFIED="1606992603176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.textimport.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1607961080399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_wordGuess.ic" NAME="RoundServiceTests.wordGuess Coverage Results" MODIFIED="1608123814364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.round.application.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$WordServiceTest.ic" NAME="WordServiceTest Coverage Results" MODIFIED="1608125633009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.word.application.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1608130494257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_wordLengthCheck__1_.ic" NAME="RoundServiceTests.wordLengthCheck (1) Coverage Results" MODIFIED="1608122317912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.round.application.*</FILTER>
     </SUITE>
   </component>
 </project>

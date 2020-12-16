@@ -6,10 +6,7 @@ import nl.hu.vkbep.lingo.word.domain.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class WordService implements WordServiceInterface {
@@ -50,31 +47,40 @@ public class WordService implements WordServiceInterface {
     }
 
     @Override
-    public Map<String, List> letterCheck(String input, String word) {
+    public Map<String, List<String>> letterCheck(String guess, String word) {
 
-        Map<String, List> map = new HashMap();
+        Map<String, List<String>> map = new HashMap<>();
 
-        List<String> list = new ArrayList<>();
+        List<String> feedback = new ArrayList<>();
+        List<String> available = new ArrayList<>();
+        Collections.addAll(available, word.split(""));
 
-        int i = 0;
-        do {
-            String inputIndex = Character.toString(input.charAt(i));
-            String wordIndex = Character.toString(word.charAt(i));
+        for (int i = 0; i < word.length(); i++) {
+            String guessChar = Character.toString(guess.charAt(i));
+            String wordChar = Character.toString(word.charAt(i));
 
-            if (inputIndex.equals(wordIndex)) {
-                list.add(inputIndex + ": CORRECT");
-
-            } else if (word.contains(inputIndex)) {
-                list.add(inputIndex + ": CONTAINS");
-            } else
-                list.add(inputIndex + ": ABSENT");
-
-            i++;
+            if (guessChar.equals(wordChar)) {
+                feedback.add("CORRECT");
+                available.set(i, null);
+            } else {
+                feedback.add(null);
+            }
         }
 
-        while (i < word.length());
+        for (int i = 0; i < word.length(); i++) {
+            String guessChar = Character.toString(guess.charAt(i));
+            if ("CORRECT".equals(feedback.get(i))) {
+                continue;
+            }
 
-        map.put("feedback", list);
+            if (available.contains(guessChar)) {
+                feedback.set(i, "CONTAINS");
+                available.set(available.indexOf(guessChar), null);
+                continue;
+            }
+            feedback.set(i, "ABSENT");
+        }
+        map.put("feedback", feedback);
 
         return map;
     }
@@ -102,7 +108,7 @@ public class WordService implements WordServiceInterface {
 
 
     @Override
-    public Boolean wordExits(String guess){
+    public Boolean wordExits(String guess) {
         return wordRepository.existsByWord(guess);
     }
 
