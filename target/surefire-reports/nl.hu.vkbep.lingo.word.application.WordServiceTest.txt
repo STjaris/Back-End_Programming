@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: nl.hu.vkbep.lingo.word.application.WordServiceTest
 -------------------------------------------------------------------------------
-Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s - in nl.hu.vkbep.lingo.word.application.WordServiceTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s - in nl.hu.vkbep.lingo.word.application.WordServiceTest
