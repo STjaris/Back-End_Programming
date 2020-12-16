@@ -1,11 +1,18 @@
 package nl.hu.vkbep.lingo.word.application;
 
 import nl.hu.vkbep.lingo.game.domain.GameType;
+import nl.hu.vkbep.lingo.word.data.WordRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
@@ -67,7 +74,7 @@ public class WordServiceTest {
 
         boolean result = wordService.wordLengthCheck(input, length);
 
-        assertEquals(result, expectedResult);
+        Assertions.assertEquals(result, expectedResult);
     }
 
     @ParameterizedTest
@@ -102,4 +109,26 @@ public class WordServiceTest {
         assertEquals(result, expectedresult);
     }
 
+    private static Stream<Arguments> provideWordsForFeedback() {
+        return Stream.of(
+           Arguments.of("baard", "bonje", List.of("CORRECT", "ABSENT", "ABSENT", "ABSENT", "ABSENT")),
+           Arguments.of("baard", "barst", List.of("CORRECT", "CORRECT", "CONTAINS", "ABSENT", "ABSENT")),
+            Arguments.of("baard", "draad", List.of("ABSENT", "CONTAINS", "CORRECT", "CONTAINS", "CORRECT")),
+            Arguments.of("baard", "baard", List.of("CORRECT", "CORRECT", "CORRECT", "CORRECT", "CORRECT"))
+        );
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("provideWordsForFeedback")
+    @DisplayName("gives feedback for guesses")
+    void letterCheck(String word, String guess, List<String> expectedFeedback) {
+
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+        WordService wordService = new WordService(wordRepository);
+
+        Map<String, List<String>> result = wordService.letterCheck(guess, word);
+
+        Assertions.assertEquals(expectedFeedback, result.get("feedback"));
+    }
 }

@@ -16,17 +16,14 @@ import java.util.Map;
 @Service
 public class RoundService implements RoundServiceInterface {
 
-    private WordServiceInterface wordServiceInterface;
+    private WordServiceInterface wordService;
     private RoundRepository roundRepository;
 
 
     @Autowired
-    public RoundService(WordServiceInterface wordServiceInterface, RoundRepository roundRepository) {
-        this.wordServiceInterface = wordServiceInterface;
+    public RoundService(WordServiceInterface wordService, RoundRepository roundRepository) {
+        this.wordService = wordService;
         this.roundRepository = roundRepository;
-    }
-
-    public RoundService() {
     }
 
     @Override
@@ -40,12 +37,12 @@ public class RoundService implements RoundServiceInterface {
         Map<String, String> map = new HashMap<>();
 
         //GET WORD FROM GAME
-        String word = wordServiceInterface.getWordbyId(wordid).getWord();
+        String word = wordService.getWordbyId(wordid).getWord();
 
         //CHECK IF WORD EXISTS
-        if (wordServiceInterface.wordExits(guess)) {
+        if (wordService.wordExits(guess)) {
 
-            return wordLengthCheck(word, guess, round);
+            return checkWord(word, guess, round);
 
         } else {
             map.put("note", "INPUT NOT VALID, WORD DOES NOT EXISTS");
@@ -54,33 +51,24 @@ public class RoundService implements RoundServiceInterface {
     }
 
 
-    public Map wordLengthCheck(String word, String guess, Round round) {
-        //GUESS CHECK ON LENGTH
-        Map map = new HashMap();
-
-        if (wordServiceInterface.wordLengthCheck(guess, roundTypeCheck(round))) {
-            map.putAll(wordCheck(word, guess, round));
-        } else {
-            map.put("note", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
+    public Map checkWord(String word, String guess, Round round) {
+        if (wordService.wordLengthCheck(guess, roundTypeCheck(round))) {
+            return provideFeedback(word, guess, round);
         }
+        return Map.of("note", "INPUT NOT VALID, WORD LENGTH NOT CORRECT");
 
-        return map;
     }
 
 
-    public Map wordCheck(String word, String guess, Round round) {
-        Map map = new HashMap();
+    private Map provideFeedback(String word, String guess, Round round) {
 
-        if (wordServiceInterface.wordCheck(guess, word)) {
-            map.put("note", "CORRECT");
+        if (wordService.wordCheck(guess, word)) {
             round.setRoundStatus(RoundStatus.CORRECT);
             roundRepository.save(round);
+            return Map.of("note", "CORRECT");
         } else {
-            map.put("feedback", wordServiceInterface.letterCheck(guess, word).toString());
-            return wordServiceInterface.letterCheck(guess, word);
+            return wordService.letterCheck(guess, word);
         }
-
-        return map;
     }
 
     @Override
@@ -95,7 +83,7 @@ public class RoundService implements RoundServiceInterface {
             return (RoundType.LETTEROF5);
         } else if (game.getGameType().equals(GameType.LETTEROF6)) {
             return (RoundType.LETTEROF6);
-        } else if(game.getGameType().equals(GameType.LETTEROF7)){
+        } else if (game.getGameType().equals(GameType.LETTEROF7)) {
             return (RoundType.LETTEROF7);
         }
         return null;
