@@ -29,19 +29,19 @@ public class GameControllerTests {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    @DisplayName("CREATE NEW GAME")
-    void createsNewGame() throws Exception {
-        Word word = new Word(1L, "tests");
-
-        Map feedback = Map.of("gameid", 1L, "feedback", word.toString());
-
-        when(gameController.startGame()).thenReturn(feedback);
-
-        mockMvc.perform(post("/games"))
-                .andExpect(status().isOk())
-                .andExpect(content().json(feedback.toString()));
-    }
+//    @Test
+//    @DisplayName("CREATE NEW GAME")
+//    void createsNewGame() throws Exception {
+//        Word word = new Word(1L, "tests");
+//
+//        Map feedback = Map.of("gameid", 1L, "feedback", word.toString());
+//
+//        when(gameController.startGame()).thenReturn(feedback);
+//
+//        mockMvc.perform(post("/games"))
+//                .andExpect(status().isOk())
+//                .andExpect(content().json(feedback.toString()));
+//    }
 
 //    @Test
 //    @DisplayName("CREATE NEW GAME")
