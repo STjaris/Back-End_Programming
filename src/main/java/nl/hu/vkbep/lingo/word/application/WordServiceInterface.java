@@ -8,7 +8,7 @@ import java.util.Map;
 
 public interface WordServiceInterface {
 
-    void save(Word word);
+    Word save(Word word);
 
     boolean wordLengthCheck(String input, int length);
 

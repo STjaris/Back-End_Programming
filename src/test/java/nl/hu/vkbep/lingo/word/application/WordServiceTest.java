@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @DisplayName("WordServiceTest")
@@ -65,6 +65,20 @@ public class WordServiceTest {
                 Arguments.of(GameType.LETTEROF7, 6, false),
                 Arguments.of(GameType.LETTEROF7, 7, true)
         );
+    }
+
+    @Test
+    @DisplayName("CHECK IF WORD IS SAVED")
+    public void save(){
+        Word word = new Word(1L, "tests");
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+        WordService wordService = new WordService(wordRepository);
+
+        when(wordRepository.save(word)).thenReturn(word);
+        Word result = wordService.save(word);
+
+        assertEquals(word, result);
+
     }
 
 

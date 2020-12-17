@@ -56,24 +56,25 @@ public class GameServiceTests {
 
     }
 
-//    @Test
-//    @DisplayName("GIVES FEEDBACK RESULT ON GUESSES")
-//    public void feedbackResultGuess() {
-//        String guess = "tests";
-//
-//        GameRepository gameRepository = mock(GameRepository.class);
-//        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-//        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
-//
-//        when(gameRepository.getById(anyLong())).thenReturn(game1);
-//
-//        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
-//
-//        Map result = gameService.guess(game1.getId(), guess);
-//
-//        assertTrue(result.containsValue("feedback"));
-//    }
+    @Test
+    @DisplayName("GIVES FEEDBACK RESULT ON GUESSES")
+    public void feedbackResultGuess(){
+        Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1);
 
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+
+        when(gameRepository.getById(game.getWord().getId())).thenReturn(game);
+        when(gameRepository.getById(game.getId())).thenReturn(game);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
+
+        Map result = gameService.guess(game.getId(), guess);
+
+        assertTrue(result.containsValue(game.toString()));
+
+    }
 
 
 
@@ -156,5 +157,24 @@ public class GameServiceTests {
         //assertEquals(game3, result);
 
         assertSame(result.getGameType(), game4.getGameType());
+    }
+
+    @Test
+    @DisplayName("GIVES GAME BACK IF ID HAS BEEN FOUND")
+    void getById() {
+        Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1);
+
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+
+        when(gameRepository.getById(game.getId())).thenReturn(game);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
+
+        Game result = gameService.getById(game.getId());
+
+        assertEquals(game, result);
+
     }
 }

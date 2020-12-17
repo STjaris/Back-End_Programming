@@ -18,16 +18,13 @@ public class WordService implements WordServiceInterface {
         this.wordRepository = wordRepository;
     }
 
-
-
     @Override
-    public void save(Word word) {
-        wordRepository.save(word);
+    public Word save(Word word) {
+        return wordRepository.save(word);
     }
 
     @Override
     public boolean wordLengthCheck(String input, int length) {
-
         return input.length() == length;
     }
 
@@ -41,7 +38,6 @@ public class WordService implements WordServiceInterface {
         } else {
             letterCheck(input, word);
         }
-
         return result;
     }
 
