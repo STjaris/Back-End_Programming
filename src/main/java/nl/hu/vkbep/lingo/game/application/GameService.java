@@ -100,7 +100,6 @@ public class GameService implements GameServiceInterface {
         //CREATES NEW GAME IF RETURNS CORRECT ELSE RETURN OLD GAME
         if (map.containsValue("CORRECT") && map.containsKey("note")
                 && game.getGameType() == GameType.LETTEROF5) {
-            System.out.println("CREATE NEW GAME OF 6");
             Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6,
                     wordServiceInterface.getRandomWord(GameType.LETTEROF6));
             gameRepository.save(newGame);
@@ -108,7 +107,6 @@ public class GameService implements GameServiceInterface {
 
         } else if (map.containsValue("CORRECT") && map.containsKey("note")
                 && game.getGameType() == GameType.LETTEROF6) {
-            System.out.println("CREATE NEW GAME OF 7");
             Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7,
                     wordServiceInterface.getRandomWord(GameType.LETTEROF7));
             gameRepository.save(newGame);
