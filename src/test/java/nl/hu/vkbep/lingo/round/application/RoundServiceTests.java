@@ -82,12 +82,6 @@ public class RoundServiceTests {
         );
     }
 
-    @Before
-    public void init() {
-
-        word.setWord("tests");
-    }
-
     @Test
     @DisplayName("gives error when wordlength not correct")
     public void wordLengthCheck() {

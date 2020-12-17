@@ -24,10 +24,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class GameControllerTests {
 
-    @MockBean
-    GameController gameController;
-    @Autowired
-    private MockMvc mockMvc;
+//    @MockBean
+//    GameController gameController;
+//    @Autowired
+//    private MockMvc mockMvc;
 
 //    @Test
 //    @DisplayName("CREATE NEW GAME")

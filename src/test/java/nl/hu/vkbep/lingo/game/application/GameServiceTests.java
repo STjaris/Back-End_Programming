@@ -32,18 +32,15 @@ public class GameServiceTests {
     private final Round round1 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, guess);
     private final Round round2 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, guess);
 
-    GameRepository gameRepository;
-    WordServiceInterface wordServiceInterface;
-    RoundServiceInterface roundServiceInterface;
-    GameService gameService;
+
 
     @Before
     public void init() {
-        gameRepository = mock(GameRepository.class);
-        wordServiceInterface = mock(WordServiceInterface.class);
-        roundServiceInterface = mock(RoundServiceInterface.class);
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
 
-        gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
 
     }
 
@@ -54,6 +51,12 @@ public class GameServiceTests {
 
         GameType gameType = GameType.LETTEROF5;
         Word word = new Word(1L, "tests");
+
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
         //Map<String, ? extends Serializable> feedback = Map.of("gameid", 1L, "feedback", word.getWord());
 
         when(wordServiceInterface.getRandomWord(gameType)).thenReturn(word);
@@ -92,6 +95,12 @@ public class GameServiceTests {
 
         Map<String, String> feedback = Map.of("Game", game1.toString());
 
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
+
         Map result = gameService.checkRoundCountPerGame(game1, word.getId(), guess);
 
         assertEquals(feedback, result);
@@ -100,6 +109,12 @@ public class GameServiceTests {
     @Test
     @DisplayName("GIVES BACK MAX ROUND REACHED IF TOO MANY GUESSES")
     public void feedbackMaxRound() {
+
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
 
 
         //Map feedback = Map.of("feedback", "MAX ROUND REACHED", "gamestatus", GameStatus.ENDED);
@@ -121,6 +136,12 @@ public class GameServiceTests {
         Word word = new Word(1L, "tests");
         Map<String, String> feedback = Map.of("note", "CORRECT");
 
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
+
         when(wordServiceInterface.getRandomWord(GameType.LETTEROF6)).thenReturn(word);
         Game result = gameService.checkGameType(feedback, game1);
 
@@ -134,6 +155,12 @@ public class GameServiceTests {
     public void letterOf7Check() {
         Word word = new Word(1L, "tests");
         Map<String, String> feedback = Map.of("note", "CORRECT");
+
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
 
         when(wordServiceInterface.getRandomWord(GameType.LETTEROF7)).thenReturn(word);
         Game result = gameService.checkGameType(feedback, game3);
