@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/presentation/GameControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/presentation/GameControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarcloud.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sonarcloud.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +42,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/cc-example-master/cc-example-master" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.37126437" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo" />
+    </key>
   </component>
   <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -171,7 +179,7 @@
       <workItem from="1607591691929" duration="13373000" />
       <workItem from="1607935927088" duration="2676000" />
       <workItem from="1607938618174" duration="19136000" />
-      <workItem from="1608194541668" duration="10516000" />
+      <workItem from="1608194541668" duration="11295000" />
     </task>
     <servers />
   </component>
