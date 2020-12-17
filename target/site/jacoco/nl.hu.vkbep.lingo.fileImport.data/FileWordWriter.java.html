@@ -21,7 +21,7 @@ public class FileWordWriter {
 <span class="nc" id="L21">        this.wordService = wordService;</span>
 <span class="nc" id="L22">    }</span>
 
-    public void arrayFiltering(List&lt;String&gt; lines) {
+    public boolean arrayFiltering(List&lt;String&gt; lines) {
 
         //FILTER LENGTH
 <span class="nc bnc" id="L27" title="All 2 branches missed.">        for (String line : lines) {</span>
@@ -31,6 +31,7 @@ public class FileWordWriter {
 <span class="nc" id="L31">                wordService.save(word);</span>
             }
 <span class="nc" id="L33">        }</span>
-<span class="nc" id="L34">    }</span>
+<span class="nc" id="L34">        return true;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

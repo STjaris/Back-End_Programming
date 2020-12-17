@@ -21,7 +21,7 @@ public class FileWordWriter {
         this.wordService = wordService;
     }
 
-    public void arrayFiltering(List<String> lines) {
+    public boolean arrayFiltering(List<String> lines) {
 
         //FILTER LENGTH
         for (String line : lines) {
@@ -31,5 +31,6 @@ public class FileWordWriter {
                 wordService.save(word);
             }
         }
+        return true;
     }
 }

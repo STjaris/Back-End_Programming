@@ -14,7 +14,6 @@ nl\hu\vkbep\lingo\word\domain\Word.class
 nl\hu\vkbep\lingo\fileImport\data\FileWordWriter.class
 nl\hu\vkbep\lingo\highScore\application\HighScoreService.class
 nl\hu\vkbep\lingo\game\domain\Game.class
-nl\hu\vkbep\lingo\game\exceptions\MaxRoundReached.class
 nl\hu\vkbep\lingo\highScore\domain\HighScore.class
 nl\hu\vkbep\lingo\game\application\GameService.class
 nl\hu\vkbep\lingo\game\presentation\GameController.class

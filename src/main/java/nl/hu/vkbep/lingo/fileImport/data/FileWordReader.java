@@ -1,6 +1,5 @@
 package nl.hu.vkbep.lingo.fileImport.data;
 
-import nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessor;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,11 +30,13 @@ public class FileWordReader implements InitializingBean {
     }
 
 
-    public void startTextImport() throws IOException {
+    public boolean startTextImport() throws IOException {
 
         if(wordRepository.count() == 0){
             fileWordWriter.arrayFiltering(filereader());
+            return true;
         }
+        return false;
     }
 
     public List<String> filereader() throws IOException {

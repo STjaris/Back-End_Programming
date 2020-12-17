@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.057" tests="23" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="nl.hu.vkbep.lingo.game.presentation.GameControllerTests" time="5.855" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -63,27 +63,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="wordLengthCheckTest(String, int, boolean)[1]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.031"/>
-  <testcase name="wordLengthCheckTest(String, int, boolean)[2]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="wordLengthCheckTest(String, int, boolean)[3]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="wordLengthCheckTest(String, int, boolean)[4]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="wordLengthCheckTest(String, int, boolean)[5]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[1]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[2]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[3]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[4]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[5]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[6]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[7]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[8]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="getLengthByGameType(GameType, int, boolean)[9]" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="letterCheck(String,String,List)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="letterCheck(String,String,List)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="letterCheck(String,String,List)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="letterCheck(String,String,List)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="wordCheckTest(String,String, boolean)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="wordCheckTest(String,String, boolean)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0.001"/>
-  <testcase name="wordCheckTest(String,String, boolean)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="wordCheckTest(String,String, boolean)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
-  <testcase name="wordCheckTest(String,String, boolean)" classname="nl.hu.vkbep.lingo.word.application.WordServiceTest" time="0"/>
+  <testcase name="createsNewGame" classname="nl.hu.vkbep.lingo.game.presentation.GameControllerTests" time="0.111"/>
 </testsuite>

@@ -1,5 +1,7 @@
+nl\hu\vkbep\lingo\fileImport\data\FileWordReaderTests.class
 nl\hu\vkbep\lingo\fileImport\application\FilterWordsProcessorTests.class
 nl\hu\vkbep\lingo\word\application\WordServiceTest.class
 nl\hu\vkbep\lingo\round\application\RoundServiceTests.class
+nl\hu\vkbep\lingo\game\presentation\GameControllerTests.class
 nl\hu\vkbep\lingo\game\application\GameServiceTests.class
 nl\hu\vkbep\lingo\BackEndProgrammingApplicationTests.class
