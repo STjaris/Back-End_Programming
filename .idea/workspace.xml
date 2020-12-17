@@ -115,7 +115,7 @@
       <recent name="C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameServiceTests.checkRoundCountPerGame">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -217,10 +217,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JUnit.GameServiceTests.checkRoundCountPerGame" />
         <item itemvalue="JUnit.GameServiceTests.createNewGame" />
         <item itemvalue="JUnit.RoundServiceTests.wordLengthCheck" />
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
       </list>
     </recent_temporary>
