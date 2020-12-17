@@ -18,8 +18,7 @@ public class WordService implements WordServiceInterface {
         this.wordRepository = wordRepository;
     }
 
-    public WordService() {
-    }
+
 
     @Override
     public void save(Word word) {

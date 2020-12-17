@@ -93,7 +93,6 @@ public class RoundServiceTests {
     public void wordLengthCheck() {
         String guess = "qwert";
 
-
         WordServiceInterface wordService = mock(WordServiceInterface.class);
         RoundRepository roundRepository = mock(RoundRepository.class);
 

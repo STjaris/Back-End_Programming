@@ -29,15 +29,6 @@ public class GameService implements GameServiceInterface {
         this.roundServiceInterface = roundServiceInterface;
     }
 
-    public GameService() {
-
-    }
-
-    @Override
-    public void getAllGames() {
-
-    }
-
     public Map createNewGame() {
 
         //CREATE NEW GAME
@@ -107,15 +98,19 @@ public class GameService implements GameServiceInterface {
     public Game checkGameType(Map<String, String> map, Game game) {
 
         //CREATES NEW GAME IF RETURNS CORRECT ELSE RETURN OLD GAME
-        if (map.containsValue("CORRECT") && map.containsKey("note") && game.getGameType() == GameType.LETTEROF5) {
+        if (map.containsValue("CORRECT") && map.containsKey("note")
+                && game.getGameType() == GameType.LETTEROF5) {
             System.out.println("CREATE NEW GAME OF 6");
-            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, wordServiceInterface.getRandomWord(GameType.LETTEROF6));
+            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6,
+                    wordServiceInterface.getRandomWord(GameType.LETTEROF6));
             gameRepository.save(newGame);
             return newGame;
 
-        } else if (map.containsValue("CORRECT") && map.containsKey("note") && game.getGameType() == GameType.LETTEROF6) {
+        } else if (map.containsValue("CORRECT") && map.containsKey("note")
+                && game.getGameType() == GameType.LETTEROF6) {
             System.out.println("CREATE NEW GAME OF 7");
-            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, wordServiceInterface.getRandomWord(GameType.LETTEROF7));
+            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7,
+                    wordServiceInterface.getRandomWord(GameType.LETTEROF7));
             gameRepository.save(newGame);
             return newGame;
         } else {

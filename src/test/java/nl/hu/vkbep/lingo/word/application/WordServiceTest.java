@@ -2,13 +2,13 @@ package nl.hu.vkbep.lingo.word.application;
 
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
+import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.List;
@@ -16,6 +16,9 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.when;
 
 @DisplayName("WordServiceTest")
 public class WordServiceTest {
@@ -70,7 +73,8 @@ public class WordServiceTest {
     @ParameterizedTest
     @MethodSource("provideWordLengthAndResult")
     public void wordLengthCheckTest(String input, int length, boolean expectedResult) {
-        WordService wordService = new WordService();
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+        WordService wordService = new WordService(wordRepository);
 
         boolean result = wordService.wordLengthCheck(input, length);
 
@@ -80,7 +84,8 @@ public class WordServiceTest {
     @ParameterizedTest
     @MethodSource("provideWordGuessAndResult")
     public void wordCheckTest(String input, String word, boolean expectedResult) {
-        WordService wordService = new WordService();
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+        WordService wordService = new WordService(wordRepository);
 
         boolean result = wordService.wordCheck(input, word);
 
@@ -102,11 +107,12 @@ public class WordServiceTest {
     @ParameterizedTest
     @MethodSource("provideGametypeLengthAndResult")
     public void getLengthByGameType(GameType gameType, int length, boolean expectedresult){
-        WordService wordService = new WordService();
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+        WordService wordService = new WordService(wordRepository);
 
         boolean result = wordService.getLengthByGameType(gameType) == length;
 
-        assertEquals(result, expectedresult);
+        Assertions.assertEquals(result, expectedresult);
     }
 
     private static Stream<Arguments> provideWordsForFeedback() {
@@ -121,7 +127,7 @@ public class WordServiceTest {
 
     @ParameterizedTest
     @MethodSource("provideWordsForFeedback")
-    @DisplayName("gives feedback for guesses")
+    @DisplayName("GIVES FEEDBACK FOR GUESSES")
     void letterCheck(String word, String guess, List<String> expectedFeedback) {
 
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
@@ -131,4 +137,25 @@ public class WordServiceTest {
 
         Assertions.assertEquals(expectedFeedback, result.get("feedback"));
     }
+
+
+//    @Test
+//    @DisplayName("GIVES FEEDBACK WHEN RANDOM PICKED WORD LENGTH = GAMETYPE LENGTH")
+//    void getRandomWord() {
+//        int i = 5;
+//
+//        Word word = new Word(1L, "tests");
+//        GameType gameType = GameType.LETTEROF5;
+//
+//        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+//        WordService wordService = new WordService(wordRepository);
+//
+//        //when(wordService.getLengthByGameType();
+//
+//        when(wordService.getRandomWord(GameType.LETTEROF5)).thenReturn(word);
+//
+//        boolean result = wordService.getRandomWord(GameType.LETTEROF5).getWord().length() == 5;
+//
+//        Assertions.assertTrue(result);
+//    }
 }
