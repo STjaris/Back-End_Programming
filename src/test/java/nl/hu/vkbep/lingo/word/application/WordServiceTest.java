@@ -2,10 +2,8 @@ package nl.hu.vkbep.lingo.word.application;
 
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
-import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -14,11 +12,6 @@ import org.mockito.Mockito;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.when;
 
 @DisplayName("WordServiceTest")
 public class WordServiceTest {
@@ -89,7 +82,7 @@ public class WordServiceTest {
 
         boolean result = wordService.wordCheck(input, word);
 
-        assertEquals(result, expectedResult);
+        Assertions.assertEquals(result, expectedResult);
     }
 //
 //    @ParameterizedTest

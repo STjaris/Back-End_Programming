@@ -10,13 +10,13 @@ import nl.hu.vkbep.lingo.round.domain.RoundStatus;
 import nl.hu.vkbep.lingo.round.domain.RoundType;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import nl.hu.vkbep.lingo.word.domain.Word;
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -31,18 +31,6 @@ public class GameServiceTests {
     private final Game game4 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word, 0, 0);
     private final Round round1 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, guess);
     private final Round round2 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, guess);
-
-
-
-    @Before
-    public void init() {
-        GameRepository gameRepository = mock(GameRepository.class);
-        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
-
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface);
-
-    }
 
 
     @Test

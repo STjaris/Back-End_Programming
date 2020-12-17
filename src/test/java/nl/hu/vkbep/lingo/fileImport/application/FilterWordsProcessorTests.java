@@ -1,13 +1,13 @@
 package nl.hu.vkbep.lingo.fileImport.application;
 
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
-
-import static org.junit.Assert.assertEquals;
 
 @DisplayName("FilterWordsProcessorTests")
 public class FilterWordsProcessorTests {
@@ -40,7 +40,7 @@ public class FilterWordsProcessorTests {
 
         boolean result = filterWordsProcessor.stringFilteringOnLength(input);
 
-        assertEquals(expectedResult, result);
+        Assertions.assertEquals(expectedResult, result);
     }
 
     @ParameterizedTest
@@ -51,6 +51,6 @@ public class FilterWordsProcessorTests {
 
         boolean result = filterWordsProcessor.stringFilteringOnSpecialChar(input);
 
-        assertEquals(expectedResult, result);
+        Assertions.assertEquals(expectedResult, result);
     }
 }

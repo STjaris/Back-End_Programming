@@ -15,23 +15,15 @@ import static org.mockito.Mockito.when;
 
 public class FileWordReaderTests {
 
-    WordRepository wordRepository;
-    FileWordWriter fileWordWriter;
-    FileWordReader fileWordReader;
-
-    List<String> wordList = List.of(
-            "pizza",
-            "pizzas",
-            "bier"
-    );
-
-    @Before
-    public void init() {
-        wordRepository = Mockito.mock(WordRepository.class);
-        fileWordWriter = Mockito.mock(FileWordWriter.class);
-
-        fileWordReader = new FileWordReader(wordRepository, fileWordWriter);
-    }
+//    WordRepository wordRepository;
+//    FileWordWriter fileWordWriter;
+//    FileWordReader fileWordReader;
+//
+//    List<String> wordList = List.of(
+//            "pizza",
+//            "pizzas",
+//            "bier"
+//    );
 
 //    @Test
 //    @DisplayName("READS FILE IF COUNT == 0")
