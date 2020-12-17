@@ -96,8 +96,8 @@ public class RoundServiceTests {
         WordServiceInterface wordService = mock(WordServiceInterface.class);
         RoundRepository roundRepository = mock(RoundRepository.class);
 
-        when(wordService.wordLengthCheck(eq(guess), anyInt()))
-                .thenReturn(false);
+//        when(wordService.wordLengthCheck(eq(guess), anyInt()))
+//                .thenReturn(false);
 
         RoundService roundService = new RoundService(wordService, roundRepository);
 

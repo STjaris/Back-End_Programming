@@ -5,9 +5,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarcloud.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sonarcloud.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codecov.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.fileImport.data/FileWordReader.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.fileImport.data/FileWordReader.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.fileImport.data/FileWordWriter.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.fileImport.data/FileWordWriter.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/GameService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/GameService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/GameService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/GameService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.application/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/Game.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.game.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/HighScoreService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/HighScoreService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/HighScoreService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/HighScoreService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.application/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/HighScoreController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/HighScoreController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/HighScoreController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/HighScoreController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.highScore.presentation/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/PlayerService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/PlayerService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/PlayerService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/PlayerService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.application/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/Player.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/Player.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/Player.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/Player.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/PlayerController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/PlayerController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/PlayerController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/PlayerController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.player.presentation/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/Round.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/RoundController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/RoundController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/RoundController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/RoundController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.round.presentation/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/ScoreService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/ScoreService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/ScoreService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/ScoreService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.application/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/Score.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/Score.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/Score.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/Score.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/ScoreController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/ScoreController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/ScoreController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/ScoreController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.score.presentation/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/Word.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.domain/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/WordController.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/WordController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/WordController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/WordController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo.word.presentation/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/BackEndProgrammingApplication.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/BackEndProgrammingApplication.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/BackEndProgrammingApplication.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/BackEndProgrammingApplication.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/nl.hu.vkbep.lingo/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.game.presentation.GameControllerTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.round.application.RoundServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.round.application.RoundServiceTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.word.application.WordServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-nl.hu.vkbep.lingo.word.application.WordServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessorTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.game.presentation.GameControllerTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.round.application.RoundServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.round.application.RoundServiceTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.word.application.WordServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/nl.hu.vkbep.lingo.word.application.WordServiceTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +130,7 @@
       <recent name="C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
+  <component name="RunManager" selected="JUnit.GameServiceTests.checkRoundCountPerGame">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -80,49 +158,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileWordReaderTests.fileReader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameServiceTests.checkRoundCountPerGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.data.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.game.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport.data" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.data.FileWordReaderTests" />
-      <option name="METHOD_NAME" value="fileReader" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.game.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.game.application.GameServiceTests" />
+      <option name="METHOD_NAME" value="checkRoundCountPerGame" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileWordReaderTests.startTextImport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameServiceTests.createNewGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.data.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.game.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport.data" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.data.FileWordReaderTests" />
-      <option name="METHOD_NAME" value="startTextImport" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.game.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.game.application.GameServiceTests" />
+      <option name="METHOD_NAME" value="createNewGame" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameControllerTests.createsNewGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoundServiceTests.wordLengthCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.game.presentation.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.game.presentation" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.game.presentation.GameControllerTests" />
-      <option name="METHOD_NAME" value="createsNewGame" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
+      <option name="METHOD_NAME" value="wordLengthCheck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
+        <item itemvalue="JUnit.GameServiceTests.checkRoundCountPerGame" />
+        <item itemvalue="JUnit.GameServiceTests.createNewGame" />
+        <item itemvalue="JUnit.RoundServiceTests.wordLengthCheck" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JUnit.GameControllerTests.createsNewGame" />
-        <item itemvalue="JUnit.FileWordReaderTests.startTextImport" />
-        <item itemvalue="JUnit.FileWordReaderTests.fileReader" />
+        <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +257,7 @@
       <workItem from="1607591691929" duration="13373000" />
       <workItem from="1607935927088" duration="2676000" />
       <workItem from="1607938618174" duration="19136000" />
-      <workItem from="1608194541668" duration="11295000" />
+      <workItem from="1608194541668" duration="13486000" />
     </task>
     <servers />
   </component>
