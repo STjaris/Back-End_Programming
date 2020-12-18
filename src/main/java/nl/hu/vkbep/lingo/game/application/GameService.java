@@ -128,4 +128,8 @@ public class GameService implements GameServiceInterface {
     public Game getById(Long gameid) {
         return gameRepository.getById(gameid);
     }
+
+    public Map getPlayedGameId(Map map){
+        return map;
+    }
 }
