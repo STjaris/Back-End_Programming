@@ -100,6 +100,7 @@ public class GameService implements GameServiceInterface {
             //CHANGE GAMESTATUS TO ENDED AND SAVE
             game.setGameStatus(GameStatus.ENDED);
             gameRepository.save(game);
+
             return map;
         }
     }
