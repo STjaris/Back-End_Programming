@@ -18,70 +18,66 @@ public class WordService implements WordServiceInterface {
 <span class="fc" id="L18">        this.wordRepository = wordRepository;</span>
 <span class="fc" id="L19">    }</span>
 
-
-
     @Override
-    public void save(Word word) {
-<span class="nc" id="L25">        wordRepository.save(word);</span>
-<span class="nc" id="L26">    }</span>
+    public Word save(Word word) {
+<span class="fc" id="L23">        return wordRepository.save(word);</span>
+    }
 
     @Override
     public boolean wordLengthCheck(String input, int length) {
-
-<span class="fc bfc" id="L31" title="All 2 branches covered.">        return input.length() == length;</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        return input.length() == length;</span>
     }
 
     @Override
     public boolean wordCheck(String input, String word) {
 
-<span class="fc" id="L37">        boolean result = false;</span>
+<span class="fc" id="L34">        boolean result = false;</span>
 
-<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (input.equals(word)) {</span>
-<span class="fc" id="L40">            result = true;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (input.equals(word)) {</span>
+<span class="fc" id="L37">            result = true;</span>
         } else {
-<span class="fc" id="L42">            letterCheck(input, word);</span>
+<span class="fc" id="L39">            letterCheck(input, word);</span>
         }
-
-<span class="fc" id="L45">        return result;</span>
+<span class="fc" id="L41">        return result;</span>
     }
 
     @Override
     public Map&lt;String, List&lt;String&gt;&gt; letterCheck(String guess, String word) {
 
-<span class="fc" id="L51">        Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L47">        Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();</span>
 
-<span class="fc" id="L53">        List&lt;String&gt; feedback = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L54">        List&lt;String&gt; available = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L55">        Collections.addAll(available, word.split(&quot;&quot;));</span>
+<span class="fc" id="L49">        List&lt;String&gt; feedback = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L50">        List&lt;String&gt; available = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L51">        Collections.addAll(available, word.split(&quot;&quot;));</span>
 
-<span class="fc bfc" id="L57" title="All 2 branches covered.">        for (int i = 0; i &lt; word.length(); i++) {</span>
-<span class="fc" id="L58">            String guessChar = Character.toString(guess.charAt(i));</span>
-<span class="fc" id="L59">            String wordChar = Character.toString(word.charAt(i));</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        for (int i = 0; i &lt; word.length(); i++) {</span>
+<span class="fc" id="L54">            String guessChar = Character.toString(guess.charAt(i));</span>
+<span class="fc" id="L55">            String wordChar = Character.toString(word.charAt(i));</span>
 
-<span class="fc bfc" id="L61" title="All 2 branches covered.">            if (guessChar.equals(wordChar)) {</span>
-<span class="fc" id="L62">                feedback.add(&quot;CORRECT&quot;);</span>
-<span class="fc" id="L63">                available.set(i, null);</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">            if (guessChar.equals(wordChar)) {</span>
+<span class="fc" id="L58">                feedback.add(&quot;CORRECT&quot;);</span>
+<span class="fc" id="L59">                available.set(i, null);</span>
             } else {
-<span class="fc" id="L65">                feedback.add(null);</span>
+<span class="fc" id="L61">                feedback.add(null);</span>
             }
         }
 
-<span class="fc bfc" id="L69" title="All 2 branches covered.">        for (int i = 0; i &lt; word.length(); i++) {</span>
-<span class="fc" id="L70">            String guessChar = Character.toString(guess.charAt(i));</span>
-<span class="fc bfc" id="L71" title="All 2 branches covered.">            if (&quot;CORRECT&quot;.equals(feedback.get(i))) {</span>
-<span class="fc" id="L72">                continue;</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (int i = 0; i &lt; word.length(); i++) {</span>
+<span class="fc" id="L66">            String guessChar = Character.toString(guess.charAt(i));</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">            if (&quot;CORRECT&quot;.equals(feedback.get(i))) {</span>
+<span class="fc" id="L68">                continue;</span>
             }
 
-<span class="fc bfc" id="L75" title="All 2 branches covered.">            if (available.contains(guessChar)) {</span>
-<span class="fc" id="L76">                feedback.set(i, &quot;CONTAINS&quot;);</span>
-<span class="fc" id="L77">                available.set(available.indexOf(guessChar), null);</span>
-<span class="fc" id="L78">                continue;</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">            if (available.contains(guessChar)) {</span>
+<span class="fc" id="L72">                feedback.set(i, &quot;CONTAINS&quot;);</span>
+<span class="fc" id="L73">                available.set(available.indexOf(guessChar), null);</span>
+<span class="fc" id="L74">                continue;</span>
             }
-<span class="fc" id="L80">            feedback.set(i, &quot;ABSENT&quot;);</span>
+<span class="fc" id="L76">            feedback.set(i, &quot;ABSENT&quot;);</span>
         }
-<span class="fc" id="L82">        map.put(&quot;feedback&quot;, feedback);</span>
+<span class="fc" id="L78">        map.put(&quot;feedback&quot;, feedback);</span>
 
-<span class="fc" id="L84">        return map;</span>
+<span class="fc" id="L80">        return map;</span>
     }
 
     @Override
@@ -91,38 +87,38 @@ public class WordService implements WordServiceInterface {
 
         //LOOP WHILE WORD FROM DB != i;
         do {
-<span class="nc" id="L94">            word = wordRepository.getRandomWord();</span>
+<span class="fc" id="L90">            word = wordRepository.getRandomWord();</span>
         }
-<span class="nc bnc" id="L96" title="All 2 branches missed.">        while (word.getWord().length() != getLengthByGameType(gameType));</span>
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        while (word.getWord().length() != getLengthByGameType(gameType));</span>
 
-<span class="nc" id="L98">        return word;</span>
+<span class="fc" id="L94">        return word;</span>
     }
 
     @Override
     public Word getWordbyId(Long wordid) {
 
-<span class="nc" id="L104">        return wordRepository.getById(wordid);</span>
+<span class="nc" id="L100">        return wordRepository.getById(wordid);</span>
 
     }
 
 
     @Override
     public Boolean wordExits(String guess) {
-<span class="nc" id="L111">        return wordRepository.existsByWord(guess);</span>
+<span class="fc" id="L107">        return wordRepository.existsByWord(guess);</span>
     }
 
     public int getLengthByGameType(GameType gameType) {
         int i;
 
         //SET INT i ON SAME VALUE OF LETTER LENGTH OF GAME
-<span class="fc bfc" id="L118" title="All 2 branches covered.">        if (gameType == GameType.LETTEROF5) {</span>
-<span class="fc" id="L119">            i = 5;</span>
-<span class="fc bfc" id="L120" title="All 2 branches covered.">        } else if (gameType == GameType.LETTEROF6) {</span>
-<span class="fc" id="L121">            i = 6;</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">        if (gameType == GameType.LETTEROF5) {</span>
+<span class="fc" id="L115">            i = 5;</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        } else if (gameType == GameType.LETTEROF6) {</span>
+<span class="fc" id="L117">            i = 6;</span>
         } else {
-<span class="fc" id="L123">            i = 7;</span>
+<span class="fc" id="L119">            i = 7;</span>
         }
-<span class="fc" id="L125">        return i;</span>
+<span class="fc" id="L121">        return i;</span>
     }
 
 }

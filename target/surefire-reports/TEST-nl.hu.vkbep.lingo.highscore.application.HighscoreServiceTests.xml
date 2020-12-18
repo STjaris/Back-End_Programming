@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.733" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="nl.hu.vkbep.lingo.highscore.application.HighscoreServiceTests" time="0.032" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -57,11 +57,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="feedbackMaxRound" classname="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.701"/>
-  <testcase name="createNewGame" classname="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.013"/>
-  <testcase name="getById" classname="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.001"/>
-  <testcase name="feedbackResultGuess" classname="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.011"/>
-  <testcase name="letterOf6Check" classname="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.001"/>
-  <testcase name="letterOf7Check" classname="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.001"/>
-  <testcase name="checkRoundCountPerGame" classname="nl.hu.vkbep.lingo.game.application.GameServiceTests" time="0.001"/>
+  <testcase name="getHighscore" classname="nl.hu.vkbep.lingo.highscore.application.HighscoreServiceTests" time="0.032"/>
 </testsuite>

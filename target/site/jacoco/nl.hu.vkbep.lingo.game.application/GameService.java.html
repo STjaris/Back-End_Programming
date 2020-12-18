@@ -58,14 +58,14 @@ public class GameService implements GameServiceInterface {
     public Map guess(Long gameid, String guess) {
 
        //GET WORDID FROM GAME
-<span class="nc" id="L61">        Long wordid = gameRepository.getById(gameid).getWord().getId();</span>
+<span class="fc" id="L61">        Long wordid = gameRepository.getById(gameid).getWord().getId();</span>
 
         //SET GAME TO ONGOING AND SAVE
-<span class="nc" id="L64">        Game game = gameRepository.getById(gameid);</span>
-<span class="nc" id="L65">        game.setGameStatus(GameStatus.ONGOING);</span>
-<span class="nc" id="L66">        gameRepository.save(game);</span>
+<span class="fc" id="L64">        Game game = gameRepository.getById(gameid);</span>
+<span class="fc" id="L65">        game.setGameStatus(GameStatus.ONGOING);</span>
+<span class="fc" id="L66">        gameRepository.save(game);</span>
 
-<span class="nc" id="L68">        return checkRoundCountPerGame(game, wordid, guess);</span>
+<span class="fc" id="L68">        return checkRoundCountPerGame(game, wordid, guess);</span>
     }
 
     public Map checkRoundCountPerGame(Game game, Long wordid, String guess) {
@@ -100,35 +100,37 @@ public class GameService implements GameServiceInterface {
         //CREATES NEW GAME IF RETURNS CORRECT ELSE RETURN OLD GAME
 <span class="pc bpc" id="L101" title="1 of 4 branches missed.">        if (map.containsValue(&quot;CORRECT&quot;) &amp;&amp; map.containsKey(&quot;note&quot;)</span>
 <span class="fc bfc" id="L102" title="All 2 branches covered.">                &amp;&amp; game.getGameType() == GameType.LETTEROF5) {</span>
-<span class="fc" id="L103">            System.out.println(&quot;CREATE NEW GAME OF 6&quot;);</span>
-<span class="fc" id="L104">            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6,</span>
-<span class="fc" id="L105">                    wordServiceInterface.getRandomWord(GameType.LETTEROF6));</span>
-<span class="fc" id="L106">            gameRepository.save(newGame);</span>
-<span class="fc" id="L107">            return newGame;</span>
+<span class="fc" id="L103">            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6,</span>
+<span class="fc" id="L104">                    wordServiceInterface.getRandomWord(GameType.LETTEROF6));</span>
+<span class="fc" id="L105">            gameRepository.save(newGame);</span>
+<span class="fc" id="L106">            return newGame;</span>
 
-<span class="pc bpc" id="L109" title="1 of 4 branches missed.">        } else if (map.containsValue(&quot;CORRECT&quot;) &amp;&amp; map.containsKey(&quot;note&quot;)</span>
-<span class="pc bpc" id="L110" title="1 of 2 branches missed.">                &amp;&amp; game.getGameType() == GameType.LETTEROF6) {</span>
-<span class="fc" id="L111">            System.out.println(&quot;CREATE NEW GAME OF 7&quot;);</span>
-<span class="fc" id="L112">            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7,</span>
-<span class="fc" id="L113">                    wordServiceInterface.getRandomWord(GameType.LETTEROF7));</span>
-<span class="fc" id="L114">            gameRepository.save(newGame);</span>
-<span class="fc" id="L115">            return newGame;</span>
+<span class="pc bpc" id="L108" title="1 of 4 branches missed.">        } else if (map.containsValue(&quot;CORRECT&quot;) &amp;&amp; map.containsKey(&quot;note&quot;)</span>
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">                &amp;&amp; game.getGameType() == GameType.LETTEROF6) {</span>
+<span class="fc" id="L110">            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7,</span>
+<span class="fc" id="L111">                    wordServiceInterface.getRandomWord(GameType.LETTEROF7));</span>
+<span class="fc" id="L112">            gameRepository.save(newGame);</span>
+<span class="fc" id="L113">            return newGame;</span>
         } else {
-<span class="fc" id="L117">            return game;</span>
+<span class="fc" id="L115">            return game;</span>
         }
     }
 
 
     public int countRoundsPerGame(Long gameid) {
-<span class="fc" id="L123">        Game game = gameRepository.getById(gameid);</span>
+<span class="fc" id="L121">        Game game = gameRepository.getById(gameid);</span>
 
-<span class="fc" id="L125">        return roundServiceInterface.countRoundPerGame(game);</span>
+<span class="fc" id="L123">        return roundServiceInterface.countRoundPerGame(game);</span>
     }
 
 
     @Override
     public Game getById(Long gameid) {
-<span class="nc" id="L131">        return gameRepository.getById(gameid);</span>
+<span class="fc" id="L129">        return gameRepository.getById(gameid);</span>
+    }
+
+    public Map getPlayedGameId(Map map){
+<span class="nc" id="L133">        return map;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
