@@ -4,12 +4,14 @@ import nl.hu.vkbep.lingo.word.data.WordRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@Service
 public class FileWordReader implements InitializingBean {
 
     @Value(&quot;classpath:basiswoorden-gekeurd.txt&quot;)
@@ -19,38 +21,38 @@ public class FileWordReader implements InitializingBean {
 
     private FileWordWriter fileWordWriter;
 
-<span class="nc" id="L22">    public FileWordReader(WordRepository wordRepository, FileWordWriter fileWordWriter) {</span>
-<span class="nc" id="L23">        this.wordRepository = wordRepository;</span>
-<span class="nc" id="L24">        this.fileWordWriter = fileWordWriter;</span>
-<span class="nc" id="L25">    }</span>
+<span class="nc" id="L24">    public FileWordReader(WordRepository wordRepository, FileWordWriter fileWordWriter) {</span>
+<span class="nc" id="L25">        this.wordRepository = wordRepository;</span>
+<span class="nc" id="L26">        this.fileWordWriter = fileWordWriter;</span>
+<span class="nc" id="L27">    }</span>
 
     @Override
     public void afterPropertiesSet() throws Exception {
-<span class="nc" id="L29">        this.startTextImport();</span>
-<span class="nc" id="L30">    }</span>
+<span class="nc" id="L31">        this.startTextImport();</span>
+<span class="nc" id="L32">    }</span>
 
 
     public boolean startTextImport() throws IOException {
 
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        if(wordRepository.count() == 0){</span>
-<span class="nc" id="L36">            fileWordWriter.arrayFiltering(filereader());</span>
-<span class="nc" id="L37">            return true;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if(wordRepository.count() == 0){</span>
+<span class="nc" id="L38">            fileWordWriter.arrayFiltering(filereader());</span>
+<span class="nc" id="L39">            return true;</span>
         }
-<span class="nc" id="L39">        return false;</span>
+<span class="nc" id="L41">        return false;</span>
     }
 
     public List&lt;String&gt; filereader() throws IOException {
-<span class="nc" id="L43">        List&lt;String&gt; lines = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L45">        List&lt;String&gt; lines = new ArrayList&lt;&gt;();</span>
 
 
         //File file = new File(this.source.getFile());
-<span class="nc" id="L47">        Scanner scanner = new Scanner(this.source.getFile());</span>
+<span class="nc" id="L49">        Scanner scanner = new Scanner(this.source.getFile());</span>
 
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        while (scanner.hasNextLine()) {</span>
-<span class="nc" id="L50">            lines.add(scanner.nextLine());</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        while (scanner.hasNextLine()) {</span>
+<span class="nc" id="L52">            lines.add(scanner.nextLine());</span>
         }
 
-<span class="nc" id="L53">        return lines;</span>
+<span class="nc" id="L55">        return lines;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

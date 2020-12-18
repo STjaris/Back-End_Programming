@@ -1,9 +1,7 @@
-C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\highScore\domain\HighScore.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\round\data\RoundRepository.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\application\GameServiceInterface.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\round\domain\Round.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\word\application\WordService.java
-C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\highScore\data\HighScoreRepository.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\word\domain\Word.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\fileImport\data\FileWordWriter.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\round\presentation\RoundController.java
@@ -11,7 +9,7 @@ C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\BackEndProgrammingApplication.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\score\application\ScoreService.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\fileImport\data\FileWordReader.java
-C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\highScore\application\HighScoreServiceInterface.java
+C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\score\exception\HighscoreNotFound.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\player\data\PlayerRepository.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\score\presentation\ScoreController.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\player\application\PlayerServiceInterface.java
@@ -26,8 +24,6 @@ C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\fileImport\application\FilterWordsProcessor.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\domain\GameStatus.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\data\GameRepository.java
-C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\highScore\application\HighScoreService.java
-C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\highScore\presentation\HighScoreController.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\domain\Game.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\player\domain\Player.java
 C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo\src\main\java\nl\hu\vkbep\lingo\game\presentation\GameController.java

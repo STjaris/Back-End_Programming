@@ -15,7 +15,7 @@ public class Score {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
+
     private double score;
 
     @ManyToOne
@@ -24,8 +24,7 @@ public class Score {
     private Player player;
 
 
-    public Score(Long id, double score, Player player) {
-        this.id = id;
+    public Score(double score, Player player) {
         this.score = score;
         this.player = player;
     }

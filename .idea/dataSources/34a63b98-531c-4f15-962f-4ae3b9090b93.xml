@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="jdbc:postgresql://localhost:5432/Back-end_Programming">
+<dataSource name="Back-end_Programming@localhost">
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.20">
     <root id="1">
       <ServerVersion>13.1</ServerVersion>
@@ -784,12 +784,12 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1608191365</StartupTime>
+      <StartupTime>1608288624</StartupTime>
     </root>
     <database id="2" parent="1" name="Back-end_Programming">
       <ObjectId>16394</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>149089</IntrospectionStateNumber>
+      <IntrospectionStateNumber>149113</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -865,7 +865,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>149090</IntrospectionStateNumber>
+      <IntrospectionStateNumber>149114</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -983,6 +983,7 @@ UC/10
     </table>
     <table id="33" parent="17" name="player">
       <ObjectId>17116</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>130570</StateNumber>
     </table>
@@ -1013,11 +1014,13 @@ UC/10
     </table>
     <table id="39" parent="17" name="score">
       <ObjectId>17145</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
-      <StateNumber>130568</StateNumber>
+      <StateNumber>149112</StateNumber>
     </table>
     <table id="40" parent="17" name="word">
       <ObjectId>17150</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>130567</StateNumber>
     </table>
@@ -1400,7 +1403,14 @@ UC/10
       <StateNumber>130565</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="91" parent="39" name="score_pkey">
+    <column id="91" parent="39" name="total_score">
+      <Position>4</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>149112</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <index id="92" parent="39" name="score_pkey">
       <ObjectId>17148</ObjectId>
       <StateNumber>130565</StateNumber>
       <ColNames>id</ColNames>
@@ -1410,14 +1420,14 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="92" parent="39" name="score_pkey">
+    <key id="93" parent="39" name="score_pkey">
       <ObjectId>17149</ObjectId>
       <StateNumber>130565</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>score_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="93" parent="39" name="fkej882fy75q67pm9otdp93kgtj">
+    <foreign-key id="94" parent="39" name="fkej882fy75q67pm9otdp93kgtj">
       <ObjectId>17190</ObjectId>
       <StateNumber>130574</StateNumber>
       <ColNames>playerid</ColNames>
@@ -1428,20 +1438,20 @@ UC/10
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="94" parent="40" name="id">
+    <column id="95" parent="40" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130566</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="95" parent="40" name="word">
+    <column id="96" parent="40" name="word">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>130566</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="96" parent="40" name="word_pkey">
+    <index id="97" parent="40" name="word_pkey">
       <ObjectId>17153</ObjectId>
       <StateNumber>130566</StateNumber>
       <ColNames>id</ColNames>
@@ -1451,7 +1461,7 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="97" parent="40" name="word_pkey">
+    <key id="98" parent="40" name="word_pkey">
       <ObjectId>17154</ObjectId>
       <StateNumber>130566</StateNumber>
       <ColNames>id</ColNames>

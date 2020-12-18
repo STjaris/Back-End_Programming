@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">back-end_programming</a> &gt; <a href="index.source.html" class="el_package">nl.hu.vkbep.lingo.game.presentation</a> &gt; <span class="el_source">GameController.java</span></div><h1>GameController.java</h1><pre class="source lang-java linenums">package nl.hu.vkbep.lingo.game.presentation;
 
 import nl.hu.vkbep.lingo.game.application.GameServiceInterface;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,28 +9,23 @@ import java.util.Map;
 @RestController
 public class GameController {
 
-<span class="nc" id="L15">    private Map&lt;String, Long&gt; gameIdMap = new HashMap();</span>
+<span class="nc" id="L12">    private Long playerid = 1L;</span>
 
     private GameServiceInterface gameServiceInterface;
 
-<span class="nc" id="L19">    public GameController(GameServiceInterface gameServiceInterface) {</span>
-<span class="nc" id="L20">        gameIdMap.clear();</span>
-<span class="nc" id="L21">        this.gameServiceInterface = gameServiceInterface;</span>
-<span class="nc" id="L22">    }</span>
+<span class="nc" id="L16">    public GameController(GameServiceInterface gameServiceInterface) {</span>
+<span class="nc" id="L17">        this.gameServiceInterface = gameServiceInterface;</span>
+<span class="nc" id="L18">    }</span>
 
-    @PostMapping(&quot;/games&quot;)
+    @GetMapping(&quot;/games&quot;)
     public Map startGame() {
-<span class="nc" id="L26">        return gameServiceInterface.createNewGame();</span>
+<span class="nc" id="L22">        return gameServiceInterface.createNewGame();</span>
     }
 
     @PostMapping(&quot;/games/{gameid}/attempt&quot;)
     public Map makeAttempt(@PathVariable Long gameid, @RequestBody String attempt) {
-<span class="nc" id="L31">        gameIdMap.put(&quot;id&quot;, gameid);</span>
-<span class="nc" id="L32">        return gameServiceInterface.guess(gameid, attempt);</span>
+
+<span class="nc" id="L28">        return gameServiceInterface.guess(gameid, attempt);</span>
     }
-
-    public void getPayedGameId() {
-
-<span class="nc" id="L37">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

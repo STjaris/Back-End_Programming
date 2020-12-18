@@ -1,5 +1,4 @@
 nl\hu\vkbep\lingo\score\application\ScoreService.class
-nl\hu\vkbep\lingo\highScore\presentation\HighScoreController.class
 nl\hu\vkbep\lingo\round\domain\Round.class
 nl\hu\vkbep\lingo\fileImport\domain\LingoWordFilter.class
 nl\hu\vkbep\lingo\round\presentation\RoundController.class
@@ -12,14 +11,11 @@ nl\hu\vkbep\lingo\player\domain\Player.class
 nl\hu\vkbep\lingo\round\application\RoundService.class
 nl\hu\vkbep\lingo\word\domain\Word.class
 nl\hu\vkbep\lingo\fileImport\data\FileWordWriter.class
-nl\hu\vkbep\lingo\highScore\application\HighScoreService.class
 nl\hu\vkbep\lingo\game\domain\Game.class
-nl\hu\vkbep\lingo\highScore\domain\HighScore.class
 nl\hu\vkbep\lingo\game\application\GameService.class
 nl\hu\vkbep\lingo\game\presentation\GameController.class
 nl\hu\vkbep\lingo\game\application\GameServiceInterface.class
 nl\hu\vkbep\lingo\score\data\ScoreRepository.class
-nl\hu\vkbep\lingo\highScore\data\HighScoreRepository.class
 nl\hu\vkbep\lingo\round\application\RoundServiceInterface.class
 nl\hu\vkbep\lingo\round\data\RoundRepository.class
 nl\hu\vkbep\lingo\word\application\WordService.class
@@ -27,7 +23,7 @@ nl\hu\vkbep\lingo\word\data\WordRepository.class
 nl\hu\vkbep\lingo\player\application\PlayerService.class
 nl\hu\vkbep\lingo\player\application\PlayerServiceInterface.class
 nl\hu\vkbep\lingo\fileImport\application\FilterWordsProcessor.class
-nl\hu\vkbep\lingo\highScore\application\HighScoreServiceInterface.class
+nl\hu\vkbep\lingo\score\exception\HighscoreNotFound.class
 nl\hu\vkbep\lingo\game\domain\GameStatus.class
 nl\hu\vkbep\lingo\round\domain\RoundType.class
 nl\hu\vkbep\lingo\word\application\WordServiceInterface.class

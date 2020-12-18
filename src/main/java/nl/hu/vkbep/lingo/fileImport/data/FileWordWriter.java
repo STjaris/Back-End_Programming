@@ -3,10 +3,12 @@ package nl.hu.vkbep.lingo.fileImport.data;
 import nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessor;
 import nl.hu.vkbep.lingo.word.application.WordService;
 import nl.hu.vkbep.lingo.word.domain.Word;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class FileWordWriter {
 
     private FilterWordsProcessor filterWordsProcessor;

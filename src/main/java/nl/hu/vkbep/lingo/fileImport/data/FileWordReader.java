@@ -4,12 +4,14 @@ import nl.hu.vkbep.lingo.word.data.WordRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@Service
 public class FileWordReader implements InitializingBean {
 
     @Value("classpath:basiswoorden-gekeurd.txt")

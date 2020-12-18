@@ -15,7 +15,7 @@ public class Score {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
+
     private double score;
 
     @ManyToOne
@@ -24,23 +24,22 @@ public class Score {
     private Player player;
 
 
-<span class="fc" id="L27">    public Score(Long id, double score, Player player) {</span>
-<span class="fc" id="L28">        this.id = id;</span>
-<span class="fc" id="L29">        this.score = score;</span>
-<span class="fc" id="L30">        this.player = player;</span>
-<span class="fc" id="L31">    }</span>
+<span class="fc" id="L27">    public Score(double score, Player player) {</span>
+<span class="fc" id="L28">        this.score = score;</span>
+<span class="fc" id="L29">        this.player = player;</span>
+<span class="fc" id="L30">    }</span>
 
-<span class="nc" id="L33">    public Score() {</span>
-<span class="nc" id="L34">    }</span>
+<span class="nc" id="L32">    public Score() {</span>
+<span class="nc" id="L33">    }</span>
 
     public Long getId() {
-<span class="nc" id="L37">        return id;</span>
+<span class="nc" id="L36">        return id;</span>
     }
     public double getScore() {
-<span class="nc" id="L40">        return score;</span>
+<span class="nc" id="L39">        return score;</span>
     }
     public Player getPlayer() {
-<span class="nc" id="L43">        return player;</span>
+<span class="nc" id="L42">        return player;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

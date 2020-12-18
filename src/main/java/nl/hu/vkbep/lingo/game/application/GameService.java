@@ -5,32 +5,37 @@ import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.domain.GameStatus;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.round.application.RoundServiceInterface;
+import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 @Service
 public class GameService implements GameServiceInterface {
 
+    private List<Long> gameidList = new ArrayList<>();
+
+
     private GameRepository gameRepository;
-
     private WordServiceInterface wordServiceInterface;
-
     private RoundServiceInterface roundServiceInterface;
+    private ScoreService scoreService;
 
     @Autowired
-    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, RoundServiceInterface roundServiceInterface) {
+    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, RoundServiceInterface roundServiceInterface, ScoreService scoreService) {
         this.gameRepository = gameRepository;
         this.wordServiceInterface = wordServiceInterface;
         this.roundServiceInterface = roundServiceInterface;
+        this.scoreService = scoreService;
     }
 
     public Map createNewGame() {
-
         //CREATE NEW GAME
         Game game = new Game();
 
@@ -51,13 +56,18 @@ public class GameService implements GameServiceInterface {
         map.put("gameid", game.getId());
         map.put("feedback", game.getWord().toString());
 
+
         return map;
     }
 
     @Override
     public Map guess(Long gameid, String guess) {
 
-       //GET WORDID FROM GAME
+        if (!gameidList.contains(gameid)) {
+            gameidList.add(gameid);
+        }
+
+        //GET WORDID FROM GAME
         Long wordid = gameRepository.getById(gameid).getWord().getId();
 
         //SET GAME TO ONGOING AND SAVE
@@ -129,7 +139,12 @@ public class GameService implements GameServiceInterface {
         return gameRepository.getById(gameid);
     }
 
-    public Map getPlayedGameId(Map map){
-        return map;
+
+    public int gameType(Game game) {
+        if (game.getGameType() == GameType.LETTEROF5) {
+            return 5;
+        } else if (game.getGameType() == GameType.LETTEROF6) {
+            return 6;
+        } else return 7;
     }
 }

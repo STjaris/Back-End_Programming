@@ -1,5 +1,8 @@
 package nl.hu.vkbep.lingo.fileImport.application;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class FilterWordsProcessor {
 
     public boolean stringFilteringOnSpecialChar(String input) {
