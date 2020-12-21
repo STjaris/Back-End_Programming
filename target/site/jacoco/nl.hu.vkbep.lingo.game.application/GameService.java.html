@@ -56,50 +56,50 @@ public class GameService implements GameServiceInterface {
 <span class="fc" id="L56">        map.put(&quot;gameid&quot;, game.getId());</span>
 <span class="fc" id="L57">        map.put(&quot;feedback&quot;, game.getWord().toString());</span>
 
-
-<span class="fc" id="L60">        return map;</span>
+<span class="fc" id="L59">        return map;</span>
     }
 
     @Override
     public Map guess(Long gameid, String guess) {
 
-<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if (!gameidList.contains(gameid)) {</span>
-<span class="fc" id="L67">            gameidList.add(gameid);</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (!gameidList.contains(gameid)) {</span>
+<span class="fc" id="L66">            gameidList.add(gameid);</span>
         }
 
         //GET WORDID FROM GAME
-<span class="fc" id="L71">        Long wordid = gameRepository.getById(gameid).getWord().getId();</span>
+<span class="fc" id="L70">        Long wordid = gameRepository.getById(gameid).getWord().getId();</span>
 
         //SET GAME TO ONGOING AND SAVE
-<span class="fc" id="L74">        Game game = gameRepository.getById(gameid);</span>
-<span class="fc" id="L75">        game.setGameStatus(GameStatus.ONGOING);</span>
-<span class="fc" id="L76">        gameRepository.save(game);</span>
+<span class="fc" id="L73">        Game game = gameRepository.getById(gameid);</span>
+<span class="fc" id="L74">        game.setGameStatus(GameStatus.ONGOING);</span>
+<span class="fc" id="L75">        gameRepository.save(game);</span>
 
-<span class="fc" id="L78">        return checkRoundCountPerGame(game, wordid, guess);</span>
+<span class="fc" id="L77">        return checkRoundCountPerGame(game, wordid, guess);</span>
     }
 
     public Map checkRoundCountPerGame(Game game, Long wordid, String guess) {
+
         //CHECK IF MAX ROUND IS REACHED
 <span class="fc bfc" id="L83" title="All 2 branches covered.">        if (game.getRoundCount() &lt; 5) {</span>
 
 <span class="fc" id="L85">            game.setRoundCount(countRoundsPerGame(game.getId()) + 1);</span>
-
-<span class="fc" id="L87">            Map map = new HashMap();</span>
+<span class="fc" id="L86">            Map map = new HashMap();</span>
 
             //ADDS NEW GAME TO MAP
-<span class="fc" id="L90">            map.put(&quot;Game&quot;, checkGameType(roundServiceInterface.playRound(game, wordid, guess), game).toString());</span>
+<span class="fc" id="L89">            map.put(&quot;Game&quot;, checkGameType(roundServiceInterface.playRound(game, wordid, guess), game).toString());</span>
 
-<span class="fc" id="L92">            map.putAll(roundServiceInterface.playRound(game, wordid, guess));</span>
+<span class="fc" id="L91">            map.putAll(roundServiceInterface.playRound(game, wordid, guess));</span>
 
-<span class="fc" id="L94">            return map;</span>
+<span class="fc" id="L93">            return map;</span>
         } else {
-<span class="fc" id="L96">            Map&lt;String, String&gt; map = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L97">            map.put(&quot;feedback&quot;, &quot;MAX ROUND REACHED&quot;);</span>
-<span class="fc" id="L98">            map.put(&quot;gamestatus&quot;, GameStatus.ENDED.toString());</span>
+<span class="fc" id="L95">            Map&lt;String, String&gt; map = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L96">            map.put(&quot;feedback&quot;, &quot;MAX ROUND REACHED&quot;);</span>
+<span class="fc" id="L97">            map.put(&quot;gamestatus&quot;, GameStatus.ENDED.toString());</span>
 
             //CHANGE GAMESTATUS TO ENDED AND SAVE
-<span class="fc" id="L101">            game.setGameStatus(GameStatus.ENDED);</span>
-<span class="fc" id="L102">            gameRepository.save(game);</span>
+<span class="fc" id="L100">            game.setGameStatus(GameStatus.ENDED);</span>
+<span class="fc" id="L101">            gameRepository.save(game);</span>
+
 <span class="fc" id="L103">            return map;</span>
         }
     }
@@ -141,11 +141,11 @@ public class GameService implements GameServiceInterface {
 
 
     public int gameType(Game game) {
-<span class="nc bnc" id="L144" title="All 2 branches missed.">        if (game.getGameType() == GameType.LETTEROF5) {</span>
-<span class="nc" id="L145">            return 5;</span>
-<span class="nc bnc" id="L146" title="All 2 branches missed.">        } else if (game.getGameType() == GameType.LETTEROF6) {</span>
-<span class="nc" id="L147">            return 6;</span>
-<span class="nc" id="L148">        } else return 7;</span>
+<span class="fc bfc" id="L144" title="All 2 branches covered.">        if (game.getGameType() == GameType.LETTEROF5) {</span>
+<span class="fc" id="L145">            return 5;</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">        } else if (game.getGameType() == GameType.LETTEROF6) {</span>
+<span class="fc" id="L147">            return 6;</span>
+<span class="fc" id="L148">        } else return 7;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

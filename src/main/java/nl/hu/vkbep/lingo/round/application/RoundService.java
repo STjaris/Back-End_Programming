@@ -73,7 +73,6 @@ public class RoundService implements RoundServiceInterface {
 
     @Override
     public int countRoundPerGame(Game game) {
-
         return roundRepository.countAllByGame(game);
     }
 
@@ -83,10 +82,9 @@ public class RoundService implements RoundServiceInterface {
             return (RoundType.LETTEROF5);
         } else if (game.getGameType().equals(GameType.LETTEROF6)) {
             return (RoundType.LETTEROF6);
-        } else if (game.getGameType().equals(GameType.LETTEROF7)) {
+        } else {
             return (RoundType.LETTEROF7);
         }
-        return null;
     }
 
     public int roundTypeCheck(Round round) {

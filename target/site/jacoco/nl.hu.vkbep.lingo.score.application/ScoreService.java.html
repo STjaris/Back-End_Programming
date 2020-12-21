@@ -25,25 +25,26 @@ public class ScoreService implements ScoreServiceInterface{
 <span class="fc" id="L25">        return scoreRepository.getAllOrderByScore();</span>
     }
 
-    public void calculateScores(Game game, int multiplier, Long playerid , List&lt;Long&gt; list) {
+    public Score calculateScores(Game game, int multiplier, Long playerid , List&lt;Long&gt; list) {
 
-<span class="nc" id="L30">        System.out.println(&quot;LIST: &quot; + list.toString());</span>
+<span class="fc" id="L30">        System.out.println(&quot;LIST: &quot; + list.toString());</span>
 
-<span class="nc" id="L32">        double totalscore = 0;</span>
+<span class="fc" id="L32">        double totalscore = 0;</span>
 
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        for (Object ignored : list) {</span>
-<span class="nc" id="L35">            int roundCount = game.getRoundCount();</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (Object ignored : list) {</span>
+<span class="fc" id="L35">            int roundCount = game.getRoundCount();</span>
+<span class="fc" id="L36">            totalscore += calculation(roundCount, multiplier);</span>
+<span class="fc" id="L37">        }</span>
 
-<span class="nc" id="L37">            totalscore += calculation(roundCount, multiplier);</span>
+<span class="fc" id="L39">        Score score = new Score(totalscore, playerRepository.getPlayerById(playerid));</span>
+<span class="fc" id="L40">        scoreRepository.save(score);</span>
 
-<span class="nc" id="L39">            Score score = new Score(totalscore, playerRepository.getPlayerById(playerid));</span>
-<span class="nc" id="L40">            scoreRepository.save(score);</span>
-<span class="nc" id="L41">        }</span>
-<span class="nc" id="L42">    }</span>
+<span class="fc" id="L42">        return score;</span>
+    }
 
     public double calculation(int roundcount, int multiplier) {
-<span class="nc" id="L45">        final int maxRoundCount = 5;</span>
-<span class="nc" id="L46">        return ((maxRoundCount/(double)roundcount) * multiplier);</span>
+<span class="fc" id="L46">        final int maxRoundCount = 5;</span>
+<span class="fc" id="L47">        return ((maxRoundCount/(double)roundcount) * multiplier);</span>
     }
 
 }

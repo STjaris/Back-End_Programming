@@ -13,9 +13,12 @@ import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
@@ -25,11 +28,11 @@ import static org.mockito.Mockito.when;
 public class GameServiceTests {
 
     private final String guess = "tests";
-    private final Word word = new Word(1L, "tests");
-    private final Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1);
-    private final Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 5);
-    private final Game game3 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word, 0, 0);
-    private final Game game4 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word, 0, 0);
+    private static final Word word = new Word(1L, "tests");
+    private static final Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1);
+    private static final Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 5);
+    private static final Game game3 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word, 0, 0);
+    private static final Game game4 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word, 0, 0);
     private final Round round1 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, guess);
     private final Round round2 = new Round(RoundStatus.NOTCORRECT, RoundType.LETTEROF5, game1, guess);
 
@@ -186,6 +189,36 @@ public class GameServiceTests {
         Game result = gameService.getById(game.getId());
 
         assertEquals(game, result);
+    }
 
+
+    private static Stream<Arguments> provideGameintAndResult() {
+        return Stream.of(
+                Arguments.of(game1, 5),
+                Arguments.of(game3, 6),
+                Arguments.of(game4, 7)
+
+        );
+    }
+
+
+
+    @ParameterizedTest
+    @MethodSource("provideGameintAndResult")
+    @DisplayName("GIVES INT BACK CORRESPONDING WITH GAMETYPE")
+    void gameType(Game game, int integer) {
+
+
+
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        RoundServiceInterface roundServiceInterface = mock(RoundServiceInterface.class);
+        ScoreService scoreService = mock(ScoreService.class);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface, scoreService);
+
+        int result = gameService.gameType(game);
+
+        assertEquals(integer, result);
     }
 }

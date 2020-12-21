@@ -11,19 +11,23 @@ import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class RoundServiceTests {
 
     private static final Word word = new Word(1L, "tests");
+    private static final String guess = "tests";
 
     private static final Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
     private static final Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word);
@@ -140,47 +144,87 @@ public class RoundServiceTests {
 
         Map result = roundService.checkWord(word.getWord(), guess, round1);
 
-        Assertions.assertEquals(feedback, result);
+        assertEquals(feedback, result);
     }
-
-
 
 
 //    @ParameterizedTest
 //    @MethodSource("provideGameGuessRoundAndResult")
 //    public void wordCheck(Game game, String guess, Round round, boolean expectedResult) {
-//        RoundService roundService = new RoundService();
+//
+//        WordServiceInterface wordService = mock(WordServiceInterface.class);
+//        RoundRepository roundRepository = mock(RoundRepository.class);
+//
+//        RoundService roundService = new RoundService(wordService, roundRepository);
 //
 //        boolean result = roundService.wordCheck(game.getWord().getWord(), guess, round)
 //                .containsValue("CORRECT");
 //
-//        Assertions.assertEquals(result, expectedResult);
+//        assertEquals(result, expectedResult);
 //    }
 
 
-//    @ParameterizedTest
-//    @MethodSource("provideGameAndResult")
-//    public void roundCheckFromGame(Game game, Round round, boolean expectedResult) {
+    @ParameterizedTest
+    @MethodSource("provideGameAndResult")
+    public void roundCheckFromGame(Game game, Round round, boolean expectedResult) {
+
+        WordServiceInterface wordService = mock(WordServiceInterface.class);
+        RoundRepository roundRepository = mock(RoundRepository.class);
+
+        RoundService roundService = new RoundService(wordService, roundRepository);
+
+        boolean result = roundService.roundCheckFromGame(game)
+                .equals(round.getRoundType());
+
+        assertEquals(result, expectedResult);
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("provideRoundLengthAndResult")
+    public void roundTypeCheck(Round round, int length, boolean expectedResult) {
+
+        WordServiceInterface wordService = mock(WordServiceInterface.class);
+        RoundRepository roundRepository = mock(RoundRepository.class);
+
+        RoundService roundService = new RoundService(wordService, roundRepository);
+
+        Boolean result = roundService.roundTypeCheck(round) == length;
+
+        assertEquals(result, expectedResult);
+    }
+
+
+//    @Test
+//    @DisplayName("GIVES MAP BACK IF CORRECT")
+//    void playRound() {
 //
-//        RoundService roundServiceMock = Mockito.mock(RoundService.class);
-//        RoundService roundService = new RoundService();
+//        WordServiceInterface wordService = mock(WordServiceInterface.class);
+//        RoundRepository roundRepository = mock(RoundRepository.class);
 //
-//        boolean result = roundService.roundCheckFromGame(game)
-//                .equals(round.getRoundType());
+//        when(wordService.getWordbyId(word.getId()).getWord()).thenReturn(word.getWord());
+//        when(wordService.wordExits(word.getWord())).thenReturn(true);
 //
-//        assertEquals(result, expectedResult);
+//        RoundService roundService = new RoundService(wordService, roundRepository);
+//        Map result = roundService.playRound(game1, word.getId(), guess);
+//
+//        assertTrue(result.containsValue("CORRECT"));
 //    }
 //
+//    @Test
+//    @DisplayName("GIVES MAP BACK IF WORD DOES NOT EXISTS")
+//    void wordDoesNotExists() {
 //
-//    @ParameterizedTest
-//    @MethodSource("provideRoundLengthAndResult")
-//    public void roundTypeCheck(Round round, int length, boolean expectedResult) {
+//        WordServiceInterface wordService = mock(WordServiceInterface.class);
+//        RoundRepository roundRepository = mock(RoundRepository.class);
 //
-//        RoundService roundService = new RoundService();
+//        when(wordService.getWordbyId(word.getId()).getWord()).thenReturn(word.getWord());
+//        when(wordService.wordExits(word.getWord())).thenReturn(true);
 //
-//        Boolean result = roundService.roundTypeCheck(round) == length;
+//        RoundService roundService = new RoundService(wordService, roundRepository);
+//        Map result = roundService.playRound(game1, word.getId(), guess);
 //
-//        assertEquals(result, expectedResult);
-//
+//        assertTrue(result.containsValue("CORRECT"));
 //    }
+
 }

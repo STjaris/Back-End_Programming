@@ -56,7 +56,6 @@ public class GameService implements GameServiceInterface {
         map.put("gameid", game.getId());
         map.put("feedback", game.getWord().toString());
 
-
         return map;
     }
 
@@ -79,11 +78,11 @@ public class GameService implements GameServiceInterface {
     }
 
     public Map checkRoundCountPerGame(Game game, Long wordid, String guess) {
+
         //CHECK IF MAX ROUND IS REACHED
         if (game.getRoundCount() < 5) {
 
             game.setRoundCount(countRoundsPerGame(game.getId()) + 1);
-
             Map map = new HashMap();
 
             //ADDS NEW GAME TO MAP

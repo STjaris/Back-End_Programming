@@ -73,30 +73,28 @@ public class RoundService implements RoundServiceInterface {
 
     @Override
     public int countRoundPerGame(Game game) {
-
-<span class="nc" id="L77">        return roundRepository.countAllByGame(game);</span>
+<span class="nc" id="L76">        return roundRepository.countAllByGame(game);</span>
     }
 
     public RoundType roundCheckFromGame(Game game) {
         //CHECKS GAMETYPE AND RETURNS CORRESPONDING ROUNDTYPE
-<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (game.getGameType().equals(GameType.LETTEROF5)) {</span>
-<span class="nc" id="L83">            return (RoundType.LETTEROF5);</span>
-<span class="nc bnc" id="L84" title="All 2 branches missed.">        } else if (game.getGameType().equals(GameType.LETTEROF6)) {</span>
-<span class="nc" id="L85">            return (RoundType.LETTEROF6);</span>
-<span class="nc bnc" id="L86" title="All 2 branches missed.">        } else if (game.getGameType().equals(GameType.LETTEROF7)) {</span>
-<span class="nc" id="L87">            return (RoundType.LETTEROF7);</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if (game.getGameType().equals(GameType.LETTEROF5)) {</span>
+<span class="fc" id="L82">            return (RoundType.LETTEROF5);</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        } else if (game.getGameType().equals(GameType.LETTEROF6)) {</span>
+<span class="fc" id="L84">            return (RoundType.LETTEROF6);</span>
+        } else {
+<span class="fc" id="L86">            return (RoundType.LETTEROF7);</span>
         }
-<span class="nc" id="L89">        return null;</span>
     }
 
     public int roundTypeCheck(Round round) {
         //RETURNS INT CORRESPONDING ROUNDTYPE
-<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        if (round.getRoundType() == RoundType.LETTEROF5) {</span>
-<span class="fc" id="L95">            return 5;</span>
-<span class="nc bnc" id="L96" title="All 2 branches missed.">        } else if (round.getRoundType() == RoundType.LETTEROF6) {</span>
-<span class="nc" id="L97">            return 6;</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (round.getRoundType() == RoundType.LETTEROF5) {</span>
+<span class="fc" id="L93">            return 5;</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        } else if (round.getRoundType() == RoundType.LETTEROF6) {</span>
+<span class="fc" id="L95">            return 6;</span>
         } else {
-<span class="nc" id="L99">            return 7;</span>
+<span class="fc" id="L97">            return 7;</span>
         }
     }
 

@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a63b98-531c-4f15-962f-4ae3b9090b93.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a63b98-531c-4f15-962f-4ae3b9090b93/storage_v2/_src_/database/Back-end_Programming.jwoALg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a63b98-531c-4f15-962f-4ae3b9090b93/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a63b98-531c-4f15-962f-4ae3b9090b93/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34a63b98-531c-4f15-962f-4ae3b9090b93/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,19 +59,21 @@
       <recent name="C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameServiceTests.gameType (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
@@ -75,38 +83,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.game.application" />
       <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.game.application.GameServiceTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScoreServiceTests.calculateScores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.score.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.score.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.score.application.ScoreServiceTests" />
-      <option name="METHOD_NAME" value="calculateScores" />
+      <option name="METHOD_NAME" value="gameType(nl.hu.vkbep.lingo.game.domain.Game,int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScoreServiceTests.getHighscore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RoundServiceTests.playRound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.score.application.*" />
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.score.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.score.application.ScoreServiceTests" />
-      <option name="METHOD_NAME" value="getHighscore" />
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
+      <option name="METHOD_NAME" value="playRound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoundServiceTests.roundCheckFromGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
+      <option name="METHOD_NAME" value="roundCheckFromGame(nl.hu.vkbep.lingo.game.domain.Game,nl.hu.vkbep.lingo.round.domain.Round,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoundServiceTests.roundTypeCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.round.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.round.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.round.application.RoundServiceTests" />
+      <option name="METHOD_NAME" value="roundTypeCheck(nl.hu.vkbep.lingo.round.domain.Round,int,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,9 +151,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/back-end_programming/target/site/jacoco/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <configuration name="BackEndProgrammingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="lingo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="nl.hu.vkbep.lingo.BackEndProgrammingApplication" />
@@ -139,10 +161,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JUnit.ScoreServiceTests.calculateScores" />
-        <item itemvalue="JUnit.ScoreServiceTests.getHighscore" />
-        <item itemvalue="JUnit.GameServiceTests" />
+        <item itemvalue="JUnit.RoundServiceTests.playRound" />
+        <item itemvalue="JUnit.RoundServiceTests.roundTypeCheck" />
+        <item itemvalue="JUnit.RoundServiceTests.roundCheckFromGame" />
+        <item itemvalue="JUnit.GameServiceTests.gameType (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -165,6 +187,7 @@
       <workItem from="1607938618174" duration="19136000" />
       <workItem from="1608194541668" duration="13486000" />
       <workItem from="1608316199561" duration="1385000" />
+      <workItem from="1608558300351" duration="5535000" />
     </task>
     <servers />
   </component>
@@ -172,38 +195,44 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_roundCheckFromGame.ic" NAME="RoundServiceTests.roundCheckFromGame Coverage Results" MODIFIED="1608564141775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.round.application.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$GameServiceTests_gameTypeCheck.ic" NAME="GameServiceTests.gameTypeCheck Coverage Results" MODIFIED="1608201076527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.game.application.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$textimportTests.ic" NAME="textimportTests Coverage Results" MODIFIED="1606992603176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.textimport.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_wordGuess.ic" NAME="RoundServiceTests.wordGuess Coverage Results" MODIFIED="1608123814364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_roundTypeCheck.ic" NAME="RoundServiceTests.roundTypeCheck Coverage Results" MODIFIED="1608564182531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.round.application.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$ScoreServiceTests_calculateScores.ic" NAME="ScoreServiceTests.calculateScores Coverage Results" MODIFIED="1608316973984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>nl.hu.vkbep.lingo.score.application.*</FILTER>
+    <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_wordGuess.ic" NAME="RoundServiceTests.wordGuess Coverage Results" MODIFIED="1608123814364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.round.application.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$WordServiceTest.ic" NAME="WordServiceTest Coverage Results" MODIFIED="1608195548774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.word.application.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$FileWordReaderTests_startTextImport.ic" NAME="FileWordReaderTests.startTextImport Coverage Results" MODIFIED="1608202725702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>nl.hu.vkbep.lingo.fileImport.data.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$GameServiceTests_createNewGame.ic" NAME="GameServiceTests.createNewGame Coverage Results" MODIFIED="1608197353654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.game.application.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1608317675133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1608564226888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_wordLengthCheck__1_.ic" NAME="RoundServiceTests.wordLengthCheck (1) Coverage Results" MODIFIED="1608122317912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.round.application.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$GameControllerTests_createsNewGame.ic" NAME="GameControllerTests.createsNewGame Coverage Results" MODIFIED="1608204129177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>nl.hu.vkbep.lingo.game.presentation.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$GameServiceTests_letterOf7Check.ic" NAME="GameServiceTests.letterOf7Check Coverage Results" MODIFIED="1608201150805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.game.application.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$ScoreServiceTests_calculateScores.ic" NAME="ScoreServiceTests.calculateScores Coverage Results" MODIFIED="1608316973984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.score.application.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$FileWordReaderTests_startTextImport.ic" NAME="FileWordReaderTests.startTextImport Coverage Results" MODIFIED="1608202725702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.fileImport.data.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$GameControllerTests_createsNewGame.ic" NAME="GameControllerTests.createsNewGame Coverage Results" MODIFIED="1608204129177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.game.presentation.*</FILTER>
     </SUITE>
   </component>
 </project>
