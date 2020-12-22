@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ScoreController {
@@ -18,7 +19,7 @@ public class ScoreController {
     }
 
     @GetMapping("/highscore")
-    public List<Score> getHighscore() throws HighscoreNotFound{
+    public List<Map> getHighscore() throws HighscoreNotFound{
 
             return scoreService.getHighscore();
     }

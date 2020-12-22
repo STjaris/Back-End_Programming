@@ -17,6 +17,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -66,6 +67,7 @@ public class GameServiceTests {
     public void feedbackResultGuess(){
         Long playerid = 1L;
         Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1);
+        List<Long> gameidList = List.of(game.getId());
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
@@ -77,7 +79,7 @@ public class GameServiceTests {
 
         GameService gameService = new GameService(gameRepository, wordServiceInterface, roundServiceInterface, scoreService);
 
-        Map result = gameService.guess(game.getId(), guess);
+        Map result = gameService.guess(game.getId(), guess, gameidList, playerid);
 
         assertTrue(result.containsValue(game.toString()));
 

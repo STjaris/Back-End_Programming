@@ -10,7 +10,13 @@ import java.util.List;
 public interface ScoreRepository extends JpaRepository<Score, Long> {
 
     @Query(
-            value = "SELECT * FROM SCORE ORDER BY SCORE ASC", nativeQuery = true
+            value = "SELECT * FROM SCORE ORDER BY SCORE DESC", nativeQuery = true
     )
     List<Score> getAllOrderByScore();
+
+    Score getScoreByGameid(Long gameid);
+
+    boolean existsScoreByGameidEquals(Long gameid);
+
+
 }

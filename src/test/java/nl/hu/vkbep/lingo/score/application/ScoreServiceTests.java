@@ -12,7 +12,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -25,8 +27,12 @@ public class ScoreServiceTests {
     public void getHighscore() {
 
         Player player = new Player("test", "test", "test", true, false);
-        Score score = new Score(40.0, player);
+        Long gameid = 1L;
+        Score score = new Score(40.0, player, gameid);
+        Map scoreMap = Map.of("id", 1, "score",score.getScore(), "player", score.getPlayer().getName());
         List<Score> scoreList = List.of(score);
+        List<Map> resultList = List.of(scoreMap);
+
 
         ScoreRepository scoreRepository = mock(ScoreRepository.class);
         PlayerRepository playerRepository = mock(PlayerRepository.class);
@@ -35,9 +41,9 @@ public class ScoreServiceTests {
 
         ScoreService highScoreService = new ScoreService(scoreRepository, playerRepository);
 
-        List<Score> result = highScoreService.getHighscore();
+        List<Map> result = highScoreService.getHighscore();
 
-        assertEquals(scoreList, result);
+        assertEquals(resultList, result);
 
     }
 
@@ -50,7 +56,7 @@ public class ScoreServiceTests {
         int multiplier  = 5;
 
         Word word = new Word(1L, "tests");
-        Score score = new Score(50, player);
+        Score score = new Score(50, player, list.get(0));
         Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0 ,1);
 
         ScoreRepository scoreRepository = mock(ScoreRepository.class);

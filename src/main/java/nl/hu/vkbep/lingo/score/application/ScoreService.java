@@ -7,7 +7,11 @@ import nl.hu.vkbep.lingo.score.domain.Score;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Handler;
 
 @Service
 public class ScoreService implements ScoreServiceInterface{
@@ -21,13 +25,25 @@ public class ScoreService implements ScoreServiceInterface{
         this.playerRepository = playerRepository;
     }
 
-    public List<Score> getHighscore() {
-        return scoreRepository.getAllOrderByScore();
+    public List<Map> getHighscore() {
+
+        List<Score> list = scoreRepository.getAllOrderByScore();
+        List<Map> resultList = new ArrayList<>();
+        int i = 1;
+
+        for(Score score : list){
+            Map map = new HashMap<>();
+            map.put("id", i);
+            map.put("score", score.getScore());
+            map.put("player", score.getPlayer().getName());
+            resultList.add(map);
+            i++;
+        }
+        return resultList;
     }
 
     public Score calculateScores(Game game, int multiplier, Long playerid , List<Long> list) {
-
-        System.out.println("LIST: " + list.toString());
+        Score score;
 
         double totalscore = 0;
 
@@ -36,7 +52,19 @@ public class ScoreService implements ScoreServiceInterface{
             totalscore += calculation(roundCount, multiplier);
         }
 
-        Score score = new Score(totalscore, playerRepository.getPlayerById(playerid));
+        if (findScoreByGameid(list.get(0))) {
+            score = getScoreByGameid(list.get(0));
+
+            if (score.getScore() > 0) {
+                totalscore += score.getScore();
+            }
+
+            score.setScore(totalscore);
+
+        } else {
+            score = new Score(totalscore, playerRepository.getPlayerById(playerid), list.get(0));
+        }
+
         scoreRepository.save(score);
 
         return score;
@@ -44,7 +72,15 @@ public class ScoreService implements ScoreServiceInterface{
 
     public double calculation(int roundcount, int multiplier) {
         final int maxRoundCount = 5;
-        return ((maxRoundCount/(double)roundcount) * multiplier);
+        return ((maxRoundCount / (double) (roundcount + 1)) * multiplier);
+    }
+
+    public Score getScoreByGameid(Long gameid) {
+        return scoreRepository.getScoreByGameid(gameid);
+    }
+
+    public boolean findScoreByGameid(Long gameid) {
+        return scoreRepository.existsScoreByGameidEquals(gameid);
     }
 
 }

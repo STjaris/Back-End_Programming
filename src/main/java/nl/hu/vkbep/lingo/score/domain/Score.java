@@ -23,10 +23,14 @@ public class Score {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Player player;
 
+    @NotNull
+    private Long gameid;
 
-    public Score(double score, Player player) {
+
+    public Score(double score, Player player, Long gameid) {
         this.score = score;
         this.player = player;
+        this.gameid = gameid;
     }
 
     public Score() {
@@ -40,5 +44,15 @@ public class Score {
     }
     public Player getPlayer() {
         return player;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    public void setGameid(Long gameid) {
+        this.gameid = gameid;
     }
 }

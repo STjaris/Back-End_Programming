@@ -60,7 +60,7 @@ public class GameService implements GameServiceInterface {
     }
 
     @Override
-    public Map guess(Long gameid, String guess) {
+    public Map guess(Long gameid, String guess, List<Long> listOfGameid, Long playerid) {
 
         if (!gameidList.contains(gameid)) {
             gameidList.add(gameid);
@@ -73,6 +73,8 @@ public class GameService implements GameServiceInterface {
         Game game = gameRepository.getById(gameid);
         game.setGameStatus(GameStatus.ONGOING);
         gameRepository.save(game);
+
+        scoreService.calculateScores(game, gameType(game), playerid, listOfGameid);
 
         return checkRoundCountPerGame(game, wordid, guess);
     }
