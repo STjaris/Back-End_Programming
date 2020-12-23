@@ -40,6 +40,13 @@ public class Game {
         this.roundCount = roundCount;
     }
 
+    public Game(Long id, GameStatus gameStatus, GameType gameType, Word word) {
+        this.id = id;
+        this.gameStatus = gameStatus;
+        this.gameType = gameType;
+        this.word = word;
+    }
+
     public Game(GameStatus gameStatus, GameType gameType, Word word) {
         this.gameStatus = gameStatus;
         this.gameType = gameType;
