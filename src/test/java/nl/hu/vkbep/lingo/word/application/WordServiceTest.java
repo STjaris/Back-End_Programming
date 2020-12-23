@@ -3,6 +3,8 @@ package nl.hu.vkbep.lingo.word.application;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.domain.Word;
+import nl.hu.vkbep.lingo.word.exception.WordDoesNotExists;
+import nl.hu.vkbep.lingo.word.exception.WordLengthNotCorrect;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,11 +17,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 @DisplayName("WordServiceTest")
 public class WordServiceTest {
+
+    private static final Word word = new Word(1L, "baard");
 
     private static Stream<Arguments> provideWordLengthAndResult() {
         return Stream.of(
@@ -81,29 +86,6 @@ public class WordServiceTest {
 
     }
 
-
-    @ParameterizedTest
-    @MethodSource("provideWordLengthAndResult")
-    public void wordLengthCheckTest(String input, int length, boolean expectedResult) {
-        WordRepository wordRepository = Mockito.mock(WordRepository.class);
-        WordService wordService = new WordService(wordRepository);
-
-        boolean result = wordService.wordLengthCheck(input, length);
-
-        Assertions.assertEquals(result, expectedResult);
-    }
-
-    @ParameterizedTest
-    @MethodSource("provideWordGuessAndResult")
-    public void wordCheckTest(String input, String word, boolean expectedResult) {
-        WordRepository wordRepository = Mockito.mock(WordRepository.class);
-        WordService wordService = new WordService(wordRepository);
-
-        boolean result = wordService.wordCheck(input, word);
-
-        Assertions.assertEquals(result, expectedResult);
-    }
-
     @Test
     @DisplayName("GIVES TRUE WHEN WORD DOES EXISTS")
     public void wordExists(){
@@ -132,10 +114,10 @@ public class WordServiceTest {
 
     private static Stream<Arguments> provideWordsForFeedback() {
         return Stream.of(
-           Arguments.of("baard", "bonje", List.of("CORRECT", "ABSENT", "ABSENT", "ABSENT", "ABSENT")),
-           Arguments.of("baard", "barst", List.of("CORRECT", "CORRECT", "CONTAINS", "ABSENT", "ABSENT")),
-            Arguments.of("baard", "draad", List.of("ABSENT", "CONTAINS", "CORRECT", "CONTAINS", "CORRECT")),
-            Arguments.of("baard", "baard", List.of("CORRECT", "CORRECT", "CORRECT", "CORRECT", "CORRECT"))
+                Arguments.of(word, "bonje", List.of("CORRECT", "ABSENT", "ABSENT", "ABSENT", "ABSENT")),
+                Arguments.of(word, "barst", List.of("CORRECT", "CORRECT", "CONTAINS", "ABSENT", "ABSENT")),
+                Arguments.of(word, "draad", List.of("ABSENT", "CONTAINS", "CORRECT", "CONTAINS", "CORRECT")),
+                Arguments.of(word, "baard", List.of("CORRECT", "CORRECT", "CORRECT", "CORRECT", "CORRECT"))
         );
     }
 
@@ -143,12 +125,14 @@ public class WordServiceTest {
     @ParameterizedTest
     @MethodSource("provideWordsForFeedback")
     @DisplayName("GIVES FEEDBACK FOR GUESSES")
-    void letterCheck(String word, String guess, List<String> expectedFeedback) {
+    void checkOfLetters(Word word, String guess, List<String> expectedFeedback) {
 
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
         WordService wordService = new WordService(wordRepository);
 
-        Map<String, List<String>> result = wordService.letterCheck(guess, word);
+        when(wordRepository.getById(word.getId())).thenReturn(word);
+
+        Map<String, List<String>> result = wordService.checkOfLetters(guess, word.getId());
 
         Assertions.assertEquals(expectedFeedback, result.get("feedback"));
     }
@@ -169,5 +153,82 @@ public class WordServiceTest {
         String result = wordService.getRandomWord(gameType).getWord();
 
         Assertions.assertEquals(result, word.getWord());
+    }
+
+    @Test
+    @DisplayName("GIVES TRUE WHEN GUESS EQUALS WORD")
+    void attemptChecker() {
+        Word guess = new Word(1L, "baard");
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+
+        when(wordRepository.getById(word.getId())).thenReturn(word);
+
+        WordService wordService = new WordService(wordRepository);
+
+        boolean result = wordService.attemptChecker(word.getId(), guess.getWord());
+
+        assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("RETURNS WORD WHEN FOUND")
+    void getWordById() {
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+
+        when(wordRepository.getById(word.getId())).thenReturn(word);
+
+        WordService wordService = new WordService(wordRepository);
+        Word result = wordService.getWordbyId(word.getId());
+
+        assertEquals(word, result);
+    }
+
+
+    @Test
+    @DisplayName("RETURNS MAP OF FEEDBACK WHEN LENGTH AND EXISTS IS TRUE")
+    void wordCheckerCorrect() {
+        Word guess = new Word(1L, "tests");
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+
+        when(wordRepository.getById(word.getId())).thenReturn(word);
+
+        WordService wordService = new WordService(wordRepository);
+        when(wordService.wordExits(guess.toString())).thenReturn(true);
+
+        Map result = wordService.wordChecker(guess.getWord(), word.getId());
+
+        assertTrue(result.containsKey("feedback"));
+    }
+
+    @Test
+    @DisplayName("RETURNS WORDLENGTHNOTCORRECT WHEN LENGTH IS FALSE")
+    void wordCheckerWrongLength() {
+        Word guess = new Word(1L, "123456789");
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+
+        when(wordRepository.getById(word.getId())).thenReturn(word);
+
+        WordService wordService = new WordService(wordRepository);
+        when(wordService.wordExits(guess.toString())).thenReturn(true);
+
+        Map result = wordService.wordChecker(guess.getWord(), word.getId());
+
+        assertTrue(result.containsValue(new WordLengthNotCorrect(guess.toString()).getMessage()));
+    }
+
+    @Test
+    @DisplayName("RETURNS WORDDOESNOTEXISTS WHEN EXISTS IS FALSE")
+    void wordCheckerGuessNotExisting() {
+        Word guess = new Word(1L, "12345");
+        WordRepository wordRepository = Mockito.mock(WordRepository.class);
+
+        when(wordRepository.getById(word.getId())).thenReturn(word);
+
+        WordService wordService = new WordService(wordRepository);
+        when(wordService.wordExits(guess.toString())).thenReturn(false);
+
+        Map result = wordService.wordChecker(guess.getWord(), word.getId());
+
+        assertTrue(result.containsValue(new WordDoesNotExists(guess.toString()).getMessage()));
     }
 }

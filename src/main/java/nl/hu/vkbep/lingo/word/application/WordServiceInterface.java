@@ -10,16 +10,11 @@ public interface WordServiceInterface {
 
     Word save(Word word);
 
-    boolean wordLengthCheck(String input, int length);
-
-    boolean wordCheck(String input, String word);
-
-    Map<String, List<String>> letterCheck(String input, String word);
-
     Word getRandomWord(GameType gameType);
 
     Word getWordbyId(Long gameid);
 
-    Boolean wordExits(String guess);
+    boolean attemptChecker(Long wordid,String guess);
 
+    Map wordChecker(String guess, Long wordid);
 }

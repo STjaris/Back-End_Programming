@@ -3,6 +3,8 @@ package nl.hu.vkbep.lingo.word.application;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.domain.Word;
+import nl.hu.vkbep.lingo.word.exception.WordDoesNotExists;
+import nl.hu.vkbep.lingo.word.exception.WordLengthNotCorrect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,27 +26,53 @@ public class WordService implements WordServiceInterface {
     }
 
     @Override
-    public boolean wordLengthCheck(String input, int length) {
-        return input.length() == length;
-    }
+    public Map wordChecker(String guess, Long wordid) {
 
-    @Override
-    public boolean wordCheck(String input, String word) {
+        Map map = new HashMap<>();
+        Word word = wordRepository.getById(wordid);
 
-        boolean result = false;
-
-        if (input.equals(word)) {
-            result = true;
-        } else {
-            letterCheck(input, word);
+        if (guess.length() == word.getWord().length() && wordExits(guess)) {
+            return checkOfLetters(guess, wordid);
+        } else if (guess.length() != word.getWord().length() && wordExits(guess)) {
+            map.put("NOTE", new WordLengthNotCorrect(guess).getMessage());
+        } else{
+            map.put("NOTE", new WordDoesNotExists(guess).getMessage());
         }
-        return result;
+        return map;
     }
 
     @Override
-    public Map<String, List<String>> letterCheck(String guess, String word) {
+    public Word getRandomWord(GameType gameType) {
+        //GET RANDOM WORD FROM DB BY LENGTH
+        Word word;
+
+        //LOOP WHILE WORD FROM DB != i;
+        do {
+            word = wordRepository.getRandomWord();
+        }
+        while (word.getWord().length() != getLengthByGameType(gameType));
+
+        return word;
+    }
+
+    @Override
+    public Word getWordbyId(Long wordid) {
+
+        return wordRepository.getById(wordid);
+
+    }
+
+    @Override
+    public boolean attemptChecker(Long wordid, String guess) {
+        Word word = wordRepository.getById(wordid);
+
+        return word.getWord().equals(guess);
+    }
+
+    public Map<String, List<String>> checkOfLetters(String guess, Long wordid) {
 
         Map<String, List<String>> map = new HashMap<>();
+        String word = wordRepository.getById(wordid).getWord();
 
         List<String> feedback = new ArrayList<>();
         List<String> available = new ArrayList<>();
@@ -80,29 +108,6 @@ public class WordService implements WordServiceInterface {
         return map;
     }
 
-    @Override
-    public Word getRandomWord(GameType gameType) {
-        //GET RANDOM WORD FROM DB BY LENGTH
-        Word word;
-
-        //LOOP WHILE WORD FROM DB != i;
-        do {
-            word = wordRepository.getRandomWord();
-        }
-        while (word.getWord().length() != getLengthByGameType(gameType));
-
-        return word;
-    }
-
-    @Override
-    public Word getWordbyId(Long wordid) {
-
-        return wordRepository.getById(wordid);
-
-    }
-
-
-    @Override
     public Boolean wordExits(String guess) {
         return wordRepository.existsByWord(guess);
     }
@@ -120,5 +125,6 @@ public class WordService implements WordServiceInterface {
         }
         return i;
     }
+
 
 }

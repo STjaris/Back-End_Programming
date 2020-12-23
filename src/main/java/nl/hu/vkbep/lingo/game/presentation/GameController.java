@@ -25,6 +25,6 @@ public class GameController {
     @PostMapping("/games/{gameid}/attempt")
     public Map makeAttempt(@PathVariable Long gameid, @RequestBody String attempt) {
 
-        return gameServiceInterface.guess(gameid, attempt);
+        return gameServiceInterface.makeAttempt(gameid, attempt);
     }
 }

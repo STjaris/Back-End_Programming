@@ -10,5 +10,5 @@ public interface GameServiceInterface {
 
     Game getById(Long gameid);
 
-    Map guess(Long gameid, String guess);
+    Map makeAttempt(Long gameid, String guess);
 }
