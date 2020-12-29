@@ -5,30 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/exception/MaxRoundReached.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/exception/WordDoesNotExists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/exception/WordLengthNotCorrect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/domain/GameSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/afe2e03d-c091-46b9-962f-15d74fceaffd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/afe2e03d-c091-46b9-962f-15d74fceaffd/storage_v2/_src_/database/Back-end_Programming.jwoALg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/afe2e03d-c091-46b9-962f-15d74fceaffd/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/afe2e03d-c091-46b9-962f-15d74fceaffd/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/afe2e03d-c091-46b9-962f-15d74fceaffd/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e980f146-ac23-4def-84f6-cd29bb4af291.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e980f146-ac23-4def-84f6-cd29bb4af291/storage_v2/_src_/database/Back-end_Programming.jwoALg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e980f146-ac23-4def-84f6-cd29bb4af291/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e980f146-ac23-4def-84f6-cd29bb4af291/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e980f146-ac23-4def-84f6-cd29bb4af291/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f526409d-bedc-4fea-ada3-0af6bb311dd1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f526409d-bedc-4fea-ada3-0af6bb311dd1/storage_v2/_src_/database/Back-end_Programming.jwoALg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f526409d-bedc-4fea-ada3-0af6bb311dd1/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f526409d-bedc-4fea-ada3-0af6bb311dd1/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f526409d-bedc-4fea-ada3-0af6bb311dd1/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/application/RoundServiceInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/data/RoundRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/Round.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/RoundStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/domain/RoundType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/round/presentation/RoundController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/word/application/WordServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/round/application/RoundServiceTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/word/application/WordServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,16 +68,14 @@
       <recent name="C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -201,6 +194,7 @@
       <workItem from="1608194541668" duration="13486000" />
       <workItem from="1608316199561" duration="1385000" />
       <workItem from="1608558300351" duration="6799000" />
+      <workItem from="1609245832471" duration="243000" />
     </task>
     <servers />
   </component>
@@ -225,6 +219,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/back_end_programming$GameServiceTests.ic" NAME="GameServiceTests Coverage Results" MODIFIED="1608737528851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -236,6 +235,7 @@
     <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_roundCheckFromGame.ic" NAME="RoundServiceTests.roundCheckFromGame Coverage Results" MODIFIED="1608564141775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.round.application.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$BackEndProgrammingApplication.ic" NAME="BackEndProgrammingApplication Coverage Results" MODIFIED="1609164144754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/back_end_programming$GameServiceTests_gameTypeCheck.ic" NAME="GameServiceTests.gameTypeCheck Coverage Results" MODIFIED="1608201076527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.game.application.*</FILTER>
     </SUITE>

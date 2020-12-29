@@ -54,10 +54,14 @@ public class GameService implements GameServiceInterface {
 
     public Map createNewGame() {
 
+        Game game = createGame();
+
+        System.out.println(game);
+
         //RETURN MAP WITH DATA
         Map map = new HashMap<>();
-        map.put("gameid", createGame().getId());
-        map.put("feedback", createGame().getWord());
+        map.put("gameid", game.getId());
+        map.put("feedback", game.getWord());
 
         return map;
     }

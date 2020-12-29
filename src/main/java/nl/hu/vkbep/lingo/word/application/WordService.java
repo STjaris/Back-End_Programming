@@ -66,6 +66,8 @@ public class WordService implements WordServiceInterface {
     public boolean attemptChecker(Long wordid, String guess) {
         Word word = wordRepository.getById(wordid);
 
+        System.out.println(word.getId());
+
         return word.getWord().equals(guess);
     }
 
