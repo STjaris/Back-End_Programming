@@ -5,6 +5,7 @@ import nl.hu.vkbep.lingo.gameSession.data.GameSessionRepository;
 import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
 import nl.hu.vkbep.lingo.player.data.PlayerRepository;
 import nl.hu.vkbep.lingo.player.domain.Player;
+import nl.hu.vkbep.lingo.score.application.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +18,13 @@ public class GameSessionService {
 
     private PlayerRepository playerRepository;
     private GameSessionRepository gameSessionRepository;
+    private ScoreService scoreService;
 
     @Autowired
-    public GameSessionService(PlayerRepository playerRepository, GameSessionRepository gameSessionRepository) {
+    public GameSessionService(PlayerRepository playerRepository, GameSessionRepository gameSessionRepository, ScoreService scoreService) {
         this.playerRepository = playerRepository;
         this.gameSessionRepository = gameSessionRepository;
+        this.scoreService = scoreService;
     }
 
     public GameSession createNewGameSession(Game game, Long playerid){
@@ -38,11 +41,17 @@ public class GameSessionService {
 
     }
 
-    public void updateGameSession(GameSession gameSession, Game game){
+    public void updateGameSession(GameSession gameSession, Game newGame, Game oldGame){
 
+        //UPDATE LIST
         List<Game> gameList = gameSession.getGames();
-        gameList.add(game);
+        gameList.add(newGame);
         gameSession.setGames(gameList);
+
+        //UPDATE SCORE
+        double score = gameSession.getTotalScore();
+        score += oldGame.getScore();
+        gameSession.setTotalScore(score);
 
         gameSessionRepository.save(gameSession);
     }

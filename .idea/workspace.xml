@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/exception/GameFinished.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/data/GameSessionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fda21d5c-21d6-4c6b-80d8-ec6707e45975.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fda21d5c-21d6-4c6b-80d8-ec6707e45975.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fda21d5c-21d6-4c6b-80d8-ec6707e45975/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fda21d5c-21d6-4c6b-80d8-ec6707e45975/storage_v2/_src_/database/Back-end_Programming.jwoALg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/presentation/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/score/application/ScoreServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/score/application/ScoreServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +182,7 @@
       <workItem from="1608194541668" duration="13486000" />
       <workItem from="1608316199561" duration="1385000" />
       <workItem from="1608558300351" duration="6799000" />
-      <workItem from="1609245832471" duration="3048000" />
+      <workItem from="1609245832471" duration="4456000" />
     </task>
     <servers />
   </component>
@@ -210,20 +206,12 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionService.java</url>
-          <line>40</line>
-          <properties class="nl.hu.vkbep.lingo.gameSession.application.GameSessionService" method="updateGameSession">
+          <url>file://$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/score/application/ScoreService.java</url>
+          <line>72</line>
+          <properties class="nl.hu.vkbep.lingo.score.application.ScoreService" method="calculation">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java</url>
-          <line>80</line>
-          <properties class="nl.hu.vkbep.lingo.game.application.GameService" method="makeAttempt">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

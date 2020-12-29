@@ -113,22 +113,34 @@ public class GameService implements GameServiceInterface {
         Game gamePlayed = gameRepository.getById(gameid);
 
         if (gamePlayed.getGameType() == GameType.LETTEROF5) {
+            //UPDATE SCORE
+            score(gamePlayed, 5);
+
+            //NEW GAME
             Game newGame = createGame();
             newGame.setGameType(GameType.LETTEROF6);
 
             GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);
-            gameSessionService.updateGameSession(gameSession, newGame);
+            gameSessionService.updateGameSession(gameSession, newGame, gamePlayed);
 
             return newGame;
         } else if (gamePlayed.getGameType() == GameType.LETTEROF6) {
+            //UPDATE SCORE
+            score(gamePlayed, 6);
+
+            //NEW GAME
             Game newGame = createGame();
             newGame.setGameType(GameType.LETTEROF7);
 
             GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);
-            gameSessionService.updateGameSession(gameSession, newGame);
+            gameSessionService.updateGameSession(gameSession, newGame, gamePlayed);
 
             return newGame;
         } else if (gamePlayed.getGameType() == GameType.LETTEROF7) {
+            //UPDATE SCORE
+            score(gamePlayed, 7);
+
+            //END GAME
             System.out.println(new GameFinished().getMessage());
             throw new GameFinished();
 
@@ -136,6 +148,16 @@ public class GameService implements GameServiceInterface {
             return gamePlayed;
         }
 
+    }
+
+    public double score(Game game, int multiplier) {
+
+        double score = scoreService.calculation(game.getRoundCount(), multiplier);
+        game.setScore(score);
+
+        gameRepository.save(game);
+
+        return score;
     }
 
 

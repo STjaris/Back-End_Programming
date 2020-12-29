@@ -28,10 +28,10 @@ public class GameServiceTests {
 
     private final String guess = "tests";
     private static final Word word = new Word(1L, "tests");
-    private static final Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1);
-    private static final Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 5);
-    private static final Game game3 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word, 0, 0);
-    private static final Game game4 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word, 0, 0);
+    private static final Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1, 0);
+    private static final Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 5, 0);
+    private static final Game game3 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word, 0, 0, 0);
+    private static final Game game4 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word, 0, 0, 0);
 
 //    @Test
 //    @DisplayName("GIVES MAP BACK IF GAME IS CREATED")
@@ -165,7 +165,7 @@ public class GameServiceTests {
     @Test
     @DisplayName("GIVES GAME BACK IF ID HAS BEEN FOUND")
     void getById() {
-        Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1);
+        Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1, 0);
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);

@@ -30,14 +30,17 @@ public class Game {
 
     @Nullable
     private int roundCount;
-    
 
-    public Game(GameStatus gameStatus, GameType gameType, Word word, int duratie, int roundCount) {
+    private double score;
+
+
+    public Game(GameStatus gameStatus, GameType gameType, Word word, int duratie, int roundCount, double score) {
         this.gameStatus = gameStatus;
         this.gameType = gameType;
         this.word = word;
         this.duratie = duratie;
         this.roundCount = roundCount;
+        this.score = score;
     }
 
     public Game(Long id, GameStatus gameStatus, GameType gameType, Word word) {
@@ -103,6 +106,14 @@ public class Game {
 
     public void setRoundCount(int roundCount) {
         this.roundCount = roundCount;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
     }
 
     @Override
