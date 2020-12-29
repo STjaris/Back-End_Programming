@@ -18,8 +18,9 @@ public class GameController {
     }
 
     @GetMapping("/games")
-    public Map startGame() {
-        return gameServiceInterface.createNewGame();
+    @ResponseBody
+    public Map startGame(@RequestParam Long playerid) {
+        return gameServiceInterface.createNewGame(playerid);
     }
 
     @PostMapping("/games/{gameid}/attempt")

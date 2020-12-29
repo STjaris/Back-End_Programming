@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface GameServiceInterface {
 
-    Map createNewGame();
+    Map createNewGame(Long playerid);
 
     Game getById(Long gameid);
 

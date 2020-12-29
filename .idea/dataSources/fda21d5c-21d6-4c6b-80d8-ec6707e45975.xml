@@ -784,12 +784,12 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1608727418</StartupTime>
+      <StartupTime>1609155438</StartupTime>
     </root>
     <database id="2" parent="1" name="Back-end_Programming">
       <ObjectId>16394</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>204973</IntrospectionStateNumber>
+      <IntrospectionStateNumber>223534</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -865,7 +865,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>204974</IntrospectionStateNumber>
+      <IntrospectionStateNumber>223535</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -966,111 +966,116 @@ UC/10
       <Type>index</Type>
     </access-method>
     <sequence id="30" parent="17" name="hibernate_sequence">
-      <ObjectId>17275</ObjectId>
+      <ObjectId>17336</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>186483</StateNumber>
+      <StateNumber>205030</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="31" parent="17" name="game">
-      <ObjectId>17277</ObjectId>
+      <ObjectId>17338</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>186488</StateNumber>
+      <StateNumber>205038</StateNumber>
     </table>
-    <table id="32" parent="17" name="high_score">
+    <table id="32" parent="17" name="gamesession">
+      <ObjectId>17343</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>205039</StateNumber>
+    </table>
+    <table id="33" parent="17" name="gamesession_games">
+      <ObjectId>17348</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>205040</StateNumber>
+    </table>
+    <table id="34" parent="17" name="high_score">
       <ObjectId>17111</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>130568</StateNumber>
     </table>
-    <table id="33" parent="17" name="player">
-      <ObjectId>17282</ObjectId>
+    <table id="35" parent="17" name="player">
+      <ObjectId>17351</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>186489</StateNumber>
+      <StateNumber>205039</StateNumber>
     </table>
-    <table id="34" parent="17" name="player_roles">
+    <table id="36" parent="17" name="player_roles">
       <ObjectId>17124</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>130569</StateNumber>
     </table>
-    <table id="35" parent="17" name="privilege">
+    <table id="37" parent="17" name="privilege">
       <ObjectId>17127</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>130571</StateNumber>
     </table>
-    <table id="36" parent="17" name="role">
+    <table id="38" parent="17" name="role">
       <ObjectId>17132</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>130569</StateNumber>
     </table>
-    <table id="37" parent="17" name="roles_privileges">
+    <table id="39" parent="17" name="roles_privileges">
       <ObjectId>17137</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>130571</StateNumber>
     </table>
-    <table id="38" parent="17" name="round">
-      <ObjectId>17210</ObjectId>
+    <table id="40" parent="17" name="score">
+      <ObjectId>17359</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>149160</StateNumber>
+      <StateNumber>205042</StateNumber>
     </table>
-    <table id="39" parent="17" name="score">
-      <ObjectId>17290</ObjectId>
+    <table id="41" parent="17" name="word">
+      <ObjectId>17364</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>186489</StateNumber>
+      <StateNumber>205038</StateNumber>
     </table>
-    <table id="40" parent="17" name="word">
-      <ObjectId>17295</ObjectId>
-      <Owner>postgres</Owner>
-      <StateNumber>186488</StateNumber>
-    </table>
-    <column id="41" parent="31" name="id">
+    <column id="42" parent="31" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186484</StateNumber>
+      <StateNumber>205031</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="42" parent="31" name="duratie">
+    <column id="43" parent="31" name="duratie">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186484</StateNumber>
+      <StateNumber>205031</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="43" parent="31" name="game_status">
+    <column id="44" parent="31" name="game_status">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>186484</StateNumber>
+      <StateNumber>205031</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="44" parent="31" name="game_type">
+    <column id="45" parent="31" name="game_type">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>186484</StateNumber>
+      <StateNumber>205031</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="45" parent="31" name="max_duratie">
+    <column id="46" parent="31" name="max_duratie">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186484</StateNumber>
+      <StateNumber>205031</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="46" parent="31" name="round_count">
+    <column id="47" parent="31" name="round_count">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186484</StateNumber>
+      <StateNumber>205031</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="47" parent="31" name="wordid">
+    <column id="48" parent="31" name="wordid">
       <Position>7</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186484</StateNumber>
+      <StateNumber>205031</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="48" parent="31" name="game_pkey">
-      <ObjectId>17280</ObjectId>
-      <StateNumber>186484</StateNumber>
+    <index id="49" parent="31" name="game_pkey">
+      <ObjectId>17341</ObjectId>
+      <StateNumber>205031</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1078,38 +1083,134 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="49" parent="31" name="game_pkey">
-      <ObjectId>17281</ObjectId>
-      <StateNumber>186484</StateNumber>
+    <key id="50" parent="31" name="game_pkey">
+      <ObjectId>17342</ObjectId>
+      <StateNumber>205031</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>game_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="50" parent="31" name="fk9h2g143g0r9lfld99ie2v9j3m">
-      <ObjectId>17300</ObjectId>
-      <StateNumber>186488</StateNumber>
+    <foreign-key id="51" parent="31" name="fk9h2g143g0r9lfld99ie2v9j3m">
+      <ObjectId>17371</ObjectId>
+      <StateNumber>205038</StateNumber>
       <ColNames>wordid</ColNames>
-      <RefTableId>17295</RefTableId>
+      <RefTableId>17364</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>word</RefTableName>
       <RefKeyName>word_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="51" parent="32" name="id">
+    <column id="52" parent="32" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>205032</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="53" parent="32" name="total_score">
+      <Position>2</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>205032</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="54" parent="32" name="player_id">
+      <Position>3</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>205032</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="55" parent="32" name="gamesession_pkey">
+      <ObjectId>17346</ObjectId>
+      <StateNumber>205032</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>3124</ClassIds>
+    </index>
+    <key id="56" parent="32" name="gamesession_pkey">
+      <ObjectId>17347</ObjectId>
+      <StateNumber>205032</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>gamesession_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="57" parent="32" name="fk55oajjgnqkl6vxy2y5e0xgw87">
+      <ObjectId>17376</ObjectId>
+      <StateNumber>205039</StateNumber>
+      <ColNames>player_id</ColNames>
+      <RefTableId>17351</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>player</RefTableName>
+      <RefKeyName>player_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="58" parent="33" name="game_session_id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>205033</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="59" parent="33" name="games_id">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>205033</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="60" parent="33" name="uk_gieeo61l8gcbiekiy87ksv3xk">
+      <ObjectId>17369</ObjectId>
+      <StateNumber>205037</StateNumber>
+      <ColNames>games_id</ColNames>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>3124</ClassIds>
+    </index>
+    <key id="61" parent="33" name="uk_gieeo61l8gcbiekiy87ksv3xk">
+      <ObjectId>17370</ObjectId>
+      <StateNumber>205037</StateNumber>
+      <ColNames>games_id</ColNames>
+      <UnderlyingIndexName>uk_gieeo61l8gcbiekiy87ksv3xk</UnderlyingIndexName>
+    </key>
+    <foreign-key id="62" parent="33" name="fk8bi2gvfnxe5bihya0cusgjy1x">
+      <ObjectId>17386</ObjectId>
+      <StateNumber>205041</StateNumber>
+      <ColNames>game_session_id</ColNames>
+      <RefTableId>17343</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>gamesession</RefTableName>
+      <RefKeyName>gamesession_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="63" parent="33" name="fkbvakickd3dn0n10hj37lonytv">
+      <ObjectId>17381</ObjectId>
+      <StateNumber>205040</StateNumber>
+      <ColNames>games_id</ColNames>
+      <RefTableId>17338</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>game</RefTableName>
+      <RefKeyName>game_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="64" parent="34" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130558</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="52" parent="32" name="scoreid">
+    <column id="65" parent="34" name="scoreid">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130558</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="53" parent="32" name="high_score_pkey">
+    <index id="66" parent="34" name="high_score_pkey">
       <ObjectId>17114</ObjectId>
       <StateNumber>130558</StateNumber>
       <ColNames>id</ColNames>
@@ -1119,55 +1220,55 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="54" parent="32" name="high_score_pkey">
+    <key id="67" parent="34" name="high_score_pkey">
       <ObjectId>17115</ObjectId>
       <StateNumber>130558</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>high_score_pkey</UnderlyingIndexName>
     </key>
-    <column id="55" parent="33" name="id">
+    <column id="68" parent="35" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186485</StateNumber>
+      <StateNumber>205034</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="56" parent="33" name="email">
+    <column id="69" parent="35" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>186485</StateNumber>
+      <StateNumber>205034</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="57" parent="33" name="enabled">
+    <column id="70" parent="35" name="enabled">
       <Position>3</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186485</StateNumber>
+      <StateNumber>205034</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="58" parent="33" name="name">
+    <column id="71" parent="35" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>186485</StateNumber>
+      <StateNumber>205034</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="59" parent="33" name="password">
+    <column id="72" parent="35" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>186485</StateNumber>
+      <StateNumber>205034</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="60" parent="33" name="token_expired">
+    <column id="73" parent="35" name="token_expired">
       <Position>6</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186485</StateNumber>
+      <StateNumber>205034</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="61" parent="33" name="player_pkey">
-      <ObjectId>17288</ObjectId>
-      <StateNumber>186485</StateNumber>
+    <index id="74" parent="35" name="player_pkey">
+      <ObjectId>17357</ObjectId>
+      <StateNumber>205034</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1175,28 +1276,28 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="62" parent="33" name="player_pkey">
-      <ObjectId>17289</ObjectId>
-      <StateNumber>186485</StateNumber>
+    <key id="75" parent="35" name="player_pkey">
+      <ObjectId>17358</ObjectId>
+      <StateNumber>205034</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>player_pkey</UnderlyingIndexName>
     </key>
-    <column id="63" parent="34" name="playerid">
+    <column id="76" parent="36" name="playerid">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130560</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="64" parent="34" name="roleid">
+    <column id="77" parent="36" name="roleid">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130560</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="65" parent="34" name="fkmlnniw6beeny7felrvg1y7i8p">
+    <foreign-key id="78" parent="36" name="fkmlnniw6beeny7felrvg1y7i8p">
       <ObjectId>17165</ObjectId>
       <StateNumber>130569</StateNumber>
       <ColNames>roleid</ColNames>
@@ -1206,20 +1307,20 @@ UC/10
       <RefKeyName>role_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="66" parent="35" name="id">
+    <column id="79" parent="37" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130561</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="67" parent="35" name="name">
+    <column id="80" parent="37" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>130561</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="68" parent="35" name="privilege_pkey">
+    <index id="81" parent="37" name="privilege_pkey">
       <ObjectId>17130</ObjectId>
       <StateNumber>130561</StateNumber>
       <ColNames>id</ColNames>
@@ -1229,27 +1330,27 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="69" parent="35" name="privilege_pkey">
+    <key id="82" parent="37" name="privilege_pkey">
       <ObjectId>17131</ObjectId>
       <StateNumber>130561</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>privilege_pkey</UnderlyingIndexName>
     </key>
-    <column id="70" parent="36" name="id">
+    <column id="83" parent="38" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130562</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="71" parent="36" name="name">
+    <column id="84" parent="38" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>130562</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="72" parent="36" name="role_pkey">
+    <index id="85" parent="38" name="role_pkey">
       <ObjectId>17135</ObjectId>
       <StateNumber>130562</StateNumber>
       <ColNames>id</ColNames>
@@ -1259,28 +1360,28 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="73" parent="36" name="role_pkey">
+    <key id="86" parent="38" name="role_pkey">
       <ObjectId>17136</ObjectId>
       <StateNumber>130562</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>role_pkey</UnderlyingIndexName>
     </key>
-    <column id="74" parent="37" name="role_id">
+    <column id="87" parent="39" name="role_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130563</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="75" parent="37" name="privilege_id">
+    <column id="88" parent="39" name="privilege_id">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>130563</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="76" parent="37" name="fk9h2vewsqh8luhfq71xokh4who">
+    <foreign-key id="89" parent="39" name="fk9h2vewsqh8luhfq71xokh4who">
       <ObjectId>17180</ObjectId>
       <StateNumber>130572</StateNumber>
       <ColNames>role_id</ColNames>
@@ -1290,7 +1391,7 @@ UC/10
       <RefKeyName>role_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="77" parent="37" name="fk5yjwxw2gvfyu76j3rgqwo685u">
+    <foreign-key id="90" parent="39" name="fk5yjwxw2gvfyu76j3rgqwo685u">
       <ObjectId>17175</ObjectId>
       <StateNumber>130571</StateNumber>
       <ColNames>privilege_id</ColNames>
@@ -1300,79 +1401,36 @@ UC/10
       <RefKeyName>privilege_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="78" parent="38" name="id">
+    <column id="91" parent="40" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>149156</StateNumber>
+      <StateNumber>205035</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="79" parent="38" name="guess">
+    <column id="92" parent="40" name="gameid">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>149156</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>205035</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="80" parent="38" name="round_status">
+    <column id="93" parent="40" name="score">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>149156</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="81" parent="38" name="round_type">
-      <Position>4</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>149156</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="82" parent="38" name="gameid">
-      <Position>5</Position>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>149156</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <index id="83" parent="38" name="round_pkey">
-      <ObjectId>17213</ObjectId>
-      <StateNumber>149156</StateNumber>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-      <AccessMethodId>403</AccessMethodId>
-      <CollationIds>0</CollationIds>
-      <ClassIds>3124</ClassIds>
-    </index>
-    <key id="84" parent="38" name="round_pkey">
-      <ObjectId>17214</ObjectId>
-      <StateNumber>149156</StateNumber>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>round_pkey</UnderlyingIndexName>
-    </key>
-    <column id="85" parent="39" name="id">
-      <Position>1</Position>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>186486</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="86" parent="39" name="score">
-      <Position>2</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186486</StateNumber>
+      <StateNumber>205035</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="87" parent="39" name="playerid">
-      <Position>3</Position>
+    <column id="94" parent="40" name="playerid">
+      <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186486</StateNumber>
+      <StateNumber>205035</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="88" parent="39" name="score_pkey">
-      <ObjectId>17293</ObjectId>
-      <StateNumber>186486</StateNumber>
+    <index id="95" parent="40" name="score_pkey">
+      <ObjectId>17362</ObjectId>
+      <StateNumber>205035</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1380,40 +1438,40 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="89" parent="39" name="score_pkey">
-      <ObjectId>17294</ObjectId>
-      <StateNumber>186486</StateNumber>
+    <key id="96" parent="40" name="score_pkey">
+      <ObjectId>17363</ObjectId>
+      <StateNumber>205035</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>score_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="90" parent="39" name="fkej882fy75q67pm9otdp93kgtj">
-      <ObjectId>17305</ObjectId>
-      <StateNumber>186489</StateNumber>
+    <foreign-key id="97" parent="40" name="fkej882fy75q67pm9otdp93kgtj">
+      <ObjectId>17391</ObjectId>
+      <StateNumber>205042</StateNumber>
       <ColNames>playerid</ColNames>
-      <RefTableId>17282</RefTableId>
+      <RefTableId>17351</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>player</RefTableName>
       <RefKeyName>player_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="91" parent="40" name="id">
+    <column id="98" parent="41" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>186487</StateNumber>
+      <StateNumber>205036</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="92" parent="40" name="word">
+    <column id="99" parent="41" name="word">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>186487</StateNumber>
+      <StateNumber>205036</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="93" parent="40" name="word_pkey">
-      <ObjectId>17298</ObjectId>
-      <StateNumber>186487</StateNumber>
+    <index id="100" parent="41" name="word_pkey">
+      <ObjectId>17367</ObjectId>
+      <StateNumber>205036</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1421,9 +1479,9 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="94" parent="40" name="word_pkey">
-      <ObjectId>17299</ObjectId>
-      <StateNumber>186487</StateNumber>
+    <key id="101" parent="41" name="word_pkey">
+      <ObjectId>17368</ObjectId>
+      <StateNumber>205036</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>word_pkey</UnderlyingIndexName>

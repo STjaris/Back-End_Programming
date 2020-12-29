@@ -4,7 +4,10 @@ import nl.hu.vkbep.lingo.game.data.GameRepository;
 import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.domain.GameStatus;
 import nl.hu.vkbep.lingo.game.domain.GameType;
+import nl.hu.vkbep.lingo.game.exception.GameFinished;
 import nl.hu.vkbep.lingo.game.exception.MaxRoundReached;
+import nl.hu.vkbep.lingo.gameSession.application.GameSessionService;
+import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
 import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +28,14 @@ public class GameService implements GameServiceInterface {
     private GameRepository gameRepository;
     private WordServiceInterface wordServiceInterface;
     private ScoreService scoreService;
+    private GameSessionService gameSessionService;
 
     @Autowired
-    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, ScoreService scoreService) {
+    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, ScoreService scoreService, GameSessionService gameSessionService) {
         this.gameRepository = gameRepository;
         this.wordServiceInterface = wordServiceInterface;
         this.scoreService = scoreService;
+        this.gameSessionService = gameSessionService;
     }
 
     public Game createGame() {
@@ -52,11 +57,12 @@ public class GameService implements GameServiceInterface {
         return game;
     }
 
-    public Map createNewGame() {
+    public Map createNewGame(Long playerid) {
 
         Game game = createGame();
 
-        System.out.println(game);
+        //CREATE NEW GAMESESSION
+        gameSessionService.createNewGameSession(game, playerid);
 
         //RETURN MAP WITH DATA
         Map map = new HashMap<>();
@@ -77,11 +83,13 @@ public class GameService implements GameServiceInterface {
         Long wordid = gameRepository.getById(gameid).getWord().getId();
         Map map = new HashMap<>();
 
+
         if (roundCountChecker(gameid)) {
             if (wordServiceInterface.attemptChecker(wordid, guess)) {
+                Game newGame = checkGameType(gameid);
+
                 map.put("NOTE", "CORRECT");
-                map.put("NEWGAME", checkGameType(gameid));
-                checkGameType(gameid);
+                map.put("NEWGAME", newGame);
             } else {
                 Game game = gameRepository.getById(gameid);
                 int roundcount = game.getRoundCount();
@@ -107,14 +115,28 @@ public class GameService implements GameServiceInterface {
         if (gamePlayed.getGameType() == GameType.LETTEROF5) {
             Game newGame = createGame();
             newGame.setGameType(GameType.LETTEROF6);
+
+            GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);
+            gameSessionService.updateGameSession(gameSession, newGame);
+
             return newGame;
         } else if (gamePlayed.getGameType() == GameType.LETTEROF6) {
             Game newGame = createGame();
             newGame.setGameType(GameType.LETTEROF7);
+
+            GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);
+            gameSessionService.updateGameSession(gameSession, newGame);
+
             return newGame;
+        } else if (gamePlayed.getGameType() == GameType.LETTEROF7) {
+            System.out.println(new GameFinished().getMessage());
+            throw new GameFinished();
+
         } else {
             return gamePlayed;
         }
 
     }
+
+
 }
