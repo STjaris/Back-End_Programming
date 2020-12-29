@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/score/application/ScoreServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/score/application/ScoreServiceTests.java" afterDir="false" />
     </list>
@@ -57,13 +54,15 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -183,6 +182,7 @@
       <workItem from="1608316199561" duration="1385000" />
       <workItem from="1608558300351" duration="6799000" />
       <workItem from="1609245832471" duration="4456000" />
+      <workItem from="1609250991753" duration="226000" />
     </task>
     <servers />
   </component>
@@ -253,7 +253,7 @@
     <SUITE FILE_PATH="coverage/back_end_programming$GameServiceTests_createNewGame.ic" NAME="GameServiceTests.createNewGame Coverage Results" MODIFIED="1608197353654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.game.application.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1608737568795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1609251209104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_wordLengthCheck__1_.ic" NAME="RoundServiceTests.wordLengthCheck (1) Coverage Results" MODIFIED="1608122317912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

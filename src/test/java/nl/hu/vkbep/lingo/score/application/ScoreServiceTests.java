@@ -56,7 +56,7 @@ public class ScoreServiceTests {
         int multiplier  = 5;
 
         Word word = new Word(1L, "tests");
-        Score score = new Score(50, player, list.get(0));
+        Score score = new Score(25, player, list.get(0));
         Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0 ,1, 0);
 
         ScoreRepository scoreRepository = mock(ScoreRepository.class);

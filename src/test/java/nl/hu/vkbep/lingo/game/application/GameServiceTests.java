@@ -56,8 +56,7 @@ public class GameServiceTests {
     private static Stream<Arguments> provideGameAndExpectedGameType() {
         return Stream.of(
                 Arguments.of(game1, GameType.LETTEROF6),
-                Arguments.of(game3, GameType.LETTEROF7),
-                Arguments.of(game4, GameType.LETTEROF7)
+                Arguments.of(game3, GameType.LETTEROF7)
         );
     }
 
