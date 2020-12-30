@@ -11,13 +11,13 @@ import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class GameSessionServiceTests {
 
@@ -77,5 +77,29 @@ public class GameSessionServiceTests {
         assertEquals(expectedGameSession.getGames(), result.getGames());
         assertEquals(expectedGameSession.getPlayer(), result.getPlayer());
 
+    }
+
+    @Test
+    @DisplayName("RETURNS GAMESESSION IF GAMESESSION CONTAINS GAME")
+    void getGameSessionContainingGame() {
+        Player player = new Player("test", "test", "test", true , false);
+
+        Word word = new Word(1L, "tests");
+        Game game1 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 5, 0, 25);
+        List<Game> startList = List.of(game1);
+        GameSession expectedGameSession = new GameSession(startList, player, 0);
+
+        PlayerRepository playerRepository = mock(PlayerRepository.class);
+        GameSessionRepository gameSessionRepository = mock(GameSessionRepository.class);
+        ScoreService scoreService = mock(ScoreService.class);
+
+        when(gameSessionRepository.getGameSessionByGamesIsContaining(game1)).thenReturn(expectedGameSession);
+
+        GameSessionService gameSessionService = new GameSessionService(
+                playerRepository, gameSessionRepository, scoreService);
+
+        GameSession result = gameSessionService.getGameSessionContainingGame(game1);
+
+        assertEquals(expectedGameSession, result);
     }
 }

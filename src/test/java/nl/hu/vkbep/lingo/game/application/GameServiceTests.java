@@ -4,8 +4,11 @@ import nl.hu.vkbep.lingo.game.data.GameRepository;
 import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.domain.GameStatus;
 import nl.hu.vkbep.lingo.game.domain.GameType;
+import nl.hu.vkbep.lingo.game.exception.GameFinished;
 import nl.hu.vkbep.lingo.game.exception.MaxRoundReached;
 import nl.hu.vkbep.lingo.gameSession.application.GameSessionService;
+import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
+import nl.hu.vkbep.lingo.player.domain.Player;
 import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import nl.hu.vkbep.lingo.word.domain.Word;
@@ -15,11 +18,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -32,26 +35,37 @@ public class GameServiceTests {
     private static final Game game2 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 5, 0);
     private static final Game game3 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6, word, 0, 0, 0);
     private static final Game game4 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word, 0, 0, 0);
+    private static final Game game5 = new Game();
 
-//    @Test
-//    @DisplayName("GIVES MAP BACK IF GAME IS CREATED")
-//    void createNewGame() {
-//        Word word = new Word(1L, "baard");
-//        Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
-//        Map feedback = Map.of("gameid", game.getId(), "feedback", word.getWord());
-//
-//        GameRepository gameRepository = mock(GameRepository.class);
-//        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-//        ScoreService scoreService = mock(ScoreService.class);
-//
-//        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService);
-//
-//        when(gameService.createGame()).thenReturn(game);
-//
-//        Map result = gameService.createNewGame();
-//
-//        assertEquals(feedback, result);
-//    }
+    @Test
+    @DisplayName("GIVES MAP BACK IF GAME IS CREATED")
+    void createNewGame() {
+        Word word1 = new Word(1L, "baard");
+        Player player = new Player("test", "test", "test", true, false);
+        Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word1);
+
+        List<Game> listOfgames = List.of(game);
+        GameSession gameSession = new GameSession(listOfgames, player, 0);
+        Long playerid = 1L;
+
+        Map expectedMap = Map.of("gameid", game.getId(), "feedback", game.getWord());
+
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        ScoreService scoreService = mock(ScoreService.class);
+        GameSessionService gameSessionService = mock(GameSessionService.class);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+
+        when(gameService.createGame(GameType.LETTEROF5)).thenReturn(game);
+        when(gameSessionService.createNewGameSession(game, playerid)).thenReturn(gameSession);
+
+
+        Map result = gameService.createNewGame(playerid);
+
+        //assertEquals(expectedMap, result);
+        assertTrue(result.containsKey("gameid"));
+    }
 
     private static Stream<Arguments> provideGameAndExpectedGameType() {
         return Stream.of(
@@ -144,7 +158,7 @@ public class GameServiceTests {
     @ParameterizedTest
     @MethodSource("provideGameAndExpectedGameType")
     @DisplayName("CHECKS THE GAMETYPE AND RETURNS NEW GAME")
-    void chgeckGameType(Game game, GameType gameType) {
+    void checkGameType(Game game, GameType gameType) {
         //Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
 
         GameRepository gameRepository = mock(GameRepository.class);
@@ -159,6 +173,41 @@ public class GameServiceTests {
         Game result = gameService.checkGameType(game.getId());
 
         assertTrue(result.getGameType() == gameType);
+    }
+
+    @Test
+    @DisplayName("THROWS GAMEFINISHED EXCEPTION IF GAME IS FINISHED")
+    void checkGameTypeGameFinished() {
+
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        ScoreService scoreService = mock(ScoreService.class);
+        GameSessionService gameSessionService = mock(GameSessionService.class);
+
+        when(gameRepository.getById(game4.getId())).thenReturn(game4);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+
+        assertThrows(GameFinished.class, () -> {
+            gameService.checkGameType(game4.getId());
+        });
+    }
+
+    @Test
+    @DisplayName("RETURNS GAME IF NO GAMETYPE FOUND")
+    void checkGameTypeReturnGame() {
+        GameRepository gameRepository = mock(GameRepository.class);
+        WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
+        ScoreService scoreService = mock(ScoreService.class);
+        GameSessionService gameSessionService = mock(GameSessionService.class);
+
+        when(gameRepository.getById(game5.getId())).thenReturn(game5);
+
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+
+        Game result = gameService.checkGameType(game5.getId());
+
+        assertEquals(game5, result);
     }
 
     @Test
