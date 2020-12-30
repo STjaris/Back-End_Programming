@@ -9,7 +9,6 @@ import nl.hu.vkbep.lingo.game.exception.MaxRoundReached;
 import nl.hu.vkbep.lingo.gameSession.application.GameSessionService;
 import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
 import nl.hu.vkbep.lingo.player.domain.Player;
-import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.DisplayName;
@@ -52,10 +51,10 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
+
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
 
         when(gameService.createGame(GameType.LETTEROF5)).thenReturn(game);
         when(gameSessionService.createNewGameSession(game, playerid)).thenReturn(gameSession);
@@ -82,12 +81,11 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         when(wordServiceInterface.getRandomWord(game.getGameType())).thenReturn(word);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
 
         Game result = gameService.createGame(GameType.LETTEROF5);
 
@@ -101,14 +99,13 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
 
         when(gameRepository.getById(game.getId())).thenReturn(game);
         when(wordServiceInterface.attemptChecker(word.getId(), word.getWord())).thenReturn(true);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
         Map result = gameService.makeAttempt(game.getId(), word.getWord());
 
         assertTrue(result.containsValue("CORRECT"));
@@ -123,13 +120,12 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         when(gameRepository.getById(game.getId())).thenReturn(game);
         when(wordServiceInterface.attemptChecker(word.getId(), word.getWord())).thenReturn(true);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
         Map result = gameService.makeAttempt(game.getId(), attempt.getWord());
 
         assertTrue(result.containsKey("FEEDBACK"));
@@ -143,13 +139,12 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         when(gameRepository.getById(game2.getId())).thenReturn(game2);
         when(wordServiceInterface.attemptChecker(word.getId(), word.getWord())).thenReturn(true);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
         Map result = gameService.makeAttempt(game2.getId(), attempt.getWord());
 
         assertTrue(result.containsValue(new MaxRoundReached(game2.getId()).getMessage()));
@@ -163,12 +158,11 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         when(gameRepository.getById(game.getId())).thenReturn(game);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
 
         Game result = gameService.checkGameType(game.getId());
 
@@ -181,12 +175,11 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         when(gameRepository.getById(game4.getId())).thenReturn(game4);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
 
         assertThrows(GameFinished.class, () -> {
             gameService.checkGameType(game4.getId());
@@ -198,12 +191,11 @@ public class GameServiceTests {
     void checkGameTypeReturnGame() {
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         when(gameRepository.getById(game5.getId())).thenReturn(game5);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
 
         Game result = gameService.checkGameType(game5.getId());
 
@@ -217,12 +209,11 @@ public class GameServiceTests {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-        ScoreService scoreService = mock(ScoreService.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         when(gameRepository.getById(game.getId())).thenReturn(game);
 
-        GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
+        GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
 
         Game result = gameService.getById(game.getId());
 

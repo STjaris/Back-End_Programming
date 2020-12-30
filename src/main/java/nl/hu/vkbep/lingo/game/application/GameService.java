@@ -8,7 +8,6 @@ import nl.hu.vkbep.lingo.game.exception.GameFinished;
 import nl.hu.vkbep.lingo.game.exception.MaxRoundReached;
 import nl.hu.vkbep.lingo.gameSession.application.GameSessionService;
 import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
-import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,14 +26,13 @@ public class GameService implements GameServiceInterface {
 
     private GameRepository gameRepository;
     private WordServiceInterface wordServiceInterface;
-    private ScoreService scoreService;
+
     private GameSessionService gameSessionService;
 
     @Autowired
-    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, ScoreService scoreService, GameSessionService gameSessionService) {
+    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, GameSessionService gameSessionService) {
         this.gameRepository = gameRepository;
         this.wordServiceInterface = wordServiceInterface;
-        this.scoreService = scoreService;
         this.gameSessionService = gameSessionService;
     }
 
@@ -152,7 +150,7 @@ public class GameService implements GameServiceInterface {
 
     public double score(Game game, int multiplier) {
 
-        double score = scoreService.calculation(game.getRoundCount(), multiplier);
+        double score = game.calculation(game.getRoundCount(), multiplier);
         game.setScore(score);
 
         gameRepository.save(game);

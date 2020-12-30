@@ -5,12 +5,13 @@ import nl.hu.vkbep.lingo.gameSession.data.GameSessionRepository;
 import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
 import nl.hu.vkbep.lingo.player.data.PlayerRepository;
 import nl.hu.vkbep.lingo.player.domain.Player;
-import nl.hu.vkbep.lingo.score.application.ScoreService;
-import nl.hu.vkbep.lingo.score.domain.Score;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class GameSessionService {
@@ -18,13 +19,12 @@ public class GameSessionService {
 
     private PlayerRepository playerRepository;
     private GameSessionRepository gameSessionRepository;
-    private ScoreService scoreService;
 
     @Autowired
-    public GameSessionService(PlayerRepository playerRepository, GameSessionRepository gameSessionRepository, ScoreService scoreService) {
+    public GameSessionService(PlayerRepository playerRepository, GameSessionRepository gameSessionRepository) {
         this.playerRepository = playerRepository;
         this.gameSessionRepository = gameSessionRepository;
-        this.scoreService = scoreService;
+
     }
 
     public GameSession createNewGameSession(Game game, Long playerid){

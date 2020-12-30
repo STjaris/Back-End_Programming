@@ -1,8 +1,7 @@
 package nl.hu.vkbep.lingo.gameSession.presentation;
 
 import nl.hu.vkbep.lingo.gameSession.application.GameSessionService;
-import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
-import nl.hu.vkbep.lingo.score.exception.HighscoreNotFound;
+import nl.hu.vkbep.lingo.gameSession.exception.HighscoreNotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

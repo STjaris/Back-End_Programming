@@ -7,7 +7,6 @@ import nl.hu.vkbep.lingo.gameSession.data.GameSessionRepository;
 import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
 import nl.hu.vkbep.lingo.player.data.PlayerRepository;
 import nl.hu.vkbep.lingo.player.domain.Player;
-import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -36,12 +35,11 @@ public class GameSessionServiceTests {
 
         PlayerRepository playerRepository = mock(PlayerRepository.class);
         GameSessionRepository gameSessionRepository = mock(GameSessionRepository.class);
-        ScoreService scoreService = mock(ScoreService.class);
 
         when(playerRepository.getPlayerById(playerid)).thenReturn(player);
 
         GameSessionService gameSessionService = new GameSessionService(
-                playerRepository, gameSessionRepository, scoreService);
+                playerRepository, gameSessionRepository);
 
         GameSession result = gameSessionService.createNewGameSession(game, playerid);
 
@@ -68,10 +66,10 @@ public class GameSessionServiceTests {
 
         PlayerRepository playerRepository = mock(PlayerRepository.class);
         GameSessionRepository gameSessionRepository = mock(GameSessionRepository.class);
-        ScoreService scoreService = mock(ScoreService.class);
+
 
         GameSessionService gameSessionService = new GameSessionService(
-                playerRepository, gameSessionRepository, scoreService);
+                playerRepository, gameSessionRepository);
 
         GameSession result = gameSessionService.updateGameSession(startGameSession, game2, game1);
 
@@ -92,12 +90,11 @@ public class GameSessionServiceTests {
 
         PlayerRepository playerRepository = mock(PlayerRepository.class);
         GameSessionRepository gameSessionRepository = mock(GameSessionRepository.class);
-        ScoreService scoreService = mock(ScoreService.class);
 
         when(gameSessionRepository.getGameSessionByGamesIsContaining(game1)).thenReturn(expectedGameSession);
 
         GameSessionService gameSessionService = new GameSessionService(
-                playerRepository, gameSessionRepository, scoreService);
+                playerRepository, gameSessionRepository);
 
         GameSession result = gameSessionService.getGameSessionContainingGame(game1);
 
@@ -133,12 +130,11 @@ public class GameSessionServiceTests {
 
         PlayerRepository playerRepository = mock(PlayerRepository.class);
         GameSessionRepository gameSessionRepository = mock(GameSessionRepository.class);
-        ScoreService scoreService = mock(ScoreService.class);
 
         when(gameSessionRepository.getAllOrderByScore()).thenReturn(gameSessions);
 
         GameSessionService gameSessionService = new GameSessionService(
-                playerRepository, gameSessionRepository, scoreService);
+                playerRepository, gameSessionRepository);
 
         List<Map> result = gameSessionService.getHighscore();
 

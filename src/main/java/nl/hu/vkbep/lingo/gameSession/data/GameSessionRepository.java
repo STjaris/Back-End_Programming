@@ -2,7 +2,6 @@ package nl.hu.vkbep.lingo.gameSession.data;
 
 import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
-import nl.hu.vkbep.lingo.score.domain.Score;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

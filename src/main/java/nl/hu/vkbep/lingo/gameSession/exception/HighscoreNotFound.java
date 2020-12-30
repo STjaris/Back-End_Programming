@@ -1,4 +1,4 @@
-package nl.hu.vkbep.lingo.score.exception;
+package nl.hu.vkbep.lingo.gameSession.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

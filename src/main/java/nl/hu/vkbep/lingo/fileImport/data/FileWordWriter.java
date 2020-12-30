@@ -11,12 +11,8 @@ import java.util.List;
 
 public class FileWordWriter {
 
-
     private WordFilter wordFilter;
     private WordService wordService;
-
-    private List<String> list = new ArrayList<>();
-
 
     public FileWordWriter(WordFilter wordFilter, WordService wordService) {
         this.wordFilter = wordFilter;

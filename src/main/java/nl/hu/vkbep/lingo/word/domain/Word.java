@@ -30,9 +30,6 @@ public class Word {
         return word;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
     public void setWord(String word) {
         this.word = word;
     }

@@ -127,4 +127,9 @@ public class Game {
                 ", roundCount=" + roundCount +
                 '}';
     }
+
+    public double calculation(int roundcount, int multiplier) {
+        final int maxRoundCount = 5;
+        return ((maxRoundCount / (double) (roundcount + 1)) * multiplier);
+    }
 }
