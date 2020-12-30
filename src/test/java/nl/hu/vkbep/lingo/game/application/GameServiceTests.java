@@ -75,7 +75,7 @@ public class GameServiceTests {
 
         GameService gameService = new GameService(gameRepository, wordServiceInterface, scoreService, gameSessionService);
 
-        Game result = gameService.createGame();
+        Game result = gameService.createGame(GameType.LETTEROF5);
 
         assertEquals(game.getGameType(), result.getGameType());
     }

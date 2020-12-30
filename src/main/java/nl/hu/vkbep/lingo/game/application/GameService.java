@@ -38,7 +38,7 @@ public class GameService implements GameServiceInterface {
         this.gameSessionService = gameSessionService;
     }
 
-    public Game createGame() {
+    public Game createGame(GameType gameType) {
         //CREATE NEW GAME
         Game game = new Game();
 
@@ -46,7 +46,7 @@ public class GameService implements GameServiceInterface {
         game.setGameStatus(GameStatus.NOTSTARTED);
 
         //SET GAMETYPE
-        game.setGameType(GameType.LETTEROF5);
+        game.setGameType(gameType);
 
         //SET RANDOM WORD IN GAME
         game.setWord(wordServiceInterface.getRandomWord(game.getGameType()));
@@ -59,7 +59,7 @@ public class GameService implements GameServiceInterface {
 
     public Map createNewGame(Long playerid) {
 
-        Game game = createGame();
+        Game game = createGame(GameType.LETTEROF5);
 
         //CREATE NEW GAMESESSION
         gameSessionService.createNewGameSession(game, playerid);
@@ -117,7 +117,7 @@ public class GameService implements GameServiceInterface {
             score(gamePlayed, 5);
 
             //NEW GAME
-            Game newGame = createGame();
+            Game newGame = createGame(GameType.LETTEROF6);
             newGame.setGameType(GameType.LETTEROF6);
 
             GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);
@@ -129,7 +129,7 @@ public class GameService implements GameServiceInterface {
             score(gamePlayed, 6);
 
             //NEW GAME
-            Game newGame = createGame();
+            Game newGame = createGame(GameType.LETTEROF7);
             newGame.setGameType(GameType.LETTEROF7);
 
             GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);
