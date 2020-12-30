@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: nl.hu.vkbep.lingo.fileImport.data.FileWordWriterTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.688 s - in nl.hu.vkbep.lingo.fileImport.data.FileWordWriterTests

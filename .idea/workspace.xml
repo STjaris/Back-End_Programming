@@ -73,7 +73,7 @@
       <recent name="nl.hu.vkbep.lingo.fileImport.application" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -83,22 +83,6 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileWordReaderTests.countIsNullTextImport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.fileImport.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.fileImport.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.fileImport.application.FileWordReaderTests" />
-      <option name="METHOD_NAME" value="countIsNullTextImport" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,6 +147,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/back-end_programming/target/site/jacoco/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="BackEndProgrammingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="lingo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="nl.hu.vkbep.lingo.BackEndProgrammingApplication" />
@@ -172,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
         <item itemvalue="JUnit.FileWordWriterTests" />
         <item itemvalue="JUnit.GameTests.calculation" />
         <item itemvalue="JUnit.LingoWordFilterTests" />
-        <item itemvalue="JUnit.FileWordReaderTests.countIsNullTextImport" />
       </list>
     </recent_temporary>
   </component>

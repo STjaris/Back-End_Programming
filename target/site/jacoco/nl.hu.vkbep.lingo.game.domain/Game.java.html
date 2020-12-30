@@ -127,5 +127,10 @@ public class Game {
                 &quot;, roundCount=&quot; + roundCount +
                 '}';
     }
+
+    public double calculation(int roundcount, int multiplier) {
+<span class="fc" id="L132">        final int maxRoundCount = 5;</span>
+<span class="fc" id="L133">        return ((maxRoundCount / (double) (roundcount + 1)) * multiplier);</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
