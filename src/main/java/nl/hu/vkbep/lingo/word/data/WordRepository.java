@@ -10,8 +10,6 @@ public interface WordRepository extends JpaRepository<Word, Long> {
 
     Word save(Word word);
 
-    int countAllByIdGreaterThan(Long id);
-
     @Query(
             value = "SELECT * FROM WORD ORDER BY RANDOM() LIMIT 1", nativeQuery = true
     )

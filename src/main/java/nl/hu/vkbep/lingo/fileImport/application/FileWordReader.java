@@ -1,5 +1,6 @@
-package nl.hu.vkbep.lingo.fileImport.data;
+package nl.hu.vkbep.lingo.fileImport.application;
 
+import nl.hu.vkbep.lingo.fileImport.data.FileWordWriter;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,14 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-@Service
+
 public class FileWordReader implements InitializingBean {
 
     @Value("classpath:basiswoorden-gekeurd.txt")
     private Resource source;
 
     private WordRepository wordRepository;
-
     private FileWordWriter fileWordWriter;
 
     public FileWordReader(WordRepository wordRepository, FileWordWriter fileWordWriter) {

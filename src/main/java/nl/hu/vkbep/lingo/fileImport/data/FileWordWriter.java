@@ -1,6 +1,6 @@
 package nl.hu.vkbep.lingo.fileImport.data;
 
-import nl.hu.vkbep.lingo.fileImport.application.FilterWordsProcessor;
+import nl.hu.vkbep.lingo.fileImport.domain.WordFilter;
 import nl.hu.vkbep.lingo.word.application.WordService;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.springframework.stereotype.Service;
@@ -8,18 +8,18 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+
 public class FileWordWriter {
 
-    private FilterWordsProcessor filterWordsProcessor;
 
+    private WordFilter wordFilter;
     private WordService wordService;
 
     private List<String> list = new ArrayList<>();
 
 
-    public FileWordWriter(FilterWordsProcessor filterWordsProcessor, WordService wordService) {
-        this.filterWordsProcessor = filterWordsProcessor;
+    public FileWordWriter(WordFilter wordFilter, WordService wordService) {
+        this.wordFilter = wordFilter;
         this.wordService = wordService;
     }
 
@@ -27,7 +27,7 @@ public class FileWordWriter {
 
         //FILTER LENGTH
         for (String line : lines) {
-            if (filterWordsProcessor.stringFilteringOnLength(line) && filterWordsProcessor.stringFilteringOnSpecialChar(line)) {
+            if (wordFilter.stringFiltering(line)) {
                 Word word = new Word();
                 word.setWord(line);
                 wordService.save(word);

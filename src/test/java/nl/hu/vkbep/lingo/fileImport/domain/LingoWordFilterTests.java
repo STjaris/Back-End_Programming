@@ -1,5 +1,4 @@
-package nl.hu.vkbep.lingo.fileImport.application;
-
+package nl.hu.vkbep.lingo.fileImport.domain;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -9,9 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-@DisplayName("FilterWordsProcessorTests")
-public class FilterWordsProcessorTests {
-
+public class LingoWordFilterTests {
     private static Stream<Arguments> provideLengthAndResults() {
         return Stream.of(
                 Arguments.of("Test", false),
@@ -31,14 +28,13 @@ public class FilterWordsProcessorTests {
                 Arguments.of("qwerty", true)
         );
     }
-
-    @ParameterizedTest
+        @ParameterizedTest
     @MethodSource("provideLengthAndResults")
     @DisplayName("Is in between 5 and 7")
     public void verifyLengthIsInBetween(String input, boolean expectedResult) {
-        FilterWordsProcessor filterWordsProcessor = new FilterWordsProcessor();
+        LingoWordFilter lingoWordFilter = new LingoWordFilter();
 
-        boolean result = filterWordsProcessor.stringFilteringOnLength(input);
+        boolean result = lingoWordFilter.stringFiltering(input);
 
         Assertions.assertEquals(expectedResult, result);
     }
@@ -47,10 +43,11 @@ public class FilterWordsProcessorTests {
     @MethodSource("provideCharAndResults")
     @DisplayName("Contains no special characters")
     public void verifyCharOfString(String input, boolean expectedResult) {
-        FilterWordsProcessor filterWordsProcessor = new FilterWordsProcessor();
+        LingoWordFilter lingoWordFilter = new LingoWordFilter();
 
-        boolean result = filterWordsProcessor.stringFilteringOnSpecialChar(input);
+        boolean result = lingoWordFilter.stringFiltering(input);
 
         Assertions.assertEquals(expectedResult, result);
     }
+
 }
