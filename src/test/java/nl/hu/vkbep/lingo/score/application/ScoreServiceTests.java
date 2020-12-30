@@ -46,27 +46,4 @@ public class ScoreServiceTests {
         assertEquals(resultList, result);
 
     }
-
-    @Test
-    @DisplayName("CALCULATES SCORE")
-    public void calculateScores(){
-        Player player = new Player("test", "test", "test", true, false);
-        Long playerid = 1L;
-        List<Long> list = List.of(1L, 2L);
-        int multiplier  = 5;
-
-        Word word = new Word(1L, "tests");
-        Score score = new Score(25, player, list.get(0));
-        Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0 ,1, 0);
-
-        ScoreRepository scoreRepository = mock(ScoreRepository.class);
-        PlayerRepository playerRepository = mock(PlayerRepository.class);
-
-        when(playerRepository.getPlayerById(playerid)).thenReturn(player);
-
-        ScoreService scoreService = new ScoreService(scoreRepository, playerRepository);
-        Score result = scoreService.calculateScores(game, multiplier, playerid, list);
-
-        assertEquals(score.getScore(), result.getScore());
-    }
 }

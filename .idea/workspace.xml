@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="576e2409-743d-4161-9760-006506c3e1e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/game/application/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/game/application/GameServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/gameSession/application/GameSessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/score/application/ScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/score/application/ScoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/score/application/ScoreServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/hu/vkbep/lingo/score/application/ScoreServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,50 @@
       <recent name="C:\Users\Soerano\Documents\GitHub\Back-End_Programming\lingo" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackEndProgrammingApplication">
+  <component name="RunManager" selected="JUnit.nl.hu.vkbep.lingo in lingo">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameSessionServiceTests.createNewGameSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.gameSession.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.gameSession.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.gameSession.application.GameSessionServiceTests" />
+      <option name="METHOD_NAME" value="createNewGameSession" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameSessionServiceTests.updateGameSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lingo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.hu.vkbep.lingo.gameSession.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.gameSession.application" />
+      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.gameSession.application.GameSessionServiceTests" />
+      <option name="METHOD_NAME" value="updateGameSession" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WordServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
@@ -69,22 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WordServiceTest.wordCheckerCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.word.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.application.WordServiceTest" />
-      <option name="METHOD_NAME" value="wordCheckerCorrect" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WordServiceTest.wordCheckerGuessNotExisting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lingo" />
       <extension name="coverage">
@@ -96,22 +125,6 @@
       <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.application" />
       <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.application.WordServiceTest" />
       <option name="METHOD_NAME" value="wordCheckerGuessNotExisting" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WordServiceTest.wordCheckerWrongLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lingo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.hu.vkbep.lingo.word.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.hu.vkbep.lingo.word.application" />
-      <option name="MAIN_CLASS_NAME" value="nl.hu.vkbep.lingo.word.application.WordServiceTest" />
-      <option name="METHOD_NAME" value="wordCheckerWrongLength" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,10 +154,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.nl.hu.vkbep.lingo in lingo" />
+        <item itemvalue="JUnit.GameSessionServiceTests.updateGameSession" />
+        <item itemvalue="JUnit.GameSessionServiceTests.createNewGameSession" />
         <item itemvalue="JUnit.WordServiceTest" />
         <item itemvalue="JUnit.WordServiceTest.wordCheckerGuessNotExisting" />
-        <item itemvalue="JUnit.WordServiceTest.wordCheckerWrongLength" />
-        <item itemvalue="JUnit.WordServiceTest.wordCheckerCorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +183,7 @@
       <workItem from="1608558300351" duration="6799000" />
       <workItem from="1609245832471" duration="4456000" />
       <workItem from="1609250991753" duration="899000" />
-      <workItem from="1609331875850" duration="445000" />
+      <workItem from="1609331875850" duration="2236000" />
     </task>
     <servers />
   </component>
@@ -192,14 +205,6 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/nl/hu/vkbep/lingo/score/application/ScoreService.java</url>
-          <line>72</line>
-          <properties class="nl.hu.vkbep.lingo.score.application.ScoreService" method="calculation">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -241,7 +246,7 @@
     <SUITE FILE_PATH="coverage/back_end_programming$GameServiceTests_createNewGame.ic" NAME="GameServiceTests.createNewGame Coverage Results" MODIFIED="1608197353654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.game.application.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1609251209104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/back_end_programming$nl_hu_vkbep_lingo_in_lingo.ic" NAME="nl.hu.vkbep.lingo in lingo Coverage Results" MODIFIED="1609332873853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$RoundServiceTests_wordLengthCheck__1_.ic" NAME="RoundServiceTests.wordLengthCheck (1) Coverage Results" MODIFIED="1608122317912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -261,6 +266,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$GameControllerTests_createsNewGame.ic" NAME="GameControllerTests.createsNewGame Coverage Results" MODIFIED="1608204129177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.game.presentation.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/back_end_programming$GameSessionServiceTests_createNewGameSession.ic" NAME="GameSessionServiceTests.createNewGameSession Coverage Results" MODIFIED="1609333479663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.hu.vkbep.lingo.gameSession.application.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/back_end_programming$WordServiceTest_wordCheckerWrongLength.ic" NAME="WordServiceTest.wordCheckerWrongLength Coverage Results" MODIFIED="1608738566464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.hu.vkbep.lingo.word.application.*</FILTER>

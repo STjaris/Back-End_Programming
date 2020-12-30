@@ -41,7 +41,7 @@ public class GameSessionService {
 
     }
 
-    public void updateGameSession(GameSession gameSession, Game newGame, Game oldGame){
+    public GameSession updateGameSession(GameSession gameSession, Game newGame, Game oldGame){
 
         //UPDATE LIST
         List<Game> gameList = gameSession.getGames();
@@ -54,6 +54,8 @@ public class GameSessionService {
         gameSession.setTotalScore(score);
 
         gameSessionRepository.save(gameSession);
+
+        return gameSession;
     }
 
     public GameSession getGameSessionContainingGame(Game game){
