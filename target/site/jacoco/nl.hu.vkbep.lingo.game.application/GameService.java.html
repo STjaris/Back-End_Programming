@@ -4,7 +4,10 @@ import nl.hu.vkbep.lingo.game.data.GameRepository;
 import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.game.domain.GameStatus;
 import nl.hu.vkbep.lingo.game.domain.GameType;
-import nl.hu.vkbep.lingo.round.application.RoundServiceInterface;
+import nl.hu.vkbep.lingo.game.exception.GameFinished;
+import nl.hu.vkbep.lingo.game.exception.MaxRoundReached;
+import nl.hu.vkbep.lingo.gameSession.application.GameSessionService;
+import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
 import nl.hu.vkbep.lingo.score.application.ScoreService;
 import nl.hu.vkbep.lingo.word.application.WordServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,133 +22,144 @@ import java.util.Map;
 @Service
 public class GameService implements GameServiceInterface {
 
-<span class="fc" id="L22">    private List&lt;Long&gt; gameidList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L25">    private List&lt;Long&gt; gameidList = new ArrayList&lt;&gt;();</span>
 
 
     private GameRepository gameRepository;
     private WordServiceInterface wordServiceInterface;
-    private RoundServiceInterface roundServiceInterface;
     private ScoreService scoreService;
+    private GameSessionService gameSessionService;
 
     @Autowired
-<span class="fc" id="L31">    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, RoundServiceInterface roundServiceInterface, ScoreService scoreService) {</span>
-<span class="fc" id="L32">        this.gameRepository = gameRepository;</span>
-<span class="fc" id="L33">        this.wordServiceInterface = wordServiceInterface;</span>
-<span class="fc" id="L34">        this.roundServiceInterface = roundServiceInterface;</span>
-<span class="fc" id="L35">        this.scoreService = scoreService;</span>
-<span class="fc" id="L36">    }</span>
+<span class="fc" id="L34">    public GameService(GameRepository gameRepository, WordServiceInterface wordServiceInterface, ScoreService scoreService, GameSessionService gameSessionService) {</span>
+<span class="fc" id="L35">        this.gameRepository = gameRepository;</span>
+<span class="fc" id="L36">        this.wordServiceInterface = wordServiceInterface;</span>
+<span class="fc" id="L37">        this.scoreService = scoreService;</span>
+<span class="fc" id="L38">        this.gameSessionService = gameSessionService;</span>
+<span class="fc" id="L39">    }</span>
 
-    public Map createNewGame() {
+    public Game createGame(GameType gameType) {
         //CREATE NEW GAME
-<span class="fc" id="L40">        Game game = new Game();</span>
+<span class="fc" id="L43">        Game game = new Game();</span>
 
         //SET GAMESTATUS
-<span class="fc" id="L43">        game.setGameStatus(GameStatus.NOTSTARTED);</span>
+<span class="fc" id="L46">        game.setGameStatus(GameStatus.NOTSTARTED);</span>
 
         //SET GAMETYPE
-<span class="fc" id="L46">        game.setGameType(GameType.LETTEROF5);</span>
+<span class="fc" id="L49">        game.setGameType(gameType);</span>
 
         //SET RANDOM WORD IN GAME
-<span class="fc" id="L49">        game.setWord(wordServiceInterface.getRandomWord(game.getGameType()));</span>
+<span class="fc" id="L52">        game.setWord(wordServiceInterface.getRandomWord(game.getGameType()));</span>
 
         //SAVE GAME
-<span class="fc" id="L52">        gameRepository.save(game);</span>
+<span class="fc" id="L55">        gameRepository.save(game);</span>
+
+<span class="fc" id="L57">        return game;</span>
+    }
+
+    public Map createNewGame(Long playerid) {
+
+<span class="fc" id="L62">        Game game = createGame(GameType.LETTEROF5);</span>
+
+        //CREATE NEW GAMESESSION
+<span class="fc" id="L65">        gameSessionService.createNewGameSession(game, playerid);</span>
 
         //RETURN MAP WITH DATA
-<span class="fc" id="L55">        Map&lt;String, java.io.Serializable&gt; map = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L56">        map.put(&quot;gameid&quot;, game.getId());</span>
-<span class="fc" id="L57">        map.put(&quot;feedback&quot;, game.getWord().toString());</span>
+<span class="fc" id="L68">        Map map = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L69">        map.put(&quot;gameid&quot;, game.getId());</span>
+<span class="fc" id="L70">        map.put(&quot;feedback&quot;, game.getWord());</span>
 
-<span class="fc" id="L59">        return map;</span>
+<span class="fc" id="L72">        return map;</span>
     }
-
-    @Override
-    public Map guess(Long gameid, String guess) {
-
-<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (!gameidList.contains(gameid)) {</span>
-<span class="fc" id="L66">            gameidList.add(gameid);</span>
-        }
-
-        //GET WORDID FROM GAME
-<span class="fc" id="L70">        Long wordid = gameRepository.getById(gameid).getWord().getId();</span>
-
-        //SET GAME TO ONGOING AND SAVE
-<span class="fc" id="L73">        Game game = gameRepository.getById(gameid);</span>
-<span class="fc" id="L74">        game.setGameStatus(GameStatus.ONGOING);</span>
-<span class="fc" id="L75">        gameRepository.save(game);</span>
-
-<span class="fc" id="L77">        return checkRoundCountPerGame(game, wordid, guess);</span>
-    }
-
-    public Map checkRoundCountPerGame(Game game, Long wordid, String guess) {
-
-        //CHECK IF MAX ROUND IS REACHED
-<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (game.getRoundCount() &lt; 5) {</span>
-
-<span class="fc" id="L85">            game.setRoundCount(countRoundsPerGame(game.getId()) + 1);</span>
-<span class="fc" id="L86">            Map map = new HashMap();</span>
-
-            //ADDS NEW GAME TO MAP
-<span class="fc" id="L89">            map.put(&quot;Game&quot;, checkGameType(roundServiceInterface.playRound(game, wordid, guess), game).toString());</span>
-
-<span class="fc" id="L91">            map.putAll(roundServiceInterface.playRound(game, wordid, guess));</span>
-
-<span class="fc" id="L93">            return map;</span>
-        } else {
-<span class="fc" id="L95">            Map&lt;String, String&gt; map = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L96">            map.put(&quot;feedback&quot;, &quot;MAX ROUND REACHED&quot;);</span>
-<span class="fc" id="L97">            map.put(&quot;gamestatus&quot;, GameStatus.ENDED.toString());</span>
-
-            //CHANGE GAMESTATUS TO ENDED AND SAVE
-<span class="fc" id="L100">            game.setGameStatus(GameStatus.ENDED);</span>
-<span class="fc" id="L101">            gameRepository.save(game);</span>
-
-<span class="fc" id="L103">            return map;</span>
-        }
-    }
-
-
-    public Game checkGameType(Map&lt;String, String&gt; map, Game game) {
-
-        //CREATES NEW GAME IF RETURNS CORRECT ELSE RETURN OLD GAME
-<span class="pc bpc" id="L111" title="1 of 4 branches missed.">        if (map.containsValue(&quot;CORRECT&quot;) &amp;&amp; map.containsKey(&quot;note&quot;)</span>
-<span class="fc bfc" id="L112" title="All 2 branches covered.">                &amp;&amp; game.getGameType() == GameType.LETTEROF5) {</span>
-<span class="fc" id="L113">            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF6,</span>
-<span class="fc" id="L114">                    wordServiceInterface.getRandomWord(GameType.LETTEROF6));</span>
-<span class="fc" id="L115">            gameRepository.save(newGame);</span>
-<span class="fc" id="L116">            return newGame;</span>
-
-<span class="pc bpc" id="L118" title="1 of 4 branches missed.">        } else if (map.containsValue(&quot;CORRECT&quot;) &amp;&amp; map.containsKey(&quot;note&quot;)</span>
-<span class="pc bpc" id="L119" title="1 of 2 branches missed.">                &amp;&amp; game.getGameType() == GameType.LETTEROF6) {</span>
-<span class="fc" id="L120">            Game newGame = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7,</span>
-<span class="fc" id="L121">                    wordServiceInterface.getRandomWord(GameType.LETTEROF7));</span>
-<span class="fc" id="L122">            gameRepository.save(newGame);</span>
-<span class="fc" id="L123">            return newGame;</span>
-        } else {
-<span class="fc" id="L125">            return game;</span>
-        }
-    }
-
-
-    public int countRoundsPerGame(Long gameid) {
-<span class="fc" id="L131">        Game game = gameRepository.getById(gameid);</span>
-
-<span class="fc" id="L133">        return roundServiceInterface.countRoundPerGame(game);</span>
-    }
-
 
     @Override
     public Game getById(Long gameid) {
-<span class="fc" id="L139">        return gameRepository.getById(gameid);</span>
+<span class="fc" id="L77">        return gameRepository.getById(gameid);</span>
+    }
+
+    @Override
+    public Map makeAttempt(Long gameid, String guess) {
+
+<span class="fc" id="L83">        Long wordid = gameRepository.getById(gameid).getWord().getId();</span>
+<span class="fc" id="L84">        Map map = new HashMap&lt;&gt;();</span>
+
+
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (roundCountChecker(gameid)) {</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">            if (wordServiceInterface.attemptChecker(wordid, guess)) {</span>
+<span class="fc" id="L89">                Game newGame = checkGameType(gameid);</span>
+
+<span class="fc" id="L91">                map.put(&quot;NOTE&quot;, &quot;CORRECT&quot;);</span>
+<span class="fc" id="L92">                map.put(&quot;NEWGAME&quot;, newGame);</span>
+<span class="fc" id="L93">            } else {</span>
+<span class="fc" id="L94">                Game game = gameRepository.getById(gameid);</span>
+<span class="fc" id="L95">                int roundcount = game.getRoundCount();</span>
+<span class="fc" id="L96">                game.setRoundCount(roundcount + 1);</span>
+<span class="fc" id="L97">                gameRepository.save(game);</span>
+
+<span class="fc" id="L99">                map.put(&quot;FEEDBACK&quot;, wordServiceInterface.wordChecker(guess, wordid));</span>
+<span class="fc" id="L100">            }</span>
+        } else {
+<span class="fc" id="L102">            map.put(&quot;NOTE&quot;, new MaxRoundReached(gameid).getMessage());</span>
+        }
+<span class="fc" id="L104">        return map;</span>
+    }
+
+    public boolean roundCountChecker(Long gameid) {
+<span class="fc bfc" id="L108" title="All 2 branches covered.">        return gameRepository.getById(gameid).getRoundCount() &lt; 5;</span>
+    }
+
+    public Game checkGameType(Long gameid) {
+
+<span class="fc" id="L113">        Game gamePlayed = gameRepository.getById(gameid);</span>
+
+<span class="fc bfc" id="L115" title="All 2 branches covered.">        if (gamePlayed.getGameType() == GameType.LETTEROF5) {</span>
+            //UPDATE SCORE
+<span class="fc" id="L117">            score(gamePlayed, 5);</span>
+
+            //NEW GAME
+<span class="fc" id="L120">            Game newGame = createGame(GameType.LETTEROF6);</span>
+<span class="fc" id="L121">            newGame.setGameType(GameType.LETTEROF6);</span>
+
+<span class="fc" id="L123">            GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);</span>
+<span class="fc" id="L124">            gameSessionService.updateGameSession(gameSession, newGame, gamePlayed);</span>
+
+<span class="fc" id="L126">            return newGame;</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">        } else if (gamePlayed.getGameType() == GameType.LETTEROF6) {</span>
+            //UPDATE SCORE
+<span class="fc" id="L129">            score(gamePlayed, 6);</span>
+
+            //NEW GAME
+<span class="fc" id="L132">            Game newGame = createGame(GameType.LETTEROF7);</span>
+<span class="fc" id="L133">            newGame.setGameType(GameType.LETTEROF7);</span>
+
+<span class="fc" id="L135">            GameSession gameSession = gameSessionService.getGameSessionContainingGame(gamePlayed);</span>
+<span class="fc" id="L136">            gameSessionService.updateGameSession(gameSession, newGame, gamePlayed);</span>
+
+<span class="fc" id="L138">            return newGame;</span>
+<span class="fc bfc" id="L139" title="All 2 branches covered.">        } else if (gamePlayed.getGameType() == GameType.LETTEROF7) {</span>
+            //UPDATE SCORE
+<span class="fc" id="L141">            score(gamePlayed, 7);</span>
+
+            //END GAME
+<span class="fc" id="L144">            System.out.println(new GameFinished().getMessage());</span>
+<span class="fc" id="L145">            throw new GameFinished();</span>
+
+        } else {
+<span class="fc" id="L148">            return gamePlayed;</span>
+        }
+
+    }
+
+    public double score(Game game, int multiplier) {
+
+<span class="fc" id="L155">        double score = scoreService.calculation(game.getRoundCount(), multiplier);</span>
+<span class="fc" id="L156">        game.setScore(score);</span>
+
+<span class="fc" id="L158">        gameRepository.save(game);</span>
+
+<span class="fc" id="L160">        return score;</span>
     }
 
 
-    public int gameType(Game game) {
-<span class="fc bfc" id="L144" title="All 2 branches covered.">        if (game.getGameType() == GameType.LETTEROF5) {</span>
-<span class="fc" id="L145">            return 5;</span>
-<span class="fc bfc" id="L146" title="All 2 branches covered.">        } else if (game.getGameType() == GameType.LETTEROF6) {</span>
-<span class="fc" id="L147">            return 6;</span>
-<span class="fc" id="L148">        } else return 7;</span>
-    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

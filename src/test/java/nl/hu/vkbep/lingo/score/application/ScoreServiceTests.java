@@ -22,28 +22,46 @@ import static org.mockito.Mockito.when;
 
 public class ScoreServiceTests {
 
+//    @Test
+//    @DisplayName("GIVES A LIST WITH SCORES BACK")
+//    public void getHighscore() {
+//
+//        Player player = new Player("test", "test", "test", true, false);
+//        Long gameid = 1L;
+//        Score score = new Score(40.0, player, gameid);
+//        Map scoreMap = Map.of("id", 1, "score",score.getScore(), "player", score.getPlayer().getName());
+//        List<Score> scoreList = List.of(score);
+//        List<Map> resultList = List.of(scoreMap);
+//
+//
+//        ScoreRepository scoreRepository = mock(ScoreRepository.class);
+//        PlayerRepository playerRepository = mock(PlayerRepository.class);
+//
+//        when(scoreRepository.getAllOrderByScore()).thenReturn(scoreList);
+//
+//        ScoreService scoreService = new ScoreService(scoreRepository, playerRepository);
+//
+//        List<Map> result = scoreService.getHighscore();
+//
+//        assertEquals(resultList, result);
+//
+//    }
+
     @Test
-    @DisplayName("GIVES A LIST WITH SCORES BACK")
-    public void getHighscore() {
-
-        Player player = new Player("test", "test", "test", true, false);
-        Long gameid = 1L;
-        Score score = new Score(40.0, player, gameid);
-        Map scoreMap = Map.of("id", 1, "score",score.getScore(), "player", score.getPlayer().getName());
-        List<Score> scoreList = List.of(score);
-        List<Map> resultList = List.of(scoreMap);
-
+    @DisplayName("CALCULATES SCORE")
+    void calculation() {
+        int roundcount = 0;
+        int multiplier = 5;
+        double expectedResult = 25;
 
         ScoreRepository scoreRepository = mock(ScoreRepository.class);
         PlayerRepository playerRepository = mock(PlayerRepository.class);
 
-        when(scoreRepository.getAllOrderByScore()).thenReturn(scoreList);
+        ScoreService scoreService = new ScoreService(scoreRepository, playerRepository);
 
-        ScoreService highScoreService = new ScoreService(scoreRepository, playerRepository);
+        double result = scoreService.calculation(roundcount, multiplier);
 
-        List<Map> result = highScoreService.getHighscore();
-
-        assertEquals(resultList, result);
+        assertEquals(expectedResult, result);
 
     }
 }

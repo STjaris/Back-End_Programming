@@ -30,77 +30,95 @@ public class Game {
 
     @Nullable
     private int roundCount;
-    
 
-<span class="fc" id="L35">    public Game(GameStatus gameStatus, GameType gameType, Word word, int duratie, int roundCount) {</span>
-<span class="fc" id="L36">        this.gameStatus = gameStatus;</span>
-<span class="fc" id="L37">        this.gameType = gameType;</span>
-<span class="fc" id="L38">        this.word = word;</span>
-<span class="fc" id="L39">        this.duratie = duratie;</span>
-<span class="fc" id="L40">        this.roundCount = roundCount;</span>
-<span class="fc" id="L41">    }</span>
+    private double score;
 
-<span class="fc" id="L43">    public Game(GameStatus gameStatus, GameType gameType, Word word) {</span>
-<span class="fc" id="L44">        this.gameStatus = gameStatus;</span>
-<span class="fc" id="L45">        this.gameType = gameType;</span>
-<span class="fc" id="L46">        this.word = word;</span>
-<span class="fc" id="L47">    }</span>
 
-<span class="fc" id="L49">    public Game() {</span>
+<span class="fc" id="L37">    public Game(GameStatus gameStatus, GameType gameType, Word word, int duratie, int roundCount, double score) {</span>
+<span class="fc" id="L38">        this.gameStatus = gameStatus;</span>
+<span class="fc" id="L39">        this.gameType = gameType;</span>
+<span class="fc" id="L40">        this.word = word;</span>
+<span class="fc" id="L41">        this.duratie = duratie;</span>
+<span class="fc" id="L42">        this.roundCount = roundCount;</span>
+<span class="fc" id="L43">        this.score = score;</span>
+<span class="fc" id="L44">    }</span>
 
+<span class="fc" id="L46">    public Game(Long id, GameStatus gameStatus, GameType gameType, Word word) {</span>
+<span class="fc" id="L47">        this.id = id;</span>
+<span class="fc" id="L48">        this.gameStatus = gameStatus;</span>
+<span class="fc" id="L49">        this.gameType = gameType;</span>
+<span class="fc" id="L50">        this.word = word;</span>
 <span class="fc" id="L51">    }</span>
 
+<span class="fc" id="L53">    public Game(GameStatus gameStatus, GameType gameType, Word word) {</span>
+<span class="fc" id="L54">        this.gameStatus = gameStatus;</span>
+<span class="fc" id="L55">        this.gameType = gameType;</span>
+<span class="fc" id="L56">        this.word = word;</span>
+<span class="fc" id="L57">    }</span>
+
+<span class="fc" id="L59">    public Game() {</span>
+
+<span class="fc" id="L61">    }</span>
+
     public Long getId() {
-<span class="fc" id="L54">        return id;</span>
+<span class="fc" id="L64">        return id;</span>
     }
 
     public GameStatus getGameStatus() {
-<span class="nc" id="L58">        return gameStatus;</span>
+<span class="nc" id="L68">        return gameStatus;</span>
     }
 
     public void setGameStatus(GameStatus gameStatus) {
-<span class="fc" id="L62">        this.gameStatus = gameStatus;</span>
-<span class="fc" id="L63">    }</span>
+<span class="fc" id="L72">        this.gameStatus = gameStatus;</span>
+<span class="fc" id="L73">    }</span>
 
     public GameType getGameType() {
-<span class="fc" id="L66">        return gameType;</span>
+<span class="fc" id="L76">        return gameType;</span>
     }
 
     public void setGameType(GameType gameType) {
-<span class="fc" id="L70">        this.gameType = gameType;</span>
-<span class="fc" id="L71">    }</span>
+<span class="fc" id="L80">        this.gameType = gameType;</span>
+<span class="fc" id="L81">    }</span>
 
     public Word getWord() {
-<span class="fc" id="L74">        return word;</span>
+<span class="fc" id="L84">        return word;</span>
     }
 
     public void setWord(Word word) {
-<span class="fc" id="L78">        this.word = word;</span>
-<span class="fc" id="L79">    }</span>
+<span class="fc" id="L88">        this.word = word;</span>
+<span class="fc" id="L89">    }</span>
 
     public int getMaxDuratie() {
-<span class="nc" id="L82">        return maxDuratie;</span>
+<span class="nc" id="L92">        return maxDuratie;</span>
     }
 
     public int getDuratie() {
-<span class="nc" id="L86">        return duratie;</span>
+<span class="nc" id="L96">        return duratie;</span>
     }
 
     public void setDuratie(int duratie) {
-<span class="nc" id="L90">        this.duratie = duratie;</span>
-<span class="nc" id="L91">    }</span>
+<span class="nc" id="L100">        this.duratie = duratie;</span>
+<span class="nc" id="L101">    }</span>
 
     public int getRoundCount() {
-<span class="fc" id="L94">        return roundCount;</span>
+<span class="fc" id="L104">        return roundCount;</span>
     }
 
     public void setRoundCount(int roundCount) {
-<span class="fc" id="L98">        this.roundCount = roundCount;</span>
-<span class="fc" id="L99">    }</span>
+<span class="fc" id="L108">        this.roundCount = roundCount;</span>
+<span class="fc" id="L109">    }</span>
+
+    public double getScore() {
+<span class="fc" id="L112">        return score;</span>
+    }
+
+    public void setScore(double score) {
+<span class="fc" id="L116">        this.score = score;</span>
+<span class="fc" id="L117">    }</span>
 
     @Override
     public String toString() {
-<span class="fc" id="L103">        return &quot;Game{&quot; +</span>
+<span class="fc" id="L121">        return &quot;Game{&quot; +</span>
                 &quot;id=&quot; + id +
                 &quot;, gameStatus=&quot; + gameStatus +
                 &quot;, gameType=&quot; + gameType +

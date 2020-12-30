@@ -18,14 +18,15 @@ public class GameController {
 <span class="nc" id="L18">    }</span>
 
     @GetMapping(&quot;/games&quot;)
-    public Map startGame() {
-<span class="nc" id="L22">        return gameServiceInterface.createNewGame();</span>
+    @ResponseBody
+    public Map startGame(@RequestParam Long playerid) {
+<span class="nc" id="L23">        return gameServiceInterface.createNewGame(playerid);</span>
     }
 
     @PostMapping(&quot;/games/{gameid}/attempt&quot;)
     public Map makeAttempt(@PathVariable Long gameid, @RequestBody String attempt) {
 
-<span class="nc" id="L28">        return gameServiceInterface.guess(gameid, attempt);</span>
+<span class="nc" id="L29">        return gameServiceInterface.makeAttempt(gameid, attempt);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

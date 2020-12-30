@@ -6,11 +6,11 @@ import nl.hu.vkbep.lingo.gameSession.domain.GameSession;
 import nl.hu.vkbep.lingo.player.data.PlayerRepository;
 import nl.hu.vkbep.lingo.player.domain.Player;
 import nl.hu.vkbep.lingo.score.application.ScoreService;
+import nl.hu.vkbep.lingo.score.domain.Score;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class GameSessionService {
@@ -60,6 +60,24 @@ public class GameSessionService {
 
     public GameSession getGameSessionContainingGame(Game game){
         return gameSessionRepository.getGameSessionByGamesIsContaining(game);
+    }
+
+    public List<Map> getHighscore() {
+
+        List<GameSession> list = gameSessionRepository.getAllOrderByScore();
+
+        List<Map> resultList = new ArrayList<>();
+        int i = 0;
+
+        for(GameSession gameSession : list){
+            Map map = new HashMap<>();
+            map.put("id", i);
+            map.put("score", gameSession.getTotalScore());
+            map.put("player", gameSession.getPlayer().getName());
+            resultList.add(map);
+            i++;
+        }
+        return resultList;
     }
 
 }

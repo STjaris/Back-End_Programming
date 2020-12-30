@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -101,5 +102,47 @@ public class GameSessionServiceTests {
         GameSession result = gameSessionService.getGameSessionContainingGame(game1);
 
         assertEquals(expectedGameSession, result);
+    }
+
+    @Test
+    @DisplayName("GIVES A LIST WITH SCORES BACK")
+    public void getHighscore() {
+
+        Word word = new Word(1L, "tests");
+        Player player = new Player("test", "test", "test", true, false);
+        Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
+
+        List<Game> games = List.of(game);
+        GameSession gameSession1 = new GameSession(games, player, 25);
+        GameSession gameSession2 = new GameSession(games, player, 50);
+        List<GameSession> gameSessions = List.of(gameSession2, gameSession1);
+
+        Map map1 = Map.of(
+                "id", 0,
+                "score", gameSession2.getTotalScore(),
+                "player", gameSession2.getPlayer().getName()
+        );
+
+        Map map2 = Map.of(
+                "id", 1,
+                "score", gameSession1.getTotalScore(),
+                "player", gameSession1.getPlayer().getName()
+        );
+
+        List<Map> listOfMaps = List.of(map1, map2);
+
+        PlayerRepository playerRepository = mock(PlayerRepository.class);
+        GameSessionRepository gameSessionRepository = mock(GameSessionRepository.class);
+        ScoreService scoreService = mock(ScoreService.class);
+
+        when(gameSessionRepository.getAllOrderByScore()).thenReturn(gameSessions);
+
+        GameSessionService gameSessionService = new GameSessionService(
+                playerRepository, gameSessionRepository, scoreService);
+
+        List<Map> result = gameSessionService.getHighscore();
+
+        assertEquals(listOfMaps, result);
+
     }
 }

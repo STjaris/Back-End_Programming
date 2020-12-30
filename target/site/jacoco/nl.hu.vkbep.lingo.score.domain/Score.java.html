@@ -23,23 +23,37 @@ public class Score {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Player player;
 
+    @NotNull
+    private Long gameid;
 
-<span class="fc" id="L27">    public Score(double score, Player player) {</span>
-<span class="fc" id="L28">        this.score = score;</span>
-<span class="fc" id="L29">        this.player = player;</span>
-<span class="fc" id="L30">    }</span>
 
-<span class="nc" id="L32">    public Score() {</span>
-<span class="nc" id="L33">    }</span>
+<span class="nc" id="L30">    public Score(double score, Player player, Long gameid) {</span>
+<span class="nc" id="L31">        this.score = score;</span>
+<span class="nc" id="L32">        this.player = player;</span>
+<span class="nc" id="L33">        this.gameid = gameid;</span>
+<span class="nc" id="L34">    }</span>
+
+<span class="nc" id="L36">    public Score() {</span>
+<span class="nc" id="L37">    }</span>
 
     public Long getId() {
-<span class="nc" id="L36">        return id;</span>
+<span class="nc" id="L40">        return id;</span>
     }
     public double getScore() {
-<span class="fc" id="L39">        return score;</span>
+<span class="nc" id="L43">        return score;</span>
     }
     public Player getPlayer() {
-<span class="nc" id="L42">        return player;</span>
+<span class="nc" id="L46">        return player;</span>
     }
+
+    public void setScore(double score) {
+<span class="nc" id="L50">        this.score = score;</span>
+<span class="nc" id="L51">    }</span>
+    public void setPlayer(Player player) {
+<span class="nc" id="L53">        this.player = player;</span>
+<span class="nc" id="L54">    }</span>
+    public void setGameid(Long gameid) {
+<span class="nc" id="L56">        this.gameid = gameid;</span>
+<span class="nc" id="L57">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

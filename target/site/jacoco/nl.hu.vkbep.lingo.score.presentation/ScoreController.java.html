@@ -7,20 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
-@RestController
-public class ScoreController {
 
-    ScoreService scoreService;
+<span class="nc" id="L13">public class ScoreController {</span>
 
-<span class="nc" id="L16">    public ScoreController(ScoreService scoreService) {</span>
-<span class="nc" id="L17">        this.scoreService = scoreService;</span>
-<span class="nc" id="L18">    }</span>
-
-    @GetMapping(&quot;/highscore&quot;)
-    public List&lt;Score&gt; getHighscore() throws HighscoreNotFound{
-
-<span class="nc" id="L23">            return scoreService.getHighscore();</span>
-    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

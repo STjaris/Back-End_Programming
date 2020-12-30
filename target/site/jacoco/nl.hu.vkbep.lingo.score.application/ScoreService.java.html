@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ScoreService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">back-end_programming</a> &gt; <a href="index.source.html" class="el_package">nl.hu.vkbep.lingo.score.application</a> &gt; <span class="el_source">ScoreService.java</span></div><h1>ScoreService.java</h1><pre class="source lang-java linenums">package nl.hu.vkbep.lingo.score.application;
 
-import nl.hu.vkbep.lingo.game.domain.Game;
 import nl.hu.vkbep.lingo.player.data.PlayerRepository;
 import nl.hu.vkbep.lingo.score.data.ScoreRepository;
-import nl.hu.vkbep.lingo.score.domain.Score;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ScoreService implements ScoreServiceInterface{
@@ -16,36 +12,14 @@ public class ScoreService implements ScoreServiceInterface{
     PlayerRepository playerRepository;
 
     @Autowired
-<span class="fc" id="L19">    public ScoreService(ScoreRepository scoreRepository, PlayerRepository playerRepository) {</span>
-<span class="fc" id="L20">        this.scoreRepository = scoreRepository;</span>
-<span class="fc" id="L21">        this.playerRepository = playerRepository;</span>
-<span class="fc" id="L22">    }</span>
-
-    public List&lt;Score&gt; getHighscore() {
-<span class="fc" id="L25">        return scoreRepository.getAllOrderByScore();</span>
-    }
-
-    public Score calculateScores(Game game, int multiplier, Long playerid , List&lt;Long&gt; list) {
-
-<span class="fc" id="L30">        System.out.println(&quot;LIST: &quot; + list.toString());</span>
-
-<span class="fc" id="L32">        double totalscore = 0;</span>
-
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (Object ignored : list) {</span>
-<span class="fc" id="L35">            int roundCount = game.getRoundCount();</span>
-<span class="fc" id="L36">            totalscore += calculation(roundCount, multiplier);</span>
-<span class="fc" id="L37">        }</span>
-
-<span class="fc" id="L39">        Score score = new Score(totalscore, playerRepository.getPlayerById(playerid));</span>
-<span class="fc" id="L40">        scoreRepository.save(score);</span>
-
-<span class="fc" id="L42">        return score;</span>
-    }
+<span class="fc" id="L15">    public ScoreService(ScoreRepository scoreRepository, PlayerRepository playerRepository) {</span>
+<span class="fc" id="L16">        this.scoreRepository = scoreRepository;</span>
+<span class="fc" id="L17">        this.playerRepository = playerRepository;</span>
+<span class="fc" id="L18">    }</span>
 
     public double calculation(int roundcount, int multiplier) {
-<span class="fc" id="L46">        final int maxRoundCount = 5;</span>
-<span class="fc" id="L47">        return ((maxRoundCount/(double)roundcount) * multiplier);</span>
+<span class="fc" id="L21">        final int maxRoundCount = 5;</span>
+<span class="fc" id="L22">        return ((maxRoundCount / (double) (roundcount + 1)) * multiplier);</span>
     }
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
