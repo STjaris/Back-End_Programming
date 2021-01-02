@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.openjdk.jmh.annotations.*;
 
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
+@State(Scope.Benchmark)
 public class GameServiceTests {
 
     private final String guess = "tests";
@@ -36,9 +37,11 @@ public class GameServiceTests {
     private static final Game game4 = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF7, word, 0, 0, 0);
     private static final Game game5 = new Game();
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("GIVES MAP BACK IF GAME IS CREATED")
-    void createNewGame() {
+    public void createNewGame() {
         Word word1 = new Word(1L, "baard");
         Player player = new Player("test", "test", "test", true, false);
         Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word1);
@@ -73,9 +76,11 @@ public class GameServiceTests {
         );
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS GAME IF ONE IS CREATED")
-    void createGame() {
+    public void createGame() {
         Word word = new Word(1L, "baard");
         Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
 
@@ -92,9 +97,11 @@ public class GameServiceTests {
         assertEquals(game.getGameType(), result.getGameType());
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS CORRECT IF WORD IS GUESSED")
-    void makeCorrectAttempt() {
+    public void makeCorrectAttempt() {
         Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
 
         GameRepository gameRepository = mock(GameRepository.class);
@@ -112,9 +119,11 @@ public class GameServiceTests {
 
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS FEEDBACK IF WORD IS GUESSED BUT NOT CORRECT")
-    void makeAttempt() {
+    public void makeAttempt() {
         Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
         Word attempt = new Word(2L, "baard");
 
@@ -131,10 +140,11 @@ public class GameServiceTests {
         assertTrue(result.containsKey("FEEDBACK"));
 
     }
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS MAXROUNDREACHED IF WORD IS GUESSED BUT NOT CORRECT")
-    void makeMoreThenMaxAttempt() {
+    public void makeMoreThenMaxAttempt() {
         Word attempt = new Word(2L, "baard");
 
         GameRepository gameRepository = mock(GameRepository.class);
@@ -149,11 +159,12 @@ public class GameServiceTests {
 
         assertTrue(result.containsValue(new MaxRoundReached(game2.getId()).getMessage()));
     }
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @ParameterizedTest
     @MethodSource("provideGameAndExpectedGameType")
     @DisplayName("CHECKS THE GAMETYPE AND RETURNS NEW GAME")
-    void checkGameType(Game game, GameType gameType) {
+    public void checkGameType(Game game, GameType gameType) {
         //Game game = new Game(1L, GameStatus.NOTSTARTED, GameType.LETTEROF5, word);
 
         GameRepository gameRepository = mock(GameRepository.class);
@@ -168,10 +179,11 @@ public class GameServiceTests {
 
         assertTrue(result.getGameType() == gameType);
     }
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("THROWS GAMEFINISHED EXCEPTION IF GAME IS FINISHED")
-    void checkGameTypeGameFinished() {
+    public void checkGameTypeGameFinished() {
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
@@ -185,10 +197,11 @@ public class GameServiceTests {
             gameService.checkGameType(game4.getId());
         });
     }
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS GAME IF NO GAMETYPE FOUND")
-    void checkGameTypeReturnGame() {
+    public void checkGameTypeReturnGame() {
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
         GameSessionService gameSessionService = mock(GameSessionService.class);
@@ -201,10 +214,11 @@ public class GameServiceTests {
 
         assertEquals(game5, result);
     }
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("GIVES GAME BACK IF ID HAS BEEN FOUND")
-    void getById() {
+    public void getById() {
         Game game = new Game(GameStatus.NOTSTARTED, GameType.LETTEROF5, word, 0, 1, 0);
 
         GameRepository gameRepository = mock(GameRepository.class);

@@ -1,17 +1,19 @@
 package nl.hu.vkbep.lingo.game.domain;
 
-import nl.hu.vkbep.lingo.player.data.PlayerRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openjdk.jmh.annotations.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 
+@State(Scope.Benchmark)
 public class GameTests {
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("CALCULATES SCORE")
-    void calculation() {
+    public void calculation() {
         int roundcount = 0;
         int multiplier = 5;
         double expectedResult = 25;

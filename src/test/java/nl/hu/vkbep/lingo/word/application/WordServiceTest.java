@@ -12,6 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
+import org.openjdk.jmh.annotations.*;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
-@DisplayName("WordServiceTest")
+@State(Scope.Benchmark)
 public class WordServiceTest {
 
     private static final Word word = new Word(1L, "baard");
@@ -72,6 +73,8 @@ public class WordServiceTest {
         );
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("CHECK IF WORD IS SAVED")
     public void save(){
@@ -86,6 +89,8 @@ public class WordServiceTest {
 
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("GIVES TRUE WHEN WORD DOES EXISTS")
     public void wordExists(){
@@ -101,6 +106,8 @@ public class WordServiceTest {
         assertTrue(result);
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @ParameterizedTest
     @MethodSource("provideGametypeLengthAndResult")
     public void getLengthByGameType(GameType gameType, int length, boolean expectedresult){
@@ -121,11 +128,12 @@ public class WordServiceTest {
         );
     }
 
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @ParameterizedTest
     @MethodSource("provideWordsForFeedback")
     @DisplayName("GIVES FEEDBACK FOR GUESSES")
-    void checkOfLetters(Word word, String guess, List<String> expectedFeedback) {
+    public void checkOfLetters(Word word, String guess, List<String> expectedFeedback) {
 
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
         WordService wordService = new WordService(wordRepository);
@@ -137,10 +145,11 @@ public class WordServiceTest {
         Assertions.assertEquals(expectedFeedback, result.get("feedback"));
     }
 
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("GIVES FEEDBACK WHEN RANDOM PICKED WORD LENGTH = GAMETYPE LENGTH")
-    void getRandomWord() {
+    public void getRandomWord() {
         Word word = new Word(1L, "tests");
         GameType gameType = GameType.LETTEROF5;
 
@@ -155,9 +164,11 @@ public class WordServiceTest {
         Assertions.assertEquals(result, word.getWord());
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("GIVES TRUE WHEN GUESS EQUALS WORD")
-    void attemptChecker() {
+    public void attemptChecker() {
         Word guess = new Word(1L, "baard");
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
 
@@ -170,9 +181,11 @@ public class WordServiceTest {
         assertTrue(result);
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS WORD WHEN FOUND")
-    void getWordById() {
+    public void getWordById() {
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
 
         when(wordRepository.getById(word.getId())).thenReturn(word);
@@ -184,9 +197,11 @@ public class WordServiceTest {
     }
 
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS MAP OF FEEDBACK WHEN LENGTH AND EXISTS IS TRUE")
-    void wordCheckerCorrect() {
+    public void wordCheckerCorrect() {
         Word guess = new Word(1L, "tests");
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
 
@@ -200,9 +215,11 @@ public class WordServiceTest {
         assertTrue(result.containsKey("feedback"));
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS WORDLENGTHNOTCORRECT WHEN LENGTH IS FALSE")
-    void wordCheckerWrongLength() {
+    public void wordCheckerWrongLength() {
         Word guess = new Word(1L, "123456789");
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
 
@@ -216,9 +233,11 @@ public class WordServiceTest {
         assertTrue(result.containsValue(new WordLengthNotCorrect(guess.toString()).getMessage()));
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS WORDDOESNOTEXISTS WHEN EXISTS IS FALSE")
-    void wordCheckerGuessNotExisting() {
+    public void wordCheckerGuessNotExisting() {
         Word guess = new Word(1L, "12345");
         WordRepository wordRepository = Mockito.mock(WordRepository.class);
 

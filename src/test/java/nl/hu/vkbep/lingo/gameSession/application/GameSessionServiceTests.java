@@ -10,6 +10,9 @@ import nl.hu.vkbep.lingo.player.domain.Player;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Mode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +24,11 @@ import static org.mockito.Mockito.when;
 
 public class GameSessionServiceTests {
 
-
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("CREATE NEW GAMESESSION")
-    void createNewGameSession() {
+    public void createNewGameSession() {
         Player player = new Player("test", "test", "test", true , false);
         Long playerid = 1L;
         Word word = new Word(1L, "tests");
@@ -47,9 +51,11 @@ public class GameSessionServiceTests {
         assertEquals(expectedGameSession.getPlayer(), result.getPlayer());
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("UPDATES GAMESESSION")
-    void updateGameSession() {
+    public void updateGameSession() {
         Player player = new Player("test", "test", "test", true , false);
 
         Word word = new Word(1L, "tests");
@@ -78,9 +84,11 @@ public class GameSessionServiceTests {
 
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("RETURNS GAMESESSION IF GAMESESSION CONTAINS GAME")
-    void getGameSessionContainingGame() {
+    public void getGameSessionContainingGame() {
         Player player = new Player("test", "test", "test", true , false);
 
         Word word = new Word(1L, "tests");
@@ -101,6 +109,8 @@ public class GameSessionServiceTests {
         assertEquals(expectedGameSession, result);
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.SingleShotTime)
     @Test
     @DisplayName("GIVES A LIST WITH SCORES BACK")
     public void getHighscore() {

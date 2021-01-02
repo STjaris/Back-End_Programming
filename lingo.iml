@@ -61,7 +61,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: org.pitest:pitest-junit5-plugin:0.12" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.1" level="project" />
@@ -221,5 +220,9 @@
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:8.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.jacoco:org.jacoco.report:0.8.6" level="project" />
     <orderEntry type="library" name="Maven: org.pitest:pitest-junit5-plugin:0.12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjdk.jmh:jmh-core:1.27" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.jopt-simple:jopt-simple:4.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-math3:3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.openjdk.jmh:jmh-generator-annprocess:1.27" level="project" />
   </component>
 </module>

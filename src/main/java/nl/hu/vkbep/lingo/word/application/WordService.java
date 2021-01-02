@@ -5,6 +5,9 @@ import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.domain.Word;
 import nl.hu.vkbep.lingo.word.presentation.exception.WordDoesNotExists;
 import nl.hu.vkbep.lingo.word.presentation.exception.WordLengthNotCorrect;
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.State;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
