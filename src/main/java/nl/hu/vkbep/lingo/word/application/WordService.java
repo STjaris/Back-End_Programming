@@ -3,8 +3,8 @@ package nl.hu.vkbep.lingo.word.application;
 import nl.hu.vkbep.lingo.game.domain.GameType;
 import nl.hu.vkbep.lingo.word.data.WordRepository;
 import nl.hu.vkbep.lingo.word.domain.Word;
-import nl.hu.vkbep.lingo.word.exception.WordDoesNotExists;
-import nl.hu.vkbep.lingo.word.exception.WordLengthNotCorrect;
+import nl.hu.vkbep.lingo.word.presentation.exception.WordDoesNotExists;
+import nl.hu.vkbep.lingo.word.presentation.exception.WordLengthNotCorrect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

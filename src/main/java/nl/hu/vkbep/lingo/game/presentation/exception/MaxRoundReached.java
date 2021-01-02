@@ -1,4 +1,4 @@
-package nl.hu.vkbep.lingo.game.exception;
+package nl.hu.vkbep.lingo.game.presentation.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
