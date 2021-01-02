@@ -65,7 +65,7 @@ public class GameService implements GameServiceInterface {
         //RETURN MAP WITH DATA
 <span class="fc" id="L66">        Map map = new HashMap&lt;&gt;();</span>
 <span class="fc" id="L67">        map.put(&quot;gameid&quot;, game.getId());</span>
-<span class="fc" id="L68">        map.put(&quot;feedback&quot;, game.getWord());</span>
+<span class="fc" id="L68">        map.put(&quot;feedback&quot;, game.getWord().getWord());</span>
 
 <span class="fc" id="L70">        return map;</span>
     }

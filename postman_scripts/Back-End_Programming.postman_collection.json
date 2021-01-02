@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "61a96feb-3604-44e2-88a9-de36c4e911e8",
+		"name": "Back-End_Programming",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost",
+			"item": [
+				{
+					"name": "PlayGame",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "test",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"value": "test",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/games?playerid=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"games"
+							],
+							"query": [
+								{
+									"key": "playerid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Highscores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/highscore",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"highscore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PlayAttempt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "impactr",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/{gameid}/attempt",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"{gameid}",
+								"attempt"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Heroku",
+			"item": [
+				{
+					"name": "PlayGame",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"type": "text",
+								"value": "test",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"type": "text",
+								"value": "test",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://backend-programming.herokuapp.com/games?playerid={playerid}",
+							"protocol": "https",
+							"host": [
+								"backend-programming",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"games"
+							],
+							"query": [
+								{
+									"key": "playerid",
+									"value": "{playerid}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PlayAttempt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "impactr",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend-programming.herokuapp.com/{gameid}/attempt",
+							"protocol": "https",
+							"host": [
+								"backend-programming",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"{gameid}",
+								"attempt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Highscores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backend-programming.herokuapp.com/highscore",
+							"protocol": "https",
+							"host": [
+								"backend-programming",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"highscore"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

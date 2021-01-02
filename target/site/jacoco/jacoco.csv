@@ -4,7 +4,7 @@ back-end_programming,nl.hu.vkbep.lingo.game.domain,GameType,0,34,0,0,0,4,0,1,0,1
 back-end_programming,nl.hu.vkbep.lingo.game.domain,Game,12,124,0,0,5,40,4,16,4,16
 back-end_programming,nl.hu.vkbep.lingo.word.presentation,WordController,3,0,0,0,1,0,1,0,1,0
 back-end_programming,nl.hu.vkbep.lingo.fileImport.domain,LingoWordFilter,0,7,0,0,0,2,0,2,0,2
-back-end_programming,nl.hu.vkbep.lingo.game.application,GameService,0,262,0,12,0,60,0,14,0,8
+back-end_programming,nl.hu.vkbep.lingo.game.application,GameService,0,263,0,12,0,60,0,14,0,8
 back-end_programming,nl.hu.vkbep.lingo.player.domain,Player,19,21,0,0,7,8,6,2,6,2
 back-end_programming,nl.hu.vkbep.lingo.fileImport.data,FileWordWriter,12,27,1,3,3,8,1,3,0,2
 back-end_programming,nl.hu.vkbep.lingo.gameSession.domain,GameSession,10,29,0,0,5,12,3,6,3,6
