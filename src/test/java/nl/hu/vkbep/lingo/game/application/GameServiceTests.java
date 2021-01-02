@@ -47,23 +47,23 @@ public class GameServiceTests {
         GameSession gameSession = new GameSession(listOfgames, player, 0);
         Long playerid = 1L;
 
-        Map expectedMap = Map.of("gameid", game.getId(), "feedback", game.getWord());
+        //Map expectedMap = Map.of("gameid", game.getId(), "feedback", game.getWord().getWord());
 
         GameRepository gameRepository = mock(GameRepository.class);
         WordServiceInterface wordServiceInterface = mock(WordServiceInterface.class);
-
         GameSessionService gameSessionService = mock(GameSessionService.class);
 
         GameService gameService = new GameService(gameRepository, wordServiceInterface, gameSessionService);
 
         when(gameService.createGame(GameType.LETTEROF5)).thenReturn(game);
         when(gameSessionService.createNewGameSession(game, playerid)).thenReturn(gameSession);
-
+        when(wordServiceInterface.getRandomWord(game.getGameType())).thenReturn(word1);
 
         Map result = gameService.createNewGame(playerid);
 
         //assertEquals(expectedMap, result);
-        assertTrue(result.containsKey("gameid"));
+        assertTrue(result.containsKey("feedback"));
+        assertTrue(result.containsValue(word1.getWord()));
     }
 
     private static Stream<Arguments> provideGameAndExpectedGameType() {
