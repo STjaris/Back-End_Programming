@@ -65,7 +65,7 @@ public class GameService implements GameServiceInterface {
         //RETURN MAP WITH DATA
         Map map = new HashMap<>();
         map.put("gameid", game.getId());
-        map.put("feedback", game.getWord());
+        map.put("feedback", game.getWord().getWord());
 
         return map;
     }
