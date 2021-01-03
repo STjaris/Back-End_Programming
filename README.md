@@ -1,4 +1,11 @@
 # Back-End_Programming
+Gebruikte diensten:
+- Source code repository: Github
+- Build pipeline: Github Actions
+- Static analysis en coverage: Codecov en Sonarcloud*
+- Deployment: Heroku
+- Database: Heroku Postgres
+
 
 [![codecov](https://codecov.io/gh/STjaris/Back-End_Programming/branch/main/graph/badge.svg?token=GZXAPUD8BT)](https://codecov.io/gh/STjaris/Back-End_Programming)
 
