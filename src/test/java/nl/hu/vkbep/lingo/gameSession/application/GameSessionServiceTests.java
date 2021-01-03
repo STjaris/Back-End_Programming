@@ -25,7 +25,7 @@ import static org.mockito.Mockito.when;
 public class GameSessionServiceTests {
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("CREATE NEW GAMESESSION")
     public void createNewGameSession() {
@@ -52,7 +52,7 @@ public class GameSessionServiceTests {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("UPDATES GAMESESSION")
     public void updateGameSession() {
@@ -85,7 +85,7 @@ public class GameSessionServiceTests {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS GAMESESSION IF GAMESESSION CONTAINS GAME")
     public void getGameSessionContainingGame() {
@@ -110,7 +110,7 @@ public class GameSessionServiceTests {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("GIVES A LIST WITH SCORES BACK")
     public void getHighscore() {

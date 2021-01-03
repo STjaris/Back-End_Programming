@@ -139,7 +139,6 @@ public class GameService implements GameServiceInterface {
             score(gamePlayed, 7);
 
             //END GAME
-            System.out.println(new GameFinished().getMessage());
             throw new GameFinished();
 
         } else {

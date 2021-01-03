@@ -74,7 +74,7 @@ public class WordServiceTest {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("CHECK IF WORD IS SAVED")
     public void save(){
@@ -90,7 +90,7 @@ public class WordServiceTest {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("GIVES TRUE WHEN WORD DOES EXISTS")
     public void wordExists(){
@@ -106,8 +106,8 @@ public class WordServiceTest {
         assertTrue(result);
     }
 
-    @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+//    @Benchmark
+//    @BenchmarkMode(Mode.SingleShotTime)
     @ParameterizedTest
     @MethodSource("provideGametypeLengthAndResult")
     public void getLengthByGameType(GameType gameType, int length, boolean expectedresult){
@@ -128,8 +128,8 @@ public class WordServiceTest {
         );
     }
 
-    @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+//    @Benchmark
+//    @BenchmarkMode(Mode.SingleShotTime)
     @ParameterizedTest
     @MethodSource("provideWordsForFeedback")
     @DisplayName("GIVES FEEDBACK FOR GUESSES")
@@ -146,7 +146,7 @@ public class WordServiceTest {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("GIVES FEEDBACK WHEN RANDOM PICKED WORD LENGTH = GAMETYPE LENGTH")
     public void getRandomWord() {
@@ -165,7 +165,7 @@ public class WordServiceTest {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("GIVES TRUE WHEN GUESS EQUALS WORD")
     public void attemptChecker() {
@@ -182,7 +182,7 @@ public class WordServiceTest {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS WORD WHEN FOUND")
     public void getWordById() {
@@ -198,7 +198,7 @@ public class WordServiceTest {
 
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS MAP OF FEEDBACK WHEN LENGTH AND EXISTS IS TRUE")
     public void wordCheckerCorrect() {
@@ -216,7 +216,7 @@ public class WordServiceTest {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS WORDLENGTHNOTCORRECT WHEN LENGTH IS FALSE")
     public void wordCheckerWrongLength() {
@@ -234,7 +234,7 @@ public class WordServiceTest {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS WORDDOESNOTEXISTS WHEN EXISTS IS FALSE")
     public void wordCheckerGuessNotExisting() {

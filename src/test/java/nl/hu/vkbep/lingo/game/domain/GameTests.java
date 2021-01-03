@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GameTests {
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("CALCULATES SCORE")
     public void calculation() {

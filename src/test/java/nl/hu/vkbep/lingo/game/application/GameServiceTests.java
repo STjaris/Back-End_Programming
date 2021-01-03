@@ -38,7 +38,7 @@ public class GameServiceTests {
     private static final Game game5 = new Game();
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("GIVES MAP BACK IF GAME IS CREATED")
     public void createNewGame() {
@@ -77,7 +77,7 @@ public class GameServiceTests {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS GAME IF ONE IS CREATED")
     public void createGame() {
@@ -98,7 +98,7 @@ public class GameServiceTests {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS CORRECT IF WORD IS GUESSED")
     public void makeCorrectAttempt() {
@@ -120,7 +120,7 @@ public class GameServiceTests {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS FEEDBACK IF WORD IS GUESSED BUT NOT CORRECT")
     public void makeAttempt() {
@@ -141,7 +141,7 @@ public class GameServiceTests {
 
     }
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS MAXROUNDREACHED IF WORD IS GUESSED BUT NOT CORRECT")
     public void makeMoreThenMaxAttempt() {
@@ -159,8 +159,8 @@ public class GameServiceTests {
 
         assertTrue(result.containsValue(new MaxRoundReached(game2.getId()).getMessage()));
     }
-    @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+//    @Benchmark
+//    @BenchmarkMode(Mode.SingleShotTime)
     @ParameterizedTest
     @MethodSource("provideGameAndExpectedGameType")
     @DisplayName("CHECKS THE GAMETYPE AND RETURNS NEW GAME")
@@ -180,7 +180,7 @@ public class GameServiceTests {
         assertTrue(result.getGameType() == gameType);
     }
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("THROWS GAMEFINISHED EXCEPTION IF GAME IS FINISHED")
     public void checkGameTypeGameFinished() {
@@ -198,7 +198,7 @@ public class GameServiceTests {
         });
     }
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("RETURNS GAME IF NO GAMETYPE FOUND")
     public void checkGameTypeReturnGame() {
@@ -215,7 +215,7 @@ public class GameServiceTests {
         assertEquals(game5, result);
     }
     @Benchmark
-    @BenchmarkMode(Mode.SingleShotTime)
+    @BenchmarkMode(Mode.All)
     @Test
     @DisplayName("GIVES GAME BACK IF ID HAS BEEN FOUND")
     public void getById() {
