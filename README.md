@@ -16,4 +16,4 @@ Heroku URL: https://backend-programming.herokuapp.com/
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=STjaris_Back-End_Programming)
 
-*Zie screenshots in screenshots folder. Bij Sonarcloud had ik het probleem dat het geen Java code wilt scannen; dit probleem heb ik niet weten op te lossen.
+*Zie screenshots in screenshots folder. De repo staat op public vanwege het gebruik van Sonarcloud. Bij Sonarcloud had ik het probleem dat het geen Java code wilt scannen; dit probleem heb ik niet weten op te lossen.
