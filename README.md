@@ -6,6 +6,8 @@ Gebruikte diensten:
 - Deployment: Heroku
 - Database: Heroku Postgres
 
+Performance is getest met JMH. Zie screenshots voor resultaten
+
 In de postman folder is de postman script te vinden waarmee je de game kan spelen.
 
 Heroku URL: https://backend-programming.herokuapp.com/
