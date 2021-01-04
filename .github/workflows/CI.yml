@@ -48,7 +48,7 @@ jobs:
           image: soeranotjaris/back_end_programming
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }
+          password: ${{ secrets.DOCKER_PASSWORD }}
         
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
